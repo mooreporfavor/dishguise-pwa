@@ -1,0 +1,22 @@
+{
+  "name": "DishGuise",
+  "short_name": "DishGuise",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#eebb4d",
+  "description": "A culinary deduction game. Guess the dish, master the kitchen, and challenge your friends.",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "requestFramePermissions": []
+}
