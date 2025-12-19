@@ -1,12 +1,12 @@
-
 import React, { useEffect, useState } from 'react';
 import { ChefHat } from 'lucide-react';
 
 interface LogoIntroProps {
     onComplete: () => void;
+    heroImageUrl?: string;
 }
 
-export const LogoIntro: React.FC<LogoIntroProps> = ({ onComplete }) => {
+export const LogoIntro: React.FC<LogoIntroProps> = ({ onComplete, heroImageUrl }) => {
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
@@ -19,7 +19,13 @@ export const LogoIntro: React.FC<LogoIntroProps> = ({ onComplete }) => {
     }, [onComplete]);
 
     return (
-        <div className="fixed inset-0 z-50 bg-culinary-dark flex flex-col items-center justify-center overflow-hidden cursor-wait">
+        <div className="fixed inset-0 z-50 bg-culinary-dark flex flex-col items-center justify-center overflow-hidden">
+            {heroImageUrl && (
+                <div
+                    className="absolute inset-0 bg-cover bg-center opacity-40 blur-xl scale-110 transition-opacity duration-1000"
+                    style={{ backgroundImage: `url(${heroImageUrl})` }}
+                />
+            )}
             {/* Subtle Radial Background */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-zinc-800/20 via-culinary-dark to-black opacity-50"></div>
 

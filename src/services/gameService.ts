@@ -41,6 +41,7 @@ export const getGameRound = async (
         const rounds = dailyMenu.rounds[diffKey];
         if (rounds && rounds.length > 0) {
             // Cycle through rounds if the user plays more than 5 in a day
+            // But usually this means "Round 1 = Index 0", "Round 2 = Index 1"
             const round = rounds[roundIndex % rounds.length];
             console.log(`[GameService] 🥫 Served from Pantry: ${today} / ${diffKey} / Round ${roundIndex + 1}`);
 

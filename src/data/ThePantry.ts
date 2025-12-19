@@ -3,6 +3,7 @@ import { RoundData } from "../types";
 export interface DailyMenu {
     date: string; // "YYYY-MM-DD"
     theme: string;
+    heroDishIndex?: number; // Index of the "Hero" dish (0-4) in the EASY array? Or globally? Let's assume EASY for now or handle later.
     rounds: {
         EASY: RoundData[];   // Array of 5 rounds
         MEDIUM: RoundData[]; // Array of 5 rounds

@@ -13,6 +13,7 @@ import { TutorialOverlay } from './components/TutorialOverlay';
 import { AdminConsole } from './components/AdminConsole';
 import { GameOverScreen } from './components/GameOverScreen';
 import { logEvent, EVENTS } from './services/analytics';
+import { SFX } from './services/soundService';
 import { CheckCircle2, Play, Utensils, ChefHat, Menu as MenuIcon, Timer, Cigarette, Sparkles, LogOut, User, AlertTriangle, ArrowDown, ArrowRight } from 'lucide-react';
 
 const ROUNDS_PER_DAY = 5;
@@ -36,14 +37,19 @@ const LOADING_MSGS = [
 ];
 
 // --- PROGRESSION TITLES ---
+// --- PROGRESSION TITLES ---
 const getTitle = (level: number) => {
-    if (level < 2) return "Dishwasher";
-    if (level < 5) return "Commis Chef";
-    if (level < 10) return "Chef de Partie";
-    if (level < 20) return "Sous Chef";
-    if (level < 50) return "Chef de Cuisine";
-    return "Executive Chef";
+    if (level < 5) return "Dishwasher"; // Day 1-2
+    if (level < 15) return "Commis Chef"; // Week 1
+    if (level < 30) return "Chef de Partie"; // Month 1
+    if (level < 50) return "Sous Chef"; // Month 2
+    if (level < 75) return "Chef de Cuisine"; // Month 4
+    return "Executive Chef"; // Lvl 75+ (Requires significant play)
 };
+
+// Logarithmic/Square Root curve: Harder to level up as you go.
+// 20k XP = Lvl 6. 100k XP = Lvl 15. 1M XP = Lvl 45.
+const calculateLevel = (xp: number) => Math.floor(Math.sqrt(xp / 500)) + 1;
 
 const getRandomLoadingMsg = () => LOADING_MSGS[Math.floor(Math.random() * LOADING_MSGS.length)];
 
@@ -90,13 +96,29 @@ const App: React.FC = () => {
     // User Profile
     const [userProfile, setUserProfile] = useState<UserProfile>(() => {
         const saved = localStorage.getItem('dishguise_profile_v1');
-        return saved ? JSON.parse(saved) : {
+        const defaultProfile = {
             xp: 0,
             level: 1,
             title: "Dishwasher",
             dishHistory: [],
-            collection: []
+            collection: [],
+            stats: {
+                gamesPlayed: 0,
+                perfectGames: 0,
+                currentStreak: 0,
+                maxStreak: 0,
+                lastPlayedDate: null
+            }
         };
+
+        if (!saved) return defaultProfile;
+
+        const parsed = JSON.parse(saved);
+        // Migration for old profiles without stats
+        if (!parsed.stats) {
+            parsed.stats = defaultProfile.stats;
+        }
+        return parsed;
     });
 
     // Tutorial State
@@ -386,6 +408,7 @@ const App: React.FC = () => {
 
     const handleRoundWin = (score: number) => {
         logEvent(EVENTS.ROUND_WIN, { score, dish: currentRoundData?.targetDish, gameMode, difficulty });
+        SFX.roundWin();
         setPhase(GamePhase.REVEAL);
         setTotalScore(prev => prev + score);
         setStreak(prev => prev + 1);
@@ -424,9 +447,11 @@ const App: React.FC = () => {
 
     const handleDetectiveGuess = (optionId: string, isCorrect: boolean) => {
         if (isCorrect) {
+            SFX.correct();
             setCorrectOptionId(optionId);
             handleRoundWin(roundScore);
         } else {
+            SFX.wrong();
             setStreak(0);
             setWrongGuesses(prev => new Set(prev).add(optionId));
             setRoundScore(prev => Math.max(0, prev - 500));
@@ -442,6 +467,7 @@ const App: React.FC = () => {
 
     const handleChefSelect = (ingId: string, isCorrect: boolean) => {
         if (isCorrect) {
+            SFX.correct();
             const newFound = new Set(foundIngredientIds).add(ingId);
             setFoundIngredientIds(newFound);
             const totalCorrect = currentRoundData?.ingredientOptions.filter(o => o.isCorrect).length || 0;
@@ -449,6 +475,7 @@ const App: React.FC = () => {
                 handleRoundWin(roundScore);
             }
         } else {
+            SFX.wrong();
             setStreak(0);
             setWrongIngredientIds(prev => new Set(prev).add(ingId));
             setRoundScore(prev => Math.max(0, prev - 500));
@@ -489,7 +516,8 @@ const App: React.FC = () => {
     };
 
     const handleNextRound = () => {
-        if (roundNumber === 3) {
+        if (roundNumber === 4) { // End of Round 4 -> Going into Round 5
+            SFX.intermission();
             setAppState(AppState.INTERMISSION);
             return;
         }
@@ -501,7 +529,49 @@ const App: React.FC = () => {
             setRoundNumber(prev => prev + 1);
             loadRound(difficulty, roundNumber + 1, gameMode);
         } else {
-            logEvent(EVENTS.GAME_COMPLETE, { totalScore, difficulty });
+            const finalScore = totalScore; // Use the compiled total score
+            logEvent(EVENTS.GAME_COMPLETE, { totalScore: finalScore, difficulty });
+            SFX.gameOver();
+
+            // Update Profile & Streak
+            setUserProfile(prev => {
+                const newXP = prev.xp + finalScore;
+                const newLevel = calculateLevel(newXP);
+                const newTitle = getTitle(newLevel);
+
+                // Streak Logic
+                const today = new Date().toISOString().split('T')[0];
+                const lastPlayed = prev.stats.lastPlayedDate;
+
+                let newStreak = prev.stats.currentStreak;
+
+                if (lastPlayed !== today) {
+                    const yesterday = new Date();
+                    yesterday.setDate(yesterday.getDate() - 1);
+                    const yesterdayStr = yesterday.toISOString().split('T')[0];
+
+                    if (lastPlayed === yesterdayStr) {
+                        newStreak += 1;
+                    } else {
+                        newStreak = 1; // Reset or Start
+                    }
+                }
+
+                return {
+                    ...prev,
+                    xp: newXP,
+                    level: newLevel,
+                    title: newTitle,
+                    stats: {
+                        ...prev.stats,
+                        gamesPlayed: prev.stats.gamesPlayed + 1,
+                        currentStreak: newStreak,
+                        maxStreak: Math.max(prev.stats.maxStreak, newStreak),
+                        lastPlayedDate: today
+                    }
+                };
+            });
+
             setAppState(AppState.GAME_OVER);
         }
     };
@@ -537,7 +607,10 @@ const App: React.FC = () => {
         return reason.replace(regex, "The Ordered Dish");
     };
 
-    if (showIntro) return <LogoIntro onComplete={() => setShowIntro(false)} />;
+    const todayISO = new Date().toISOString().split('T')[0];
+    const heroImageUrl = `/daily_images/${todayISO}.jpg`; // Expects user to populate this folder
+
+    if (showIntro) return <LogoIntro onComplete={() => setShowIntro(false)} heroImageUrl={heroImageUrl} />;
 
     if (showAdmin) {
         return <AdminConsole onClose={() => setShowAdmin(false)} />;
@@ -581,24 +654,23 @@ const App: React.FC = () => {
                         <h2 className="text-3xl font-serif text-white mb-1">Smoke Break</h2>
                         <p className="text-zinc-500 text-sm italic">"Chef is screaming in the walk-in fridge. Please hold."</p>
                     </div>
-                    <div className="transform scale-105 transition-transform hover:scale-110 duration-300">
-                        <AdBanner variant="LARGE" />
+                    <div className="w-full h-[600px] bg-white rounded-lg overflow-hidden shadow-xl mb-6">
+                        <iframe
+                            id='kofiframe'
+                            src='https://ko-fi.com/dishguise/?hidefeed=true&widget=true&embed=true&preview=true'
+                            style={{ border: 'none', width: '100%', padding: '4px', background: '#f9f9f9', height: '100%' }}
+                            title='dishguise'
+                        ></iframe>
                     </div>
                     <button
-                        disabled={intermissionTimer > 0}
+                        // disabled={intermissionTimer > 0} // Optional: force them to look at it for 3s
                         onClick={handleFinishIntermission}
                         className={`
                         w-full font-bold py-4 rounded-xl uppercase tracking-widest text-sm flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-colors
-                        ${intermissionTimer > 0
-                                ? 'bg-zinc-800 text-zinc-500 cursor-wait'
-                                : 'bg-white text-black hover:bg-zinc-200'
-                            }
+                        bg-white text-black hover:bg-zinc-200
                     `}
                     >
-                        {intermissionTimer > 0
-                            ? `Next Round in ${intermissionTimer}...`
-                            : <>Continue to Round {roundNumber + 1} of {ROUNDS_PER_DAY} <ArrowRight size={16} /></>
-                        }
+                        Continue to Final Dish <ArrowRight size={16} />
                     </button>
                 </div>
             </div>
@@ -745,6 +817,8 @@ const App: React.FC = () => {
                 gameMode={gameMode}
                 APP_URL={APP_URL}
                 onMenu={() => setAppState(AppState.MENU)}
+                heroImageUrl={heroImageUrl}
+                streak={userProfile.stats.currentStreak}
             />
         );
     }

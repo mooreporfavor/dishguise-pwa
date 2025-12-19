@@ -52,7 +52,7 @@ export interface RoundData {
     triviaClues: string[];
     dishOptions: DishOption[];
     ingredientOptions: IngredientOption[];
-    difficulty: Difficulty;
+    difficulty: Difficulty | string;
     dayId: string;
 }
 
@@ -74,7 +74,14 @@ export interface UserProfile {
     level: number;
     title: string;
     dishHistory: string[];
-    collection: DishStamp[];
+    collection: string[];
+    stats: {
+        gamesPlayed: number;
+        perfectGames: number;
+        currentStreak: number;
+        maxStreak: number;
+        lastPlayedDate: string | null;
+    };
 }
 
 export interface GameResult {
@@ -88,6 +95,7 @@ export interface GameResult {
         mode: GameMode;
         category?: string; // NEW for redacted receipts
         region?: string;   // NEW for redacted receipts
+        emoji?: string; // NEW for share grid
     }[];
     difficulty: Difficulty;
 }
