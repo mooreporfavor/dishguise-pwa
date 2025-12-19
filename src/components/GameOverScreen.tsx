@@ -66,6 +66,7 @@ export const GameOverScreen: React.FC<GameOverScreenProps> = ({
     const [receiptReady, setReceiptReady] = useState(false);
     const [email, setEmail] = useState("");
     const [emailSubmitted, setEmailSubmitted] = useState(false);
+    const [spoilerFree, setSpoilerFree] = useState(true); // Default to Spoiler Free
 
     const verdict = getChefVerdict(totalScore);
     const percentile = calculatePercentile(totalScore, difficulty);
@@ -79,26 +80,22 @@ export const GameOverScreen: React.FC<GameOverScreenProps> = ({
 
     const handleShare = async () => {
         if (!receiptRef.current) return;
-
         logEvent(EVENTS.SHARE, { score: totalScore, difficulty });
 
         try {
             const element = receiptRef.current;
             element.classList.remove('animate-print-receipt');
-
             const canvas = await html2canvas(element, {
                 backgroundColor: '#121212',
                 scale: 3,
                 useCORS: true,
                 logging: false
             });
-
             const shareData = {
                 title: 'DishGuise Service Report',
                 text: `I scored ${totalScore} points on DishGuise! 🥘👨‍🍳 Think you can outsmart your friends? Prove it here: ${APP_URL}`,
                 url: APP_URL
             };
-
             canvas.toBlob(async (blob) => {
                 if (blob && navigator.share && navigator.canShare && navigator.canShare({ files: [new File([blob], 'dishguise.png', { type: 'image/png' })] })) {
                     try {
@@ -108,12 +105,8 @@ export const GameOverScreen: React.FC<GameOverScreenProps> = ({
                             ...shareData
                         });
                         return;
-                    } catch (e) {
-                        // Fallback to text copy below
-                    }
+                    } catch (e) { }
                 }
-
-                // FALLBACK: Copy Text
                 try {
                     await navigator.clipboard.writeText(shareData.text);
                     alert("Results copied to clipboard! Share them with your friends.");
@@ -126,6 +119,18 @@ export const GameOverScreen: React.FC<GameOverScreenProps> = ({
 
     return (
         <div className="min-h-screen bg-culinary-dark flex flex-col items-center p-4">
+            <div className="w-full max-w-sm flex items-center justify-end mb-2 gap-2">
+                <span className={`text-[10px] font-bold uppercase tracking-widest ${spoilerFree ? 'text-culinary-gold' : 'text-zinc-600'}`}>
+                    {spoilerFree ? "Spoiler Free" : "Show Dishes"}
+                </span>
+                <button
+                    onClick={() => setSpoilerFree(!spoilerFree)}
+                    className={`w-10 h-5 rounded-full relative transition-colors duration-300 ${spoilerFree ? 'bg-culinary-gold' : 'bg-zinc-700'}`}
+                >
+                    <div className={`absolute top-1 w-3 h-3 bg-black rounded-full transition-transform duration-300 ${spoilerFree ? 'left-6' : 'left-1'}`}></div>
+                </button>
+            </div>
+
             <div
                 ref={receiptRef}
                 className={`w-full max-w-sm bg-[#f4f4f0] text-zinc-900 shadow-2xl overflow-hidden relative mb-8 pb-12 ${!receiptReady ? 'animate-print-receipt' : ''}`}
@@ -160,7 +165,10 @@ export const GameOverScreen: React.FC<GameOverScreenProps> = ({
                                                 <span>{r.flagEmoji}</span>
                                             )}
                                             <span className="uppercase truncate">
-                                                {r.dish}
+                                                {spoilerFree
+                                                    ? `${r.region || "Global"} / ${r.category || "Mystery"}`
+                                                    : r.dish
+                                                }
                                             </span>
                                         </div>
                                         <span>{potential.toLocaleString()}</span>
