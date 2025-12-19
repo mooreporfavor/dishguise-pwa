@@ -157,121 +157,8 @@ export const GameOverScreen: React.FC<GameOverScreenProps> = ({
 
     return (
         <div className="min-h-screen bg-culinary-dark flex flex-col items-center p-4">
-            <div
-                ref={receiptRef}
-                className={`w-full max-w-sm bg-[#f4f4f0] text-zinc-900 shadow-2xl overflow-hidden relative mb-8 pb-12 ${!receiptReady ? 'animate-print-receipt' : ''}`}
-            >
-                <div className="receipt-edge"></div>
-                <div className="p-6 font-mono text-zinc-900">
-                    <div className="text-center pb-4 mb-4 border-b-2 border-dashed border-zinc-400/50">
-                        <div className="flex justify-center mb-2">
-                            <ChefHat size={32} strokeWidth={1.5} />
-                        </div>
-                        <h2 className="text-3xl font-black tracking-tighter uppercase mb-2 scale-y-110">DishGuise</h2>
-                        <div className="text-[10px] uppercase tracking-widest text-zinc-500 space-y-0.5">
-                            <p>123 CULINARY AVE, INTERNET</p>
-                            <p>TEL: (555) CHEF-YES</p>
-                            <p>STREAK: {streak} DAY{streak !== 1 ? 'S' : ''}</p>
-                            <p>{new Date().toLocaleDateString()} • {new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
-                        </div>
-                    </div>
-
-                    <div className="flex justify-between text-[10px] uppercase font-bold border-b border-zinc-900 pb-1 mb-2">
-                        <span>QTY</span>
-                        <span>ITEM</span>
-                        <span>AMT</span>
-                    </div>
-
-                    <div className="space-y-2 mb-6 text-xs leading-relaxed">
-                        {gameResult?.rounds.map((r, i) => {
-                            const potential = 5000;
-                            const discount = potential - r.score;
-                            return (
-                                <div key={i} className="group">
-                                    <div className="flex justify-between items-baseline font-bold uppercase">
-                                        <div className="flex gap-2 w-full">
-                                            <span className="w-4">1</span>
-                                            <div className="flex-1 truncate pr-2">
-                                                {r.dish}
-                                            </div>
-                                        </div>
-                                        <span>{potential.toLocaleString()}</span>
-                                    </div>
-                                    {discount > 0 && (
-                                        <div className="flex justify-between items-baseline text-[10px] text-zinc-500 italic">
-                                            <span className="pl-6">DISCOUNT (MISSED)</span>
-                                            <span>-{discount.toLocaleString()}</span>
-                                        </div>
-                                    )}
-                                </div>
-                            );
-                        })}
-                    </div>
-
-                    <div className="border-t-2 border-dashed border-zinc-400 py-3 space-y-1">
-                        <div className="flex justify-between items-end">
-                            <span className="font-bold uppercase text-sm">Subtotal</span>
-                            <span className="font-mono">{Math.floor(totalScore * 0.9).toLocaleString()}</span>
-                        </div>
-                        <div className="flex justify-between items-end">
-                            <span className="font-bold uppercase text-sm">Tax (10%)</span>
-                            <span className="font-mono">{Math.floor(totalScore * 0.1).toLocaleString()}</span>
-                        </div>
-                        <div className="flex justify-between items-end pt-2 text-xl">
-                            <span className="font-black uppercase transform scale-y-110">Total</span>
-                            <span className="font-black">{totalScore.toLocaleString()}</span>
-                        </div>
-                    </div>
-
-                    <div className="border-t border-b border-zinc-900 py-2 my-4 text-center">
-                        <p className="font-bold uppercase text-sm">Auth Code: {Math.floor(Math.random() * 900000) + 100000}</p>
-                        <p className="text-[10px] uppercase tracking-widest text-zinc-500">VISA **** **** **** {Math.floor(Math.random() * 9000) + 1000}</p>
-                    </div>
-
-                    <div className="bg-zinc-200/50 p-4 rounded text-center mb-6">
-                        <div className="flex justify-center text-zinc-800 mb-1 opacity-80">{verdict.icon}</div>
-                        <p className="italic font-bold text-lg leading-tight mb-1">"{verdict.text}"</p>
-                        <p className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">Service Report • {new Date().toLocaleDateString()}</p>
-                        <p className="font-mono text-[10px] uppercase tracking-widest text-zinc-500">{difficulty} • STREAK: {streak} DAYS</p>
-                        <p className="text-[9px] font-mono uppercase tracking-widest text-zinc-500">Chef's Verdict</p>
-                    </div>
-
-                    {!emailSubmitted ? (
-                        <div className="mb-6">
-                            <p className="text-[10px] uppercase font-bold text-center mb-2 tracking-widest">Join the Kitchen Brigade</p>
-                            <form
-                                onSubmit={(e) => { e.preventDefault(); setEmailSubmitted(true); logEvent('email_signup'); }}
-                                className="flex gap-2"
-                            >
-                                <input
-                                    type="email"
-                                    placeholder="chef@email.com"
-                                    className="flex-1 bg-white border border-zinc-300 rounded-none px-2 py-1 text-xs font-mono placeholder:uppercase"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    required
-                                />
-                                <button type="submit" className="bg-zinc-900 text-white text-[10px] font-bold uppercase px-3 hover:bg-zinc-700 transition-colors">
-                                    Join
-                                </button>
-                            </form>
-                        </div>
-                    ) : (
-                        <div className="mb-6 text-center text-zinc-900 text-xs font-bold uppercase border border-zinc-900 p-2">
-                            Welcome to the Brigade!
-                        </div>
-                    )}
-
-                    <div className="flex flex-col items-center gap-2 opacity-80">
-                        <Barcode />
-                        <p className="text-center font-mono text-[9px] uppercase tracking-widest">
-                            {APP_URL}
-                        </p>
-                    </div>
-                </div>
-                <div className="receipt-edge receipt-edge-bottom"></div>
-            </div>
-            <div className="w-full max-w-sm space-y-3">
+            <div className="w-full max-w-sm space-y-4">
+                {/* 1. Hero Image */}
                 {heroImageUrl && (
                     <div className="w-full aspect-video rounded-xl overflow-hidden shadow-lg relative group">
                         <img
@@ -286,37 +173,141 @@ export const GameOverScreen: React.FC<GameOverScreenProps> = ({
                     </div>
                 )}
 
-                <div className="text-center pb-1">
-                    <p className="text-culinary-gold font-serif italic text-lg leading-tight">Think you can outsmart your friends?</p>
-                    <p className="text-zinc-500 text-[10px] uppercase tracking-widest">Show them the digits</p>
+                {/* 2. Visible Viral Grid (Wordle Style) */}
+                <div className="bg-zinc-900/80 p-4 rounded-xl text-center space-y-2 backdrop-blur-sm border border-zinc-800">
+                    <div className="text-zinc-400 text-[10px] uppercase tracking-widest mb-1">Performance</div>
+                    <div className="font-mono text-xl tracking-widest leading-none">
+                        {gameResult?.rounds.map((r, i) => {
+                            let cubes = "🟥";
+                            if (r.score >= 4000) cubes = "🟩";
+                            else if (r.score >= 2000) cubes = "🟨";
+                            return <span key={i} className="mx-0.5">{cubes}</span>;
+                        })}
+                    </div>
+                    <div className="text-2xl font-black text-white">
+                        {totalScore.toLocaleString()} pts
+                    </div>
                 </div>
 
-                {/* Shop Ingredients Button (Instacart Deep Link placeholder) */}
-                <a
-                    href="https://www.instacart.com"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-full bg-[#E04F26] text-white font-bold py-3 rounded-xl shadow-lg hover:bg-[#c9421d] transition-all flex items-center justify-center gap-2 uppercase tracking-widest text-sm"
-                >
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Instacart_carrot_transparent.png" className="w-5 h-5" alt="Instacart" />
-                    Shop Ingredients
-                </a>
+                {/* 3. Actions */}
+                <div className="grid grid-cols-1 gap-2">
+                    {/* Dynamic Shop Button */}
+                    {(() => {
+                        const makeableDish = gameResult?.rounds.find(r => r.isMakeable)?.dish || gameResult?.rounds[gameResult.rounds.length - 1].dish;
+                        return (
+                            <a
+                                href={`https://www.instacart.com/store/search?s=${encodeURIComponent(makeableDish + " ingredients")}`}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="w-full bg-[#E04F26] text-white font-bold py-3 rounded-xl shadow-lg hover:bg-[#c9421d] transition-all flex items-center justify-center gap-2 uppercase tracking-widest text-sm"
+                            >
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Instacart_carrot_transparent.png" className="w-5 h-5" alt="Instacart" />
+                                Cook {makeableDish}
+                            </a>
+                        );
+                    })()}
 
-                <button
-                    onClick={handleShare}
-                    className="w-full bg-culinary-gold text-black font-bold py-4 rounded-xl shadow-lg hover:bg-yellow-400 transition-all flex items-center justify-center gap-2 uppercase tracking-widest text-sm"
-                >
-                    <Share2 size={18} /> Challenge Friends
-                </button>
+                    <button
+                        onClick={handleShare}
+                        className="w-full bg-culinary-gold text-black font-bold py-3 rounded-xl shadow-lg hover:bg-yellow-400 transition-all flex items-center justify-center gap-2 uppercase tracking-widest text-sm"
+                    >
+                        <Share2 size={18} /> Share Result
+                    </button>
+
+                    <button
+                        onClick={onMenu}
+                        className="w-full bg-zinc-800 text-white font-bold py-3 rounded-xl shadow-lg hover:bg-zinc-700 transition-all flex items-center justify-center gap-2 uppercase tracking-widest text-sm"
+                    >
+                        <MenuIcon size={18} /> Menu
+                    </button>
+                </div>
+
                 <div className="flex justify-center py-2">
                     <DonationButton />
                 </div>
-                <button
-                    onClick={onMenu}
-                    className="w-full bg-zinc-800 text-white font-bold py-4 rounded-xl shadow-lg hover:bg-zinc-700 transition-all flex items-center justify-center gap-2 uppercase tracking-widest text-sm"
-                >
-                    <MenuIcon size={18} /> Back to Menu
-                </button>
+            </div>
+
+            {/* 4. TIGHT RECEIPT (At Bottom) */}
+            <div
+                ref={receiptRef}
+                className={`w-full max-w-sm bg-[#f4f4f0] text-zinc-900 shadow-2xl overflow-hidden relative mt-8 ${!receiptReady ? 'animate-print-receipt' : ''}`}
+            >
+                <div className="receipt-edge"></div>
+                <div className="p-4 font-mono text-zinc-900 text-xs">
+                    <div className="text-center pb-2 mb-2 border-b-2 border-dashed border-zinc-400/50">
+                        <div className="flex justify-center mb-1">
+                            <ChefHat size={24} strokeWidth={1.5} />
+                        </div>
+                        <h2 className="text-2xl font-black tracking-tighter uppercase mb-1 scale-y-110">DishGuise</h2>
+                        <div className="text-[9px] uppercase tracking-widest text-zinc-500 space-y-0.5">
+                            <p>STREAK: {streak} DAY{streak !== 1 ? 'S' : ''}</p>
+                            <p>{new Date().toLocaleDateString()} • {new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
+                        </div>
+                    </div>
+
+                    <div className="flex justify-between text-[9px] uppercase font-bold border-b border-zinc-900 pb-1 mb-1">
+                        <span>ITEM</span>
+                        <span>AMT</span>
+                    </div>
+
+                    <div className="space-y-1 mb-4 leading-tight">
+                        {gameResult?.rounds.map((r, i) => {
+                            const potential = 5000;
+                            return (
+                                <div key={i} className="group">
+                                    <div className="flex justify-between items-start font-bold uppercase">
+                                        <div className="flex gap-1 w-full overflow-hidden">
+                                            {/* Flag Restoration */}
+                                            {r.countryCode && (
+                                                <img
+                                                    src={`https://flagcdn.com/w20/${r.countryCode.toLowerCase()}.png`}
+                                                    width="14"
+                                                    alt={r.countryCode}
+                                                    className="inline-block rounded-[1px] mt-0.5"
+                                                />
+                                            )}
+                                            {r.isMakeable && <span title="Cook at Home" className="text-[10px]">🏠</span>}
+                                            <div className="flex-1 truncate pr-1">
+                                                {r.dish}
+                                            </div>
+                                        </div>
+                                        <span>{potential.toLocaleString()}</span>
+                                    </div>
+                                    {potential - r.score > 0 && (
+                                        <div className="flex justify-between items-baseline text-[9px] text-zinc-500 italic pl-5">
+                                            <span>PROMO CODE: MISSED</span>
+                                            <span>-{(potential - r.score).toLocaleString()}</span>
+                                        </div>
+                                    )}
+                                </div>
+                            );
+                        })}
+                    </div>
+
+                    <div className="border-t-2 border-dashed border-zinc-400 py-2 space-y-0.5">
+                        <div className="flex justify-between items-end">
+                            <span className="font-bold uppercase text-[10px]">Tax (0%)</span>
+                            <span className="font-mono">0</span>
+                        </div>
+                        <div className="flex justify-between items-end pt-1 text-base">
+                            <span className="font-black uppercase transform scale-y-110">Total</span>
+                            <span className="font-black border-b-2 border-zinc-900">{totalScore.toLocaleString()}</span>
+                        </div>
+                    </div>
+
+                    <div className="bg-zinc-200/50 p-2 rounded text-center my-3">
+                        <p className="italic font-bold text-sm leading-tight">"{verdict.text}"</p>
+                        <p className="text-[8px] font-mono uppercase tracking-widest text-zinc-500">- Chef</p>
+                    </div>
+
+                    <div className="flex flex-col items-center gap-1 opacity-60 grayscale">
+                        <Barcode />
+                        <p className="text-center font-mono text-[8px] uppercase tracking-widest mt-1">
+                            {APP_URL}
+                        </p>
+                    </div>
+                </div>
+                <div className="receipt-edge receipt-edge-bottom"></div>
             </div>
         </div>
     );

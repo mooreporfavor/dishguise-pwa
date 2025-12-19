@@ -54,6 +54,7 @@ export interface RoundData {
     ingredientOptions: IngredientOption[];
     difficulty: Difficulty | string;
     dayId: string;
+    isMakeable?: boolean;
 }
 
 export interface DailyProgress {
@@ -96,6 +97,7 @@ export interface GameResult {
         category?: string; // NEW for redacted receipts
         region?: string;   // NEW for redacted receipts
         emoji?: string; // NEW for share grid
+        isMakeable?: boolean;
     }[];
     difficulty: Difficulty;
 }

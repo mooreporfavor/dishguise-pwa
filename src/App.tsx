@@ -438,7 +438,8 @@ const App: React.FC = () => {
                         countryCode: currentRoundData!.countryCode,
                         mode: gameMode,
                         category: currentRoundData!.category,
-                        region: currentRoundData!.region
+                        region: currentRoundData!.region,
+                        isMakeable: currentRoundData!.isMakeable
                     }
                 ]
             };
