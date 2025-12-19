@@ -48,7 +48,7 @@ export default defineConfig(({ mode }) => {
     ],
     define: {
       // Expose the GEMINI_API_KEY from .env as VITE_API_KEY for the client
-      'import.meta.env.VITE_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
+      'import.meta.env.VITE_API_KEY': JSON.stringify(env.GEMINI_API_KEY || "")
     },
     resolve: {
       alias: {
