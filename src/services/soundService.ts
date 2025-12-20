@@ -37,29 +37,82 @@ const playTone = (freq: number, type: OscillatorType, duration: number, vol: num
 export const SFX = {
     click: () => playTone(800, 'sine', 0.05, 0.05),
 
+    // Correct Ingredient = "Chopping" Sound (Crisp Noise Burst)
     correct: () => {
-        const c = getCtx();
-        const now = c.currentTime;
-        // Ding!
-        playTone(1200, 'sine', 0.15, 0.1);
-        setTimeout(() => playTone(1800, 'sine', 0.3, 0.1), 50);
+        try {
+            const c = getCtx();
+            const bufferSize = c.sampleRate * 0.05; // 50ms
+            const buffer = c.createBuffer(1, bufferSize, c.sampleRate);
+            const data = buffer.getChannelData(0);
+            for (let i = 0; i < bufferSize; i++) {
+                data[i] = Math.random() * 2 - 1;
+            }
+            const noise = c.createBufferSource();
+            noise.buffer = buffer;
+            const gain = c.createGain();
+
+            // Envelope for crisp chop
+            gain.gain.setValueAtTime(0.2, c.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, c.currentTime + 0.05);
+
+            // Lowpass filter to simulate chopping board thud
+            const filter = c.createBiquadFilter();
+            filter.type = 'lowpass';
+            filter.frequency.value = 1000;
+
+            noise.connect(filter);
+            filter.connect(gain);
+            gain.connect(c.destination);
+            noise.start();
+        } catch (e) { console.warn(e); }
     },
 
+    // Wrong = "Sad Trombone" / Plate Break
     wrong: () => {
-        playTone(150, 'sawtooth', 0.2, 0.05);
+        const c = getCtx();
+        // Break/Crash noise
+        const bufferSize = c.sampleRate * 0.3;
+        const buffer = c.createBuffer(1, bufferSize, c.sampleRate);
+        const data = buffer.getChannelData(0);
+        for (let i = 0; i < bufferSize; i++) {
+            data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (c.sampleRate * 0.1)); // Decay
+        }
+        const noise = c.createBufferSource();
+        noise.buffer = buffer;
+        const gain = c.createGain();
+        gain.gain.value = 0.15;
+
+        noise.connect(gain);
+        gain.connect(c.destination);
+        noise.start();
+
+        // Sad tone underneath
+        playTone(100, 'sawtooth', 0.4, 0.1);
     },
 
+    // Round Win = "Service Bell" (Ding!)
     roundWin: () => {
-        // Arpeggio
-        let delay = 0;
-        [523.25, 659.25, 783.99, 1046.50].forEach(freq => { // C Major
-            setTimeout(() => playTone(freq, 'triangle', 0.3, 0.1), delay);
-            delay += 80;
-        });
+        const c = getCtx();
+        const osc = c.createOscillator();
+        const gain = c.createGain();
+
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(2000, c.currentTime); // High belt tone
+
+        // Bell Envelope: Sharp attack, very long decay
+        gain.gain.setValueAtTime(0, c.currentTime);
+        gain.gain.linearRampToValueAtTime(0.2, c.currentTime + 0.01);
+        gain.gain.exponentialRampToValueAtTime(0.001, c.currentTime + 2.0);
+
+        osc.connect(gain);
+        gain.connect(c.destination);
+
+        osc.start();
+        osc.stop(c.currentTime + 2.1);
     },
 
     gameOver: () => {
-        // Sad slide
+        // ... (Keep existing or modify if needed, leaving sad slide for now)
         const c = getCtx();
         const osc = c.createOscillator();
         const gain = c.createGain();

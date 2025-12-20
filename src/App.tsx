@@ -14,7 +14,7 @@ import { AdminConsole } from './components/AdminConsole';
 import { GameOverScreen } from './components/GameOverScreen';
 import { logEvent, EVENTS } from './services/analytics';
 import { SFX } from './services/soundService';
-import { CheckCircle2, Play, Utensils, ChefHat, Menu as MenuIcon, Timer, Cigarette, Sparkles, LogOut, User, AlertTriangle, ArrowDown, ArrowRight } from 'lucide-react';
+import { CheckCircle2, Play, Utensils, ChefHat, Menu as MenuIcon, Timer, Cigarette, Sparkles, LogOut, User, AlertTriangle, ArrowDown, ArrowRight, Award } from 'lucide-react';
 
 const ROUNDS_PER_DAY = 5;
 const MAX_ROUND_SCORE = 5000;
@@ -81,11 +81,34 @@ interface Penalty {
     y: string;
 }
 
+import { PassportScreen } from './components/PassportScreen';
+
 const App: React.FC = () => {
     const [showIntro, setShowIntro] = useState(true);
     const [appState, setAppState] = useState<AppState>(AppState.MENU);
     const [difficulty, setDifficulty] = useState<Difficulty>(Difficulty.MEDIUM);
     const [gameMode, setGameMode] = useState<GameMode>('DETECTIVE');
+
+    // PWA Install Prompt
+    const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
+
+    useEffect(() => {
+        const handler = (e: any) => {
+            e.preventDefault();
+            setDeferredPrompt(e);
+        };
+        window.addEventListener('beforeinstallprompt', handler);
+        return () => window.removeEventListener('beforeinstallprompt', handler);
+    }, []);
+
+    const handleInstallClick = async () => {
+        if (!deferredPrompt) return;
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        if (outcome === 'accepted') {
+            setDeferredPrompt(null);
+        }
+    };
 
     // Progress
     const [dailyProgress, setDailyProgress] = useState<DailyProgress>(() => {
@@ -271,7 +294,9 @@ const App: React.FC = () => {
 
     const addToCollection = (dishName: string, score: number, flagEmoji: string, countryCode?: string) => {
         setUserProfile(prev => {
-            const newHistory = prev.dishHistory.includes(dishName) ? prev.dishHistory : [...prev.dishHistory, dishName];
+            // Check if already in collection
+            const existsInCollection = prev.collection.some(item => item.dishName === dishName);
+            const newHistory = existsInCollection ? prev.dishHistory : [...prev.dishHistory, dishName];
             const newStamp: DishStamp = {
                 id: Date.now().toString(),
                 dishName,
@@ -608,7 +633,9 @@ const App: React.FC = () => {
         return reason.replace(regex, "The Ordered Dish");
     };
 
-    const todayISO = new Date().toISOString().split('T')[0];
+    // Fix: Use local date to avoid Timezone issues (ISO is UTC)
+    // 'en-CA' outputs YYYY-MM-DD
+    const todayISO = new Date().toLocaleDateString('en-CA');
     const heroImageUrl = `/daily_images/${todayISO}.jpg`; // Expects user to populate this folder
 
     if (showIntro) return <LogoIntro onComplete={() => setShowIntro(false)} heroImageUrl={heroImageUrl} />;
@@ -800,6 +827,27 @@ const App: React.FC = () => {
                             );
                         })}
                     </div>
+
+                    <div className="mt-6 space-y-3">
+                        <button
+                            onClick={() => setAppState(AppState.PROFILE)}
+                            className="w-full bg-[#1a1a1a] text-culinary-cream border border-white/10 p-3 rounded-lg font-bold uppercase tracking-widest text-xs hover:bg-white/5 transition-colors flex items-center justify-center gap-2 group"
+                        >
+                            <Award className="text-culinary-gold group-hover:scale-110 transition-transform" />
+                            View Passport ({userProfile.collection.length})
+                        </button>
+
+                        {deferredPrompt && (
+                            <button
+                                onClick={handleInstallClick}
+                                className="w-full bg-culinary-gold text-black p-3 rounded-lg font-bold uppercase tracking-widest text-xs hover:bg-yellow-400 transition-colors flex items-center justify-center gap-2"
+                            >
+                                <ArrowDown size={16} />
+                                Install App
+                            </button>
+                        )}
+                    </div>
+
                     <div className="mt-8 text-center text-zinc-600 text-[10px] font-mono">
                         DISHGUISE v2.5 • AI POWERED • CULINARY DEDUCTION
                     </div>
@@ -808,8 +856,19 @@ const App: React.FC = () => {
         );
     }
 
+    // --- PROFILE / PASSPORT SCREEN ---
+    if (appState === AppState.PROFILE) {
+        return (
+            <PassportScreen
+                userProfile={userProfile}
+                onBack={() => setAppState(AppState.MENU)}
+            />
+        );
+    }
+
     // --- GAME OVER SCREEN (Refactored) ---
     if (appState === AppState.GAME_OVER) {
+        // ... (Existing)
         return (
             <GameOverScreen
                 totalScore={totalScore}
@@ -825,8 +884,25 @@ const App: React.FC = () => {
     }
 
     // --- MAIN GAME LOOP ---
+    const totalCorrectIngredients = currentRoundData?.ingredientOptions.filter(i => i.isCorrect).length || 5;
+    const revealProgress = Math.min(1, Math.max(0, (revealedIngredientsCount - 1) / Math.max(1, totalCorrectIngredients - 1)));
+    const blurAmount = phase === GamePhase.REVEAL ? 0 : Math.max(0, 30 * (1 - revealProgress));
+
     return (
         <div className="h-screen bg-[#121212] flex flex-col overflow-hidden relative">
+            {/* Dynamic Hero Background */}
+            <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+                <div
+                    className="absolute inset-0 bg-cover bg-center transition-all duration-1000 ease-out transform scale-110"
+                    style={{
+                        backgroundImage: `url(${heroImageUrl})`,
+                        filter: `blur(${blurAmount}px) brightness(${0.3 + (revealProgress * 0.4)})`,
+                        opacity: 0.6
+                    }}
+                />
+                <div className="absolute inset-0 bg-black/60"></div>
+            </div>
+
             {showConfetti && <Confetti />}
             {showTutorial && <TutorialOverlay mode={gameMode} onComplete={completeTutorial} />}
             {tutorialJustFinished && gameMode === 'DETECTIVE' && (

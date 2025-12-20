@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import html2canvas from 'html2canvas';
-import { ChefHat, Share2, Menu as MenuIcon, Frown, Meh, Utensils, Laugh } from 'lucide-react';
+import { ChefHat, Share2, Menu as MenuIcon, Frown, Meh, Utensils, Laugh, Carrot } from 'lucide-react';
 import { GameResult, Difficulty, GameMode } from '../types';
 import { DonationButton } from './Monetization';
 import { logEvent, EVENTS } from '../services/analytics';
@@ -201,7 +201,7 @@ export const GameOverScreen: React.FC<GameOverScreenProps> = ({
                                 rel="noreferrer"
                                 className="w-full bg-[#E04F26] text-white font-bold py-3 rounded-xl shadow-lg hover:bg-[#c9421d] transition-all flex items-center justify-center gap-2 uppercase tracking-widest text-sm"
                             >
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Instacart_carrot_transparent.png" className="w-5 h-5" alt="Instacart" />
+                                <Carrot size={20} fill="currentColor" />
                                 Cook {makeableDish}
                             </a>
                         );

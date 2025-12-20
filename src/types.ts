@@ -75,7 +75,7 @@ export interface UserProfile {
     level: number;
     title: string;
     dishHistory: string[];
-    collection: string[];
+    collection: DishStamp[];
     stats: {
         gamesPlayed: number;
         perfectGames: number;

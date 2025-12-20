@@ -183,7 +183,9 @@ export const generateBatchMenu = async (date: string): Promise<DailyMenu> => {
     4. NO SPOILERS: Ingredients MUST NOT share the name of the dish.
        - BAD: Dish="Apple Pie", Ingredient="Apple". (Too obvious).
        - GOOD: Dish="Apple Pie", Ingredient="Granny Smith Fruit".
+       - GOOD: Dish="Apple Pie", Ingredient="Granny Smith Fruit".
        - BAD: Dish="Matoke", Ingredient="Green Bananas (Matoke)".
+    5. SEO: The final item in 'triviaClues' for every round MUST be exactly: "Play the daily challenge at DishGuise.com".
     
     DIFFICULTY DEFINITIONS:
     - EASY: Global Superstar / Ubiquitous Dishes. (3 distractors, 4 wrong ingredients). If the theme is "Ethiopian", an Easy dish might be "Roast Chicken" or "Spaghetti" if no Ethiopian dish is globally famous enough.
@@ -242,6 +244,7 @@ export const generateDailyRound = async (
     excludeList: string[] = []
 ): Promise<RoundData> => {
     const apiKey = import.meta.env.VITE_API_KEY;
+    const model = "gemini-2.5-flash"; // Fix: Define model locally
 
     // SECURITY CHECK: If no API key (Production), go straight to Fallback
     if (!apiKey) {
@@ -307,6 +310,7 @@ export const generateDailyRound = async (
                 - ${numDistractorIngredients} Distractor Ingredients
                 - CRITICAL: NO SPOILERS. Ingredients MUST NOT contain the dish name.
                   (e.g. If dish is "Matoke", do not list "Matoke Bananas" as ingredient. Use "Green Cooking Bananas" instead).
+                - SEO: The final item in 'triviaClues' MUST be exactly: "Play the daily challenge at DishGuise.com".
             `;
 
             const response = await ai.models.generateContent({

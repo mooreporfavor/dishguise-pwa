@@ -1,7 +1,7 @@
-
 import { Difficulty, GameMode, RoundData } from '../types';
 import { THE_PANTRY } from '../data/ThePantry';
 import { generateDailyRound } from './geminiService';
+import { KIDS_MENU } from '../data/KidsMenu';
 
 // Simple UUID generator
 const generateSafeId = () => {
@@ -19,11 +19,6 @@ const getDifficultyKey = (d: Difficulty): 'EASY' | 'MEDIUM' | 'HARD' => {
     }
 }
 
-/**
- * The Master Fetcher.
- * 1. Checks THE_PANTRY for Today (Fast, Free, Reliable)
- * 2. Fallback to Live AI (Slow, Costly, Infinite)
- */
 export const getGameRound = async (
     difficulty: Difficulty,
     roundIndex: number,
@@ -31,8 +26,18 @@ export const getGameRound = async (
     excludeList: string[] = []
 ): Promise<RoundData> => {
 
+    // 0. KIDS MODE (EASY)
+    if (difficulty === Difficulty.EASY) {
+        const kidRound = KIDS_MENU[roundIndex % KIDS_MENU.length];
+        console.log(`[GameService] 👶 Kids Mode Active: Serving ${kidRound.targetDish}`);
+        // Return mostly static, but generate unique ID just in case
+        return { ...kidRound, id: generateSafeId() };
+    }
+
     const today = new Date().toISOString().split('T')[0];
     const diffKey = getDifficultyKey(difficulty);
+
+    // ... (Rest of existing logic)
 
     // 1. Check The Pantry
     const dailyMenu = THE_PANTRY[today];
