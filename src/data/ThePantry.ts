@@ -20,6 +20,1695 @@ export const THE_PANTRY: Record<string, DailyMenu> = {
     //   theme: "Christmas Feast",
     //   rounds: { EASY: [], MEDIUM: [], HARD: [] }
     // }
+    "2025-12-20": {
+        "date": "2025-12-20",
+        "theme": "Breakfast Staple from Sub-Saharan Africa",
+        "rounds": {
+            "EASY": [
+                {
+                    "id": "b4776932-835d-482a-829f-9db36b832f5f",
+                    "dayId": "2025-12-20-EASY",
+                    "targetDish": "Pancakes",
+                    "description": "Fluffy, flat cakes cooked on a griddle, typically served with syrup or fruit, a universally loved breakfast item.",
+                    "cuisine": "USA",
+                    "region": "North America",
+                    "originCity": "New York City",
+                    "category": "Breakfast",
+                    "procurementDifficulty": "EASY",
+                    "executionDifficulty": "EASY",
+                    "flagEmoji": "🇺🇸",
+                    "countryCode": "US",
+                    "mainIngredients": [
+                        "Wheat flour",
+                        "Hen's eggs",
+                        "Cow's milk",
+                        "Baking powder",
+                        "Granulated sugar",
+                        "Melted butter"
+                    ],
+                    "triviaClues": [
+                        "These griddle cakes are enjoyed worldwide for breakfast, often with sweet toppings.",
+                        "The earliest versions of these were made by ancient Greeks and Romans.",
+                        "A stack of these is a classic breakfast icon.",
+                        "Play the daily challenge at DishGuise.com"
+                    ],
+                    "dishOptions": [
+                        {
+                            "id": "dish-0-5a684162-5534-4645-a2f3-cf5de6c2d944",
+                            "name": "Crêpes",
+                            "isCorrect": false,
+                            "reason": "Thinner, larger French version, often rolled or folded, distinct from the fluffier target."
+                        },
+                        {
+                            "id": "dish-1-84de5116-7c52-4ff7-b51d-59ac1ed282a4",
+                            "name": "Pancakes",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "dish-2-cb1cb021-5135-473c-8c3a-bdb217128a2b",
+                            "name": "Blinis",
+                            "isCorrect": false,
+                            "reason": "Small, yeast-leavened Russian pancakes, typically served with savory toppings."
+                        },
+                        {
+                            "id": "dish-3-63bc84d3-4853-429a-8245-2115bb5b10b9",
+                            "name": "Waffles",
+                            "isCorrect": false,
+                            "reason": "Similar breakfast food, but cooked in a specialized iron with a distinct grid pattern."
+                        }
+                    ],
+                    "ingredientOptions": [
+                        {
+                            "id": "ing-0-e0cc262b-b69f-4f5b-9729-719ffa35f227",
+                            "name": "Granulated sugar",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-1-a5a1ab4e-971b-4dab-9284-a7fc9b701ad1",
+                            "name": "Mashed potato",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-2-e99335b7-fa3c-415d-bb57-c9cc4875b8a9",
+                            "name": "Cornmeal",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-3-ca680ea2-f79a-4c12-a03e-696a4ca957bc",
+                            "name": "Hen's eggs",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-4-caa0efed-89a5-4776-b138-2279799a9b57",
+                            "name": "Rice flour",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-5-b6eb7e83-691c-4d81-bee7-44504c11ed46",
+                            "name": "Cow's milk",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-6-1b40c57f-c057-458b-a029-282487f804d6",
+                            "name": "Wheat flour",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-7-1a2ca229-c11b-4602-9ad3-fc0dd29f6ad8",
+                            "name": "Yeast",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-8-3a06edcf-519a-4dee-946d-d5c2f37c694d",
+                            "name": "Baking powder",
+                            "isCorrect": true
+                        }
+                    ],
+                    "difficulty": "Sous Chef"
+                },
+                {
+                    "id": "543e3609-efda-4265-a4c8-288577bff4eb",
+                    "dayId": "2025-12-20-EASY",
+                    "targetDish": "Scrambled Eggs",
+                    "description": "A classic breakfast dish made by whisking hen's eggs and cooking them gently in a pan until soft curds form.",
+                    "cuisine": "France",
+                    "region": "Western Europe",
+                    "originCity": "Paris",
+                    "category": "Breakfast",
+                    "procurementDifficulty": "EASY",
+                    "executionDifficulty": "EASY",
+                    "flagEmoji": "🇫🇷",
+                    "countryCode": "FR",
+                    "mainIngredients": [
+                        "Hen's eggs",
+                        "Cow's milk or cream",
+                        "Butter",
+                        "Salt",
+                        "Black pepper"
+                    ],
+                    "triviaClues": [
+                        "This dish is highly versatile, often customized with cheese, vegetables, or meats.",
+                        "It's a quick and protein-rich start to the day.",
+                        "The key to a perfect preparation is gentle heat and constant stirring.",
+                        "Play the daily challenge at DishGuise.com"
+                    ],
+                    "dishOptions": [
+                        {
+                            "id": "dish-0-e4f274be-5d0d-4862-80c2-44dc7aafecce",
+                            "name": "Poached Eggs",
+                            "isCorrect": false,
+                            "reason": "Cooked in simmering water without their shell, resulting in a liquid yolk, no stirring involved."
+                        },
+                        {
+                            "id": "dish-1-4bc50933-4940-4a82-8383-37d6a30e01c3",
+                            "name": "Scrambled Eggs",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "dish-2-f8f33f6c-c5c4-45b1-ada8-853127f66ad2",
+                            "name": "Frittata",
+                            "isCorrect": false,
+                            "reason": "An Italian-style open-faced omelette, thicker and often baked or finished in the oven."
+                        },
+                        {
+                            "id": "dish-3-7ae7bbe6-3746-4e8c-af54-4ac4af30c8d8",
+                            "name": "Omelette",
+                            "isCorrect": false,
+                            "reason": "Uses similar ingredients but cooked as a folded, single-piece egg preparation."
+                        }
+                    ],
+                    "ingredientOptions": [
+                        {
+                            "id": "ing-0-94bd9074-0b77-49b7-a8f6-3ebd8f8d63ce",
+                            "name": "Salt",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-1-7990c6cd-9965-4d87-8a50-7f672715508b",
+                            "name": "Black pepper",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-2-37eaa70e-658f-4191-8f65-5ef8f7cefceb",
+                            "name": "Hen's eggs",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-3-b41f073c-8e90-4afa-a4bb-cd78033fe45f",
+                            "name": "Cheddar cheese curd",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-4-ea42dff5-9347-481f-8cfb-5836253a627a",
+                            "name": "Soy sauce",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-5-b3f0bb76-d2dc-450f-bdaf-c66407bd03bc",
+                            "name": "Cow's milk or cream",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-6-985757ab-a740-4c3c-95cd-0577394a01a5",
+                            "name": "Red pepper flakes",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-7-942afbf0-0ed1-4e67-82d8-04481da61076",
+                            "name": "Olive oil",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-8-71f739c0-9a8a-4c90-9566-f1e1190ac3f0",
+                            "name": "Butter",
+                            "isCorrect": true
+                        }
+                    ],
+                    "difficulty": "Sous Chef"
+                },
+                {
+                    "id": "efe10c8b-6510-46f2-a497-d725160183bc",
+                    "dayId": "2025-12-20-EASY",
+                    "targetDish": "French Toast",
+                    "description": "Slices of bread soaked in an egg and milk mixture, then fried until golden brown, commonly served sweet for breakfast.",
+                    "cuisine": "France",
+                    "region": "Western Europe",
+                    "originCity": "Paris",
+                    "category": "Breakfast",
+                    "procurementDifficulty": "EASY",
+                    "executionDifficulty": "EASY",
+                    "flagEmoji": "🇫🇷",
+                    "countryCode": "FR",
+                    "mainIngredients": [
+                        "Bread slices",
+                        "Hen's eggs",
+                        "Cow's milk",
+                        "Granulated sugar",
+                        "Vanilla extract",
+                        "Cinnamon powder"
+                    ],
+                    "triviaClues": [
+                        "This dish is known in France as 'pain perdu,' meaning 'lost bread,' as it was a way to use stale bread.",
+                        "It can be served sweet with syrup or fruit, or savory with bacon.",
+                        "Roman cookbooks from the 4th century AD describe a similar dish.",
+                        "Play the daily challenge at DishGuise.com"
+                    ],
+                    "dishOptions": [
+                        {
+                            "id": "dish-0-096b209a-a1c4-4eab-a232-e6408ab7c98d",
+                            "name": "Eggy Bread",
+                            "isCorrect": false,
+                            "reason": "A simpler, often savory version, typically without sugar or vanilla."
+                        },
+                        {
+                            "id": "dish-1-e2313289-253a-4fb0-8af7-53232c4f5301",
+                            "name": "French Toast",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "dish-2-4613b09f-29ed-4f3d-bb36-17110d6be746",
+                            "name": "Monte Cristo Sandwich",
+                            "isCorrect": false,
+                            "reason": "A savory sandwich, typically with ham and cheese, battered and fried like the target dish."
+                        },
+                        {
+                            "id": "dish-3-834e7b32-2084-4d1b-adfe-59a112e2881f",
+                            "name": "Bread Pudding",
+                            "isCorrect": false,
+                            "reason": "A baked dessert made from stale bread, milk, eggs, and sugar, not fried slices."
+                        }
+                    ],
+                    "ingredientOptions": [
+                        {
+                            "id": "ing-0-68dc276e-4380-466f-b830-12a6303eafd8",
+                            "name": "Powdered ginger",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-1-a9ee71fb-9c8e-4274-92e0-1a9628af5540",
+                            "name": "Whole wheat flour",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-2-8a092218-a9df-4886-8556-b53e6787ab7e",
+                            "name": "Hen's eggs",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-3-4403ebfb-2260-4f53-b3ce-5f06655dec0f",
+                            "name": "Soy milk",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-4-41ca2b98-0334-402f-a77f-ae3d8378d81f",
+                            "name": "Vanilla extract",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-5-cfc328c2-cf23-4372-8e1f-1ce40bebdf6b",
+                            "name": "Bread slices",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-6-f730a9dc-a659-4787-97b2-727f7aa890c0",
+                            "name": "Granulated sugar",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-7-d84519f8-3fb6-4dd1-86bf-e5c2020c559d",
+                            "name": "Corn syrup",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-8-1d87f285-60d2-46b0-9238-afa52a7c2ce2",
+                            "name": "Cow's milk",
+                            "isCorrect": true
+                        }
+                    ],
+                    "difficulty": "Sous Chef"
+                },
+                {
+                    "id": "83b20d83-db55-4ce2-9e70-d5fc293f4146",
+                    "dayId": "2025-12-20-EASY",
+                    "targetDish": "Oatmeal",
+                    "description": "A warm porridge made from rolled or steel-cut oats, often served with fruit, nuts, or sweeteners, a hearty and healthy breakfast.",
+                    "cuisine": "Scotland",
+                    "region": "Northern Europe",
+                    "originCity": "Edinburgh",
+                    "category": "Breakfast",
+                    "procurementDifficulty": "EASY",
+                    "executionDifficulty": "EASY",
+                    "flagEmoji": "🇬🇧",
+                    "countryCode": "GB",
+                    "mainIngredients": [
+                        "Rolled oats",
+                        "Water or cow's milk",
+                        "A pinch of salt"
+                    ],
+                    "triviaClues": [
+                        "Known for its heart-healthy benefits, this breakfast is a good source of fiber.",
+                        "Historically, it was a staple food in many northern European countries, especially Scotland.",
+                        "It can be prepared in minutes using instant varieties or slowly cooked for a creamier texture.",
+                        "Play the daily challenge at DishGuise.com"
+                    ],
+                    "dishOptions": [
+                        {
+                            "id": "dish-0-aff5c374-7596-4df5-8164-dce55f2f79db",
+                            "name": "Grits",
+                            "isCorrect": false,
+                            "reason": "A porridge made from hominy (dried corn kernels), popular in the Southern US."
+                        },
+                        {
+                            "id": "dish-1-e9fa55e6-558e-41f7-a966-fa645aefb595",
+                            "name": "Oatmeal",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "dish-2-ae5b68b6-1553-46b1-8fbf-f1e35f9be5b5",
+                            "name": "Congee",
+                            "isCorrect": false,
+                            "reason": "An Asian rice porridge, typically savory, used in many East and Southeast Asian cuisines."
+                        },
+                        {
+                            "id": "dish-3-060f297e-ba7f-4c5e-a419-d164be71353e",
+                            "name": "Cream of Wheat",
+                            "isCorrect": false,
+                            "reason": "A porridge made from wheat farina, distinct from the oat-based target."
+                        }
+                    ],
+                    "ingredientOptions": [
+                        {
+                            "id": "ing-0-c7af670a-6507-4bb3-a318-b7c762fab07f",
+                            "name": "Barley flour",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-1-b62ac70b-ed1a-4b17-b6ea-e44fb6a787c3",
+                            "name": "Buckwheat groats",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-2-bc4ace9e-e48b-44e2-89f0-907eedb3e362",
+                            "name": "Quinoa grain",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-3-994ac0b5-8ffc-486e-bd2f-37fe0accbc35",
+                            "name": "Water or cow's milk",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-4-4344248c-3c09-43b0-96b9-6db37b48fec9",
+                            "name": "A pinch of salt",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-5-0c29de8f-d61f-46de-b12d-18101b16f5e1",
+                            "name": "Maple sugar",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-6-cc12a201-a50e-4c8e-b862-2ede58b65923",
+                            "name": "Rolled oats",
+                            "isCorrect": true
+                        }
+                    ],
+                    "difficulty": "Sous Chef"
+                },
+                {
+                    "id": "081d840f-8cb9-416e-b12a-b6b65c38ed0f",
+                    "dayId": "2025-12-20-EASY",
+                    "targetDish": "Croissant",
+                    "description": "A buttery, flaky, crescent-shaped pastry, a staple in French bakeries and coffee shops, often enjoyed for breakfast.",
+                    "cuisine": "France",
+                    "region": "Western Europe",
+                    "originCity": "Paris",
+                    "category": "Breakfast",
+                    "procurementDifficulty": "EASY",
+                    "executionDifficulty": "EASY",
+                    "flagEmoji": "🇫🇷",
+                    "countryCode": "FR",
+                    "mainIngredients": [
+                        "Wheat flour",
+                        "Butter",
+                        "Yeast",
+                        "Cow's milk",
+                        "Granulated sugar",
+                        "Salt"
+                    ],
+                    "triviaClues": [
+                        "Despite its strong association with France, the shape of this pastry is said to originate from Vienna.",
+                        "The key to its distinctive texture is the lamination process, where butter is folded into dough layers.",
+                        "It is often enjoyed simply with coffee or filled with ham and cheese.",
+                        "Play the daily challenge at DishGuise.com"
+                    ],
+                    "dishOptions": [
+                        {
+                            "id": "dish-0-0db5bb4a-883d-4b1f-9a5a-b346a62ed1d1",
+                            "name": "Brioche",
+                            "isCorrect": false,
+                            "reason": "A rich, egg-and-butter-enriched bread, but not as flaky as the target."
+                        },
+                        {
+                            "id": "dish-1-03da6560-bd68-4d88-ab52-99e8aa996ee5",
+                            "name": "Pain au Chocolat",
+                            "isCorrect": false,
+                            "reason": "A similar laminated pastry, but rectangular and filled with chocolate."
+                        },
+                        {
+                            "id": "dish-2-e66eca5f-3e38-45eb-9dcc-90dc3795d2e9",
+                            "name": "Croissant",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "dish-3-a36f9734-c38e-4aca-bb6c-199f912185b9",
+                            "name": "Danish Pastry",
+                            "isCorrect": false,
+                            "reason": "A similar flaky pastry, but often with fruit or cream cheese fillings and different shapes."
+                        }
+                    ],
+                    "ingredientOptions": [
+                        {
+                            "id": "ing-0-a7c54c28-7e62-42c8-9c2d-15414e49e7e5",
+                            "name": "Almond paste",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-1-73a23dc3-e99a-4863-b0b0-28d560104ed5",
+                            "name": "Cow's milk",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-2-678bcd17-0c6f-41da-8d89-df353d1334be",
+                            "name": "Rye flour",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-3-43d581e2-fa0c-4889-8fac-eda5d46c42b9",
+                            "name": "Wheat flour",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-4-633345e9-1a5b-4ba8-8551-1d719f55af5b",
+                            "name": "Lard",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-5-c1280b6f-5556-4697-b539-d60b8eeb44ca",
+                            "name": "Butter",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-6-3923decd-c8ec-4f2b-94bf-7097907fee60",
+                            "name": "Yeast",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-7-7174230d-4484-42cf-9591-fb4747434687",
+                            "name": "Granulated sugar",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-8-d599dd56-ebbe-45a4-a68e-fca513cd286e",
+                            "name": "Whole egg liquid",
+                            "isCorrect": false
+                        }
+                    ],
+                    "difficulty": "Sous Chef"
+                }
+            ],
+            "MEDIUM": [
+                {
+                    "id": "001d479b-9bda-4d92-93ac-c197fdbe3dcf",
+                    "dayId": "2025-12-20-MEDIUM",
+                    "targetDish": "Mandazi",
+                    "description": "A slightly sweet, triangular or circular fried dough, popular in East African countries for breakfast or as a snack with tea.",
+                    "cuisine": "Kenya",
+                    "region": "East Africa",
+                    "originCity": "Mombasa",
+                    "category": "Breakfast, Fried Dough",
+                    "procurementDifficulty": "EASY",
+                    "executionDifficulty": "EASY",
+                    "flagEmoji": "🇰🇪",
+                    "countryCode": "KE",
+                    "mainIngredients": [
+                        "Wheat flour",
+                        "Coconut milk",
+                        "Sugar",
+                        "Yeast",
+                        "Cardamom powder",
+                        "Cooking oil"
+                    ],
+                    "triviaClues": [
+                        "These pastries are often flavored with a hint of cardamom, giving them a unique aromatic taste.",
+                        "They are commonly served with a hot cup of chai tea in many East African homes.",
+                        "The dough is typically rolled out and cut into triangles or squares before frying.",
+                        "Play the daily challenge at DishGuise.com"
+                    ],
+                    "dishOptions": [
+                        {
+                            "id": "dish-0-f7a05612-b00d-42f5-b498-cfab66c104ae",
+                            "name": "Puff-Puff",
+                            "isCorrect": false,
+                            "reason": "A West African fried dough, usually rounder and less spiced, distinct from the East African target."
+                        },
+                        {
+                            "id": "dish-1-e824a741-3f3a-495a-b7b1-f81fc12ea908",
+                            "name": "Samosa",
+                            "isCorrect": false,
+                            "reason": "A savory fried pastry with a spiced filling, typically triangular, but not a sweet breakfast dough."
+                        },
+                        {
+                            "id": "dish-2-ca1681a1-7105-4a14-976b-1f366bf949b1",
+                            "name": "Doughnuts",
+                            "isCorrect": false,
+                            "reason": "Similar concept of fried dough, but typically round and often glazed or filled, culturally distinct."
+                        },
+                        {
+                            "id": "dish-3-fbd218bf-9d70-499c-ada2-60686b348416",
+                            "name": "Mandazi",
+                            "isCorrect": true
+                        }
+                    ],
+                    "ingredientOptions": [
+                        {
+                            "id": "ing-0-180bafb7-af4a-4365-b505-31b27f542cc0",
+                            "name": "Groundnut paste",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-1-8d312d3b-6cc8-4fb6-84ff-8ce2987627d8",
+                            "name": "Cardamom powder",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-2-f845a689-28a1-4cd0-ab88-c57a7675ae8a",
+                            "name": "Sugar",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-3-b73a739f-bcc4-40c4-9a5c-d9da5375d76d",
+                            "name": "Baking soda",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-4-f6b76326-66cd-404d-9ffd-54423391fc03",
+                            "name": "Coconut milk",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-5-9b1b303c-e592-48b0-a3f1-387cda44aa97",
+                            "name": "Yeast",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-6-c47f8020-32db-488c-93e3-5e78e7449050",
+                            "name": "Plantain",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-7-bbbac4b9-720e-4bdc-bc20-33c3b55a5620",
+                            "name": "Millet flour",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-8-80324c0b-1dd9-4d83-a62e-45c9fdf7a558",
+                            "name": "Honey",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-9-f6e7b02c-5ba2-4e37-a16e-14f39b6dbf5e",
+                            "name": "Wheat flour",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-10-94d77202-7cf3-4c48-bb86-1d9f0ad67ba7",
+                            "name": "Rice flour",
+                            "isCorrect": false
+                        }
+                    ],
+                    "difficulty": "Chef de Partie"
+                },
+                {
+                    "id": "39d68130-ea85-4c58-be7f-1c023cc0b8ab",
+                    "dayId": "2025-12-20-MEDIUM",
+                    "targetDish": "Akara",
+                    "description": "Deep-fried fritters made from peeled legumes, onions, and spices, a popular breakfast and street food in West Africa.",
+                    "cuisine": "Nigeria",
+                    "region": "West Africa",
+                    "originCity": "Lagos",
+                    "category": "Breakfast, Fritters, Street Food",
+                    "procurementDifficulty": "EASY",
+                    "executionDifficulty": "MEDIUM",
+                    "flagEmoji": "🇳🇬",
+                    "countryCode": "NG",
+                    "mainIngredients": [
+                        "Black-eyed peas",
+                        "Onions",
+                        "Habanero peppers",
+                        "Vegetable oil",
+                        "Salt"
+                    ],
+                    "triviaClues": [
+                        "These savory fritters are often paired with pap (corn porridge) or bread for a complete breakfast.",
+                        "They are believed to have originated with the Yoruba people of Nigeria.",
+                        "The process involves soaking, peeling, and blending the primary legumes into a paste before frying.",
+                        "Play the daily challenge at DishGuise.com"
+                    ],
+                    "dishOptions": [
+                        {
+                            "id": "dish-0-3f1d4563-12a6-495a-9263-237b39a282e7",
+                            "name": "Moin-Moin",
+                            "isCorrect": false,
+                            "reason": "A West African steamed bean pudding, similar main ingredient but distinct preparation and texture."
+                        },
+                        {
+                            "id": "dish-1-abc0288f-1a81-4425-9d90-1453d278f573",
+                            "name": "Bofrot",
+                            "isCorrect": false,
+                            "reason": "A Ghanaian fried dough, sweet and made from wheat flour, unlike the savory legume fritter."
+                        },
+                        {
+                            "id": "dish-2-6748f5cc-5404-4b43-90d0-ddac66ce8e7b",
+                            "name": "Akara",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "dish-3-d79e8ff4-f845-46eb-9dc7-df940cfcdbfc",
+                            "name": "Falafel",
+                            "isCorrect": false,
+                            "reason": "A Middle Eastern deep-fried fritter, typically made from chickpeas or fava beans, different spices and cultural origin."
+                        }
+                    ],
+                    "ingredientOptions": [
+                        {
+                            "id": "ing-0-f98ff842-956b-4adb-827a-32726614eafd",
+                            "name": "Corn starch",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-1-8c825827-d522-4b2b-bc7d-17b45a70dbe6",
+                            "name": "Sweet peppers",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-2-bd83c34a-f715-406a-b7a2-cd57d10fa8ec",
+                            "name": "Shrimp paste",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-3-7e53a785-962a-4308-bf5b-5072cc099ea9",
+                            "name": "Lentils",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-4-aca6460d-9e66-471e-a7cb-16c634679dce",
+                            "name": "Wheat flour",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-5-9d8f07f3-65dc-46c9-9c46-bba1e1c2630d",
+                            "name": "Vegetable oil",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-6-440a5485-15ca-464b-a3b8-c1930f3a8670",
+                            "name": "Black-eyed peas",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-7-3017c0bd-5fe9-489f-9088-d9fb64b909bb",
+                            "name": "Habanero peppers",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-8-b5b2ffb4-ed01-4eaf-9840-edec4ab98685",
+                            "name": "Onions",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-9-7a485aa9-8ae1-41d0-928c-15358f7735a1",
+                            "name": "Salt",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-10-ac305b3a-0b1e-4af5-b21c-13b60eb385f3",
+                            "name": "Potatoes",
+                            "isCorrect": false
+                        }
+                    ],
+                    "difficulty": "Chef de Partie"
+                },
+                {
+                    "id": "6e6c183c-f912-4fc5-a648-dcdb681ef1e8",
+                    "dayId": "2025-12-20-MEDIUM",
+                    "targetDish": "Pap (Akamu / Ogi)",
+                    "description": "A creamy, smooth porridge made from fermented maize, sorghum, or millet, a common breakfast in West Africa, often eaten with fritters.",
+                    "cuisine": "Nigeria",
+                    "region": "West Africa",
+                    "originCity": "Ibadan",
+                    "category": "Breakfast, Porridge, Beverage",
+                    "procurementDifficulty": "EASY",
+                    "executionDifficulty": "EASY",
+                    "flagEmoji": "🇳🇬",
+                    "countryCode": "NG",
+                    "mainIngredients": [
+                        "Fermented maize flour",
+                        "Water",
+                        "Sugar (optional)"
+                    ],
+                    "triviaClues": [
+                        "This dish is often consumed by infants and adults alike, sometimes sweetened or served with Akara.",
+                        "Its preparation involves a lengthy fermentation process that gives it a distinct sour taste.",
+                        "It is known by different names across West Africa, including 'Akamu' and 'Ogi'.",
+                        "Play the daily challenge at DishGuise.com"
+                    ],
+                    "dishOptions": [
+                        {
+                            "id": "dish-0-24e04e87-1b2d-4ba6-bc32-8f1e4806a144",
+                            "name": "Fufu",
+                            "isCorrect": false,
+                            "reason": "A thicker, pounded starchy accompaniment to stews, not a porridge drink."
+                        },
+                        {
+                            "id": "dish-1-a7ea6143-a7df-4ed9-97d5-1954e41c5c78",
+                            "name": "Pap (Akamu / Ogi)",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "dish-2-434a510a-c92f-4563-9c0e-01caa138ef52",
+                            "name": "Kenkey",
+                            "isCorrect": false,
+                            "reason": "A fermented corn dough staple, but typically a solid, dense accompaniment, not a fluid porridge."
+                        },
+                        {
+                            "id": "dish-3-0157cf9f-e1b9-4bd1-8e98-22f0604eb96e",
+                            "name": "Oatmeal",
+                            "isCorrect": false,
+                            "reason": "A porridge made from oats, different grain base and typically not fermented."
+                        }
+                    ],
+                    "ingredientOptions": [
+                        {
+                            "id": "ing-0-fb8b9d24-2ff5-4ca1-80fb-d2c66d97af17",
+                            "name": "Plantain flour",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-1-26e5dede-140b-4cd9-b864-d979731b345b",
+                            "name": "Sugar (optional)",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-2-d5ae4d15-679b-4db5-98ea-b8340defaff9",
+                            "name": "Water",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-3-d5306a7a-8dae-4a21-a179-1410f8aaa10f",
+                            "name": "Yeast",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-4-13d39921-7ae5-4f07-8df2-1033a39f6e34",
+                            "name": "Rice",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-5-1587e2ed-120e-4705-b206-a5547b3c9297",
+                            "name": "Cassava flour",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-6-89ad037e-0fa8-4ec9-9a5b-5e7252e33e70",
+                            "name": "Wheat semolina",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-7-09f125b3-226c-4ba4-aae9-1d87e9b583cf",
+                            "name": "Cow's milk",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-8-eaf9ea97-d6be-44f1-ae8e-b216e69f1fa9",
+                            "name": "Fermented maize flour",
+                            "isCorrect": true
+                        }
+                    ],
+                    "difficulty": "Chef de Partie"
+                },
+                {
+                    "id": "eea6c16c-c843-48ea-9715-f1756dd684fe",
+                    "dayId": "2025-12-20-MEDIUM",
+                    "targetDish": "Chapati",
+                    "description": "A thin, unleavened flatbread, widely adopted from Indian cuisine and a staple breakfast item in East Africa, often with tea.",
+                    "cuisine": "Kenya",
+                    "region": "East Africa",
+                    "originCity": "Nairobi",
+                    "category": "Breakfast, Flatbread",
+                    "procurementDifficulty": "EASY",
+                    "executionDifficulty": "MEDIUM",
+                    "flagEmoji": "🇰🇪",
+                    "countryCode": "KE",
+                    "mainIngredients": [
+                        "Wheat flour",
+                        "Water",
+                        "Salt",
+                        "Cooking oil"
+                    ],
+                    "triviaClues": [
+                        "Though originating from the Indian subcontinent, it has become a fundamental part of East African cuisine, especially for breakfast.",
+                        "The dough is typically kneaded until soft, then rolled out very thin and cooked on a flat griddle.",
+                        "It's often enjoyed with stews, vegetables, or simply with tea.",
+                        "Play the daily challenge at DishGuise.com"
+                    ],
+                    "dishOptions": [
+                        {
+                            "id": "dish-0-158a24cd-a21b-40e4-a30c-9cebbc25e386",
+                            "name": "Pita Bread",
+                            "isCorrect": false,
+                            "reason": "A Mediterranean pocket bread, typically used for sandwiches and distinct in texture."
+                        },
+                        {
+                            "id": "dish-1-da6c3cc9-5153-4613-9d1b-5f5759c293b1",
+                            "name": "Chapati",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "dish-2-43cdc445-1808-4f42-a741-e74cb7374ac8",
+                            "name": "Naan",
+                            "isCorrect": false,
+                            "reason": "A leavened Indian flatbread, often baked in a tandoor and with a different texture."
+                        },
+                        {
+                            "id": "dish-3-e161e88d-9849-4faf-949e-57269f3fa2e9",
+                            "name": "Injeras",
+                            "isCorrect": false,
+                            "reason": "An Ethiopian/Eritrean fermented teff flatbread with a unique spongy texture, very different from the unleavened target."
+                        }
+                    ],
+                    "ingredientOptions": [
+                        {
+                            "id": "ing-0-96e2557a-65f9-483d-a857-f2b57f6aed4b",
+                            "name": "Baking powder",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-1-2418c326-10fc-4281-bb41-92e44848804b",
+                            "name": "Water",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-2-d914f51c-823c-411c-8acb-7dd941d01156",
+                            "name": "Wheat flour",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-3-75b40bf4-ec71-4618-a952-df0e2d514fc2",
+                            "name": "Salt",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-4-0b32975f-5d83-4d48-a094-93fcc7d9a476",
+                            "name": "Rice flour",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-5-6f71d169-e7d8-4f3c-ae1c-96a2e91863d6",
+                            "name": "Semolina",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-6-ebe4ac6f-f668-46a9-80a9-178c2ed4b6e5",
+                            "name": "Cooking oil",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-7-9f84b535-0c06-4f81-8c7e-0e0af7b4d374",
+                            "name": "Corn flour",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-8-27d68ab2-73e5-44f5-83eb-3ed9113215db",
+                            "name": "Sugar",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-9-9702439d-3cd9-417f-a107-3780bb03f462",
+                            "name": "Yeast",
+                            "isCorrect": false
+                        }
+                    ],
+                    "difficulty": "Chef de Partie"
+                },
+                {
+                    "id": "ba5f9146-9d10-4c73-8431-e9d3094c8064",
+                    "dayId": "2025-12-20-MEDIUM",
+                    "targetDish": "Mageu",
+                    "description": "A non-alcoholic, fermented drink made from maize meal, often consumed for breakfast or as an energy-boosting snack in Southern Africa.",
+                    "cuisine": "South Africa",
+                    "region": "Southern Africa",
+                    "originCity": "Johannesburg",
+                    "category": "Breakfast, Beverage",
+                    "procurementDifficulty": "EASY",
+                    "executionDifficulty": "MEDIUM",
+                    "flagEmoji": "🇿🇦",
+                    "countryCode": "ZA",
+                    "mainIngredients": [
+                        "Maize meal",
+                        "Water",
+                        "Wheat flour",
+                        "Sugar (optional)"
+                    ],
+                    "triviaClues": [
+                        "This traditional African drink is known for its slight tang and creamy consistency, often used as a meal replacement.",
+                        "The fermentation process is typically initiated by adding a small amount of wheat flour to the maize mixture.",
+                        "It is a popular source of carbohydrates and is often consumed by athletes and laborers.",
+                        "Play the daily challenge at DishGuise.com"
+                    ],
+                    "dishOptions": [
+                        {
+                            "id": "dish-0-61e8ddf1-b174-4bc3-8289-a15e976eed89",
+                            "name": "Amarula",
+                            "isCorrect": false,
+                            "reason": "A cream liqueur made from the fruit of the marula tree, an alcoholic beverage."
+                        },
+                        {
+                            "id": "dish-1-b53ae2ec-c9cc-4cc7-9706-4429634537f5",
+                            "name": "Maas",
+                            "isCorrect": false,
+                            "reason": "A fermented milk drink, similar context but a dairy-based product."
+                        },
+                        {
+                            "id": "dish-2-24e8d7b3-2adf-4bbe-9537-cf2d1d4d570e",
+                            "name": "Mageu",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "dish-3-1e72326e-289b-4f5e-930d-df038ad9ca0f",
+                            "name": "Ogi/Pap",
+                            "isCorrect": false,
+                            "reason": "A West African fermented porridge, similar concept but thicker consistency and different regional origin."
+                        }
+                    ],
+                    "ingredientOptions": [
+                        {
+                            "id": "ing-0-b3482114-bb19-476e-ae5c-7fa082871adf",
+                            "name": "Wheat flour",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-1-70bfe0c1-8ac0-4b10-8797-4b1958a82d59",
+                            "name": "Millet",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-2-31e4b962-8d6f-4337-91c8-1c039942822a",
+                            "name": "Sorghum grain",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-3-d909335a-779e-41a6-b5af-b0dfa2032764",
+                            "name": "Maize meal",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-4-0832afd0-9302-4d69-ae36-7cd7401adc90",
+                            "name": "Sugar (optional)",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-5-0b6bf746-d59c-4356-a6e7-19cc9cea8325",
+                            "name": "Milk powder",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-6-2c768b30-03f1-4b60-a1dc-963e93cc6a1e",
+                            "name": "Fruit concentrate",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-7-29dd46e6-37d4-4048-a230-7f85cc0e8512",
+                            "name": "Water",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-8-d361db72-6fec-477f-ac46-525daa1d59fc",
+                            "name": "Rice flour",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-9-12f9bc93-7e45-4351-89ae-d10492a56f64",
+                            "name": "Yeast",
+                            "isCorrect": false
+                        }
+                    ],
+                    "difficulty": "Chef de Partie"
+                }
+            ],
+            "HARD": [
+                {
+                    "id": "6e532cfe-b607-4eee-8ef5-8bfd363530f9",
+                    "dayId": "2025-12-20-HARD",
+                    "targetDish": "Kunu Zaki",
+                    "description": "A traditional non-alcoholic fermented beverage from Northern Nigeria, typically made from millet, sorghum, or maize, often spiced with ginger and chili.",
+                    "cuisine": "Nigeria",
+                    "region": "West Africa",
+                    "originCity": "Kano",
+                    "category": "Breakfast, Beverage",
+                    "procurementDifficulty": "MEDIUM",
+                    "executionDifficulty": "HARD",
+                    "flagEmoji": "🇳🇬",
+                    "countryCode": "NG",
+                    "mainIngredients": [
+                        "Millet grains",
+                        "Sweet potato",
+                        "Ginger root",
+                        "Black peppercorns",
+                        "Cloves",
+                        "Sugar",
+                        "Water"
+                    ],
+                    "triviaClues": [
+                        "This beverage is often made with a blend of different grains and spices, giving it a complex flavor profile.",
+                        "The grains are typically soaked, milled, and then left to ferment before straining.",
+                        "It's known for its refreshing taste and nutritional value, often served chilled.",
+                        "The term 'zaki' means 'sweet' in Hausa, referring to its sweet taste.",
+                        "Play the daily challenge at DishGuise.com"
+                    ],
+                    "dishOptions": [
+                        {
+                            "id": "dish-0-56e964a2-7b78-406a-be60-bbe9dba3036b",
+                            "name": "Fura de Nono",
+                            "isCorrect": false,
+                            "reason": "Millet dough balls served with fermented cow's milk, a solid food with a liquid component, not a singular beverage."
+                        },
+                        {
+                            "id": "dish-1-1c9105f7-3679-46f4-93cb-8a2d52c89267",
+                            "name": "Kunu Zaki",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "dish-2-a26fae6a-c06d-4d8a-a236-b82adb19f2c2",
+                            "name": "Zobo",
+                            "isCorrect": false,
+                            "reason": "A Nigerian hibiscus drink, different main ingredient and flavor profile."
+                        },
+                        {
+                            "id": "dish-3-f7588f77-2535-41b2-9920-65dbaeb1771b",
+                            "name": "Malt Drink",
+                            "isCorrect": false,
+                            "reason": "An industrialized non-alcoholic beverage often made from barley, distinct from the traditional fermented grain drink."
+                        },
+                        {
+                            "id": "dish-4-14ca1352-80d0-4906-a3cc-5a514898b277",
+                            "name": "Pito",
+                            "isCorrect": false,
+                            "reason": "An indigenous alcoholic beer made from fermented millet or sorghum, distinct from the non-alcoholic target."
+                        },
+                        {
+                            "id": "dish-5-4d0121bc-3d60-4aca-a82a-3e32ec775ee3",
+                            "name": "Palm Wine",
+                            "isCorrect": false,
+                            "reason": "An alcoholic sap tapped from various palm trees, completely different source and alcoholic content."
+                        }
+                    ],
+                    "ingredientOptions": [
+                        {
+                            "id": "ing-0-92d1a3aa-be96-4187-ada9-c7c41661a0ed",
+                            "name": "Maize meal",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-1-8f2b58d8-b8ba-4d11-ab2e-9c13b2603464",
+                            "name": "Cloves",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-2-b7cc89f5-1c6f-4647-ad24-b0b1aa49fa0a",
+                            "name": "Sweet potato",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-3-76cb970d-9e24-4697-ad36-12fe9bc1e9da",
+                            "name": "Cow's milk",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-4-23ee0ea0-e851-43bb-af5d-08ab4f769bfc",
+                            "name": "Rice",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-5-c74aef28-f8fa-4e4f-9115-3a647da6217d",
+                            "name": "Millet grains",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-6-c18ee9de-5d72-47a7-bd63-0a9695601745",
+                            "name": "Cinnamon bark",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-7-e89afabf-cee6-473e-9b7c-04038e1161b9",
+                            "name": "Tamarind",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-8-3e4a40e8-8085-4c49-b395-05c9d9e8032a",
+                            "name": "Shea butter",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-9-e7e7ffb3-d980-4677-85c1-45d65ea2c4b2",
+                            "name": "Baobab fruit",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-10-46518492-4d35-40af-baaa-2fa3d3d67117",
+                            "name": "Black peppercorns",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-11-36d6acfb-979d-4627-a9c0-39adda6ec3d3",
+                            "name": "Alligator pepper",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-12-08f636df-4713-4348-a0e4-78f5d89404a2",
+                            "name": "Ginger root",
+                            "isCorrect": true
+                        }
+                    ],
+                    "difficulty": "Executive Chef"
+                },
+                {
+                    "id": "88645042-bdcc-42ac-90d4-72d0a33b222f",
+                    "dayId": "2025-12-20-HARD",
+                    "targetDish": "Mofo Gasy",
+                    "description": "Small, thick, slightly sweet rice cakes, often leavened with yeast, a popular breakfast item and snack in Madagascar.",
+                    "cuisine": "Madagascar",
+                    "region": "East Africa",
+                    "originCity": "Antananarivo",
+                    "category": "Breakfast, Cake, Snack",
+                    "procurementDifficulty": "MEDIUM",
+                    "executionDifficulty": "MEDIUM",
+                    "flagEmoji": "🇲🇬",
+                    "countryCode": "MG",
+                    "mainIngredients": [
+                        "Rice flour",
+                        "Coconut milk",
+                        "Sugar",
+                        "Yeast",
+                        "Water",
+                        "Cooking oil"
+                    ],
+                    "triviaClues": [
+                        "These fluffy, golden-brown cakes are typically cooked in special donut-like molds over charcoal.",
+                        "They are a common sight at Malagasy breakfast tables and street stalls.",
+                        "The fermentation from yeast gives them their distinctive airy texture and slight tang.",
+                        "They are often enjoyed with coffee or tea, sometimes dipped in condensed milk.",
+                        "Play the daily challenge at DishGuise.com"
+                    ],
+                    "dishOptions": [
+                        {
+                            "id": "dish-0-f2ae2366-6631-4aa0-9d14-81c4e7d6a209",
+                            "name": "Bibingka",
+                            "isCorrect": false,
+                            "reason": "A Filipino baked rice cake, often cooked in clay pots, different regional origin and preparation method."
+                        },
+                        {
+                            "id": "dish-1-cf0c99a8-05d2-46d6-9aea-859f77db77b7",
+                            "name": "Pancakes",
+                            "isCorrect": false,
+                            "reason": "Made from wheat flour, typically thinner, and universally known, distinct from the specific rice cake."
+                        },
+                        {
+                            "id": "dish-2-43e157b9-9f5c-4fe7-9221-dd620c7750ca",
+                            "name": "Appam",
+                            "isCorrect": false,
+                            "reason": "A South Indian/Sri Lankan fermented rice pancake, typically thinner and bowl-shaped."
+                        },
+                        {
+                            "id": "dish-3-aaec63f3-780a-4971-a258-1a4c3c9b26d3",
+                            "name": "Mandazi",
+                            "isCorrect": false,
+                            "reason": "An East African fried dough made from wheat flour, different main ingredient and texture."
+                        },
+                        {
+                            "id": "dish-4-7e442e8b-38bc-42ce-8167-78faf78ffc05",
+                            "name": "Roti",
+                            "isCorrect": false,
+                            "reason": "A type of flatbread, not a cake, and usually made with wheat flour."
+                        },
+                        {
+                            "id": "dish-5-89109f2b-8216-4e60-8918-39d12753dae6",
+                            "name": "Mofo Gasy",
+                            "isCorrect": true
+                        }
+                    ],
+                    "ingredientOptions": [
+                        {
+                            "id": "ing-0-d36ad84a-a622-47a3-9c85-e9b85cf88d27",
+                            "name": "Wheat flour",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-1-4e33d1c9-3c03-4457-bc8a-6e4c8f4b0bcb",
+                            "name": "Sweet potatoes",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-2-df7bdfe4-deac-4599-814a-18dc2c42c17d",
+                            "name": "Baking powder",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-3-ac910e72-05e3-4b4a-8df3-68dcb33abd8a",
+                            "name": "Corn starch",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-4-09045409-cfa8-4f5b-b39e-b166b2b1e746",
+                            "name": "Yeast",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-5-78cf5b9c-1e4c-4a03-b1d6-01572530ed3f",
+                            "name": "Coconut milk",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-6-ef08dd87-8c57-4bfc-905a-7076e28f791f",
+                            "name": "Rice flour",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-7-05f04efb-04cc-4957-89b5-c674f9ac7d8f",
+                            "name": "Water",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-8-fcdbcfeb-de13-42cb-b9ac-0d9615d5d9f5",
+                            "name": "Vanilla essence",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-9-baebc303-57fa-455a-8a19-aba68d4990e2",
+                            "name": "Tapioca flour",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-10-adabcaad-f7fe-48b0-b11b-507cdfdc0b1a",
+                            "name": "Sugar",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-11-17c759cd-1eb9-4566-aba8-ff6da1179077",
+                            "name": "Fresh fruit",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-12-63ba2a34-b60c-4373-9d36-321210cab8a9",
+                            "name": "Chicken eggs",
+                            "isCorrect": false
+                        }
+                    ],
+                    "difficulty": "Executive Chef"
+                },
+                {
+                    "id": "d11ee403-46dd-4320-9d02-4f419b2d5103",
+                    "dayId": "2025-12-20-HARD",
+                    "targetDish": "Vitumbua",
+                    "description": "Deliciously light and fluffy coconut rice pancakes, a popular breakfast and snack in coastal East Africa, especially Tanzania and Kenya.",
+                    "cuisine": "Tanzania",
+                    "region": "East Africa",
+                    "originCity": "Zanzibar City",
+                    "category": "Breakfast, Pancake",
+                    "procurementDifficulty": "MEDIUM",
+                    "executionDifficulty": "MEDIUM",
+                    "flagEmoji": "🇹🇿",
+                    "countryCode": "TZ",
+                    "mainIngredients": [
+                        "Rice",
+                        "Fresh coconut",
+                        "Sugar",
+                        "Yeast",
+                        "Cardamom powder",
+                        "Water",
+                        "Cooking oil"
+                    ],
+                    "triviaClues": [
+                        "These sweet, savory pancakes are traditionally cooked in a special pan with multiple hemispherical molds.",
+                        "The use of fresh coconut and cardamom gives them a unique fragrant flavor.",
+                        "They are often served hot with a dusting of powdered sugar or alongside a cup of strong tea.",
+                        "The name 'vitumbua' refers to the small rounded shape of the cakes.",
+                        "Play the daily challenge at DishGuise.com"
+                    ],
+                    "dishOptions": [
+                        {
+                            "id": "dish-0-b2635bdd-9738-4469-ac32-23276e093fd1",
+                            "name": "Mandazi",
+                            "isCorrect": false,
+                            "reason": "A fried wheat flour dough, not a pancake, and distinct in shape and texture."
+                        },
+                        {
+                            "id": "dish-1-d29e00d5-804d-4fd8-9759-6809916eb904",
+                            "name": "Vitumbua",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "dish-2-eefef3f7-1674-4646-8f10-af98ec20d88f",
+                            "name": "Pancakes",
+                            "isCorrect": false,
+                            "reason": "Typically made from wheat flour and lacking the distinct coconut-rice flavor profile of the target."
+                        },
+                        {
+                            "id": "dish-3-55b1f623-e0ed-44e4-b971-12591ecc9f64",
+                            "name": "Akara",
+                            "isCorrect": false,
+                            "reason": "A savory deep-fried bean fritter from West Africa, completely different ingredients and taste."
+                        },
+                        {
+                            "id": "dish-4-d9c57e36-8454-46e7-8dfd-ddb81242bf5c",
+                            "name": "Bofrot",
+                            "isCorrect": false,
+                            "reason": "A West African fried dough, similar to a doughnut, but distinct from the East African rice pancake."
+                        },
+                        {
+                            "id": "dish-5-a6eec679-bb02-413f-99d1-d1a7214bd3cc",
+                            "name": "Dosa",
+                            "isCorrect": false,
+                            "reason": "An Indian fermented lentil and rice crepe, very thin and typically savory."
+                        }
+                    ],
+                    "ingredientOptions": [
+                        {
+                            "id": "ing-0-f92f16d4-34a9-4775-9444-9c3dfa457774",
+                            "name": "Yeast",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-1-40fc1718-ebab-4783-8023-7bd684ae2d8d",
+                            "name": "Sweet potato",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-2-74096188-dbcf-4704-a017-fbf38d961d9f",
+                            "name": "Baking powder",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-3-0e450da6-5dcf-4173-a141-b355a2bcf473",
+                            "name": "Vanilla extract",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-4-d140c425-f461-46bf-ac4a-6b7a8f660e69",
+                            "name": "Hen's eggs",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-5-1fbd71d8-585d-4d6b-94b6-ec450dbb7471",
+                            "name": "Millet",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-6-1e7ba70e-b7e1-49b9-a178-5fe1a2836ec0",
+                            "name": "Wheat flour",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-7-0baea3ff-3186-45e8-a5a2-a041775e622b",
+                            "name": "Cardamom powder",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-8-646d4abd-d406-40fe-b305-00e4374aa67d",
+                            "name": "Butter",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-9-455360d1-d482-45a7-9dfb-ee39776f7043",
+                            "name": "Corn flour",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-10-cfb53f9f-9228-4d8a-8336-1eefcfae496c",
+                            "name": "Fresh coconut",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-11-8ed72264-601c-44aa-b2a3-bfda516c4249",
+                            "name": "Sugar",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-12-cc02e3f5-26f9-4d92-a368-e92ae607e00a",
+                            "name": "Rice",
+                            "isCorrect": true
+                        }
+                    ],
+                    "difficulty": "Executive Chef"
+                },
+                {
+                    "id": "4b0daf2f-be23-4a31-8c08-44558bc65a73",
+                    "dayId": "2025-12-20-HARD",
+                    "targetDish": "Ting",
+                    "description": "A soft, creamy porridge made from fermented sorghum or maize meal, a traditional staple breakfast in South Africa.",
+                    "cuisine": "South Africa",
+                    "region": "Southern Africa",
+                    "originCity": "Pretoria",
+                    "category": "Breakfast, Porridge",
+                    "procurementDifficulty": "MEDIUM",
+                    "executionDifficulty": "MEDIUM",
+                    "flagEmoji": "🇿🇦",
+                    "countryCode": "ZA",
+                    "mainIngredients": [
+                        "Sorghum grain (or maize meal)",
+                        "Water",
+                        "Salt"
+                    ],
+                    "triviaClues": [
+                        "This porridge derives its slightly sour taste from a natural fermentation process, sometimes starting with a 'starter' from a previous batch.",
+                        "It's a foundational dish in many South African households, especially among the Setswana-speaking people.",
+                        "Often served simply with sugar and milk, or as a savory accompaniment to meat and vegetables.",
+                        "Its name directly relates to the sound made when stirring the porridge.",
+                        "Play the daily challenge at DishGuise.com"
+                    ],
+                    "dishOptions": [
+                        {
+                            "id": "dish-0-ca7d4d7c-5b90-479f-bea6-5803dfdcd6fb",
+                            "name": "Ting",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "dish-1-1bbde441-0d2f-4236-ac70-b636c6c5c964",
+                            "name": "Mageu",
+                            "isCorrect": false,
+                            "reason": "A fermented drink from Southern Africa, similar ingredients but a liquid beverage, not a porridge."
+                        },
+                        {
+                            "id": "dish-2-ea80688b-60b7-4283-ac96-9d6e692392f6",
+                            "name": "Grits",
+                            "isCorrect": false,
+                            "reason": "Made from corn hominy, but without the fermentation process that defines the target."
+                        },
+                        {
+                            "id": "dish-3-6d384cdb-051b-487d-9000-277ca2b66eed",
+                            "name": "Phutu",
+                            "isCorrect": false,
+                            "reason": "A dry, crumbly maize meal porridge, distinct from the soft, creamy, fermented target."
+                        },
+                        {
+                            "id": "dish-4-c0ba7ca4-d243-4a4c-9282-d16e08ec4648",
+                            "name": "Oatmeal",
+                            "isCorrect": false,
+                            "reason": "Made from oats, not a fermented grain, and distinct in flavor and texture."
+                        },
+                        {
+                            "id": "dish-5-a0853c41-2abc-4cd1-ad88-3c4d3d0c6cd4",
+                            "name": "Pap",
+                            "isCorrect": false,
+                            "reason": "A West African fermented porridge, similar concept but often thicker and with different regional fermentation practices."
+                        }
+                    ],
+                    "ingredientOptions": [
+                        {
+                            "id": "ing-0-2f815afd-23dc-4ee5-919c-6b714f894115",
+                            "name": "Water",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-1-a321a1ca-9515-47e6-80dd-b11fa84c55ff",
+                            "name": "Yeast",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-2-0c9720c6-c2ae-43b0-9fc2-bd7436e93d2b",
+                            "name": "Salt",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-3-221fe038-7c9e-4511-bf6c-e98eb7cba365",
+                            "name": "Baking powder",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-4-c76ed2c8-97e0-485a-a1cd-4bf7a5ba4af1",
+                            "name": "Cassava",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-5-53f15626-ad80-4497-a2e6-b5f1de63d352",
+                            "name": "Milk",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-6-789622f1-9fff-4544-a52e-60439c49678b",
+                            "name": "Wheat flour",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-7-5e5160ac-1ff5-49bf-a478-83269982597a",
+                            "name": "Rice",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-8-e2474ef3-642b-4896-a3cd-3f668555670e",
+                            "name": "Sorghum grain (or maize meal)",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-9-8fcfcf7c-0c36-4e1c-bc2b-08df78d4ab02",
+                            "name": "Plantain",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-10-d674880c-83bb-48b7-a96f-3dd627c80b88",
+                            "name": "Sugar",
+                            "isCorrect": false
+                        }
+                    ],
+                    "difficulty": "Executive Chef"
+                },
+                {
+                    "id": "b00098a1-7593-468c-bfd6-39922aa1009f",
+                    "dayId": "2025-12-20-HARD",
+                    "targetDish": "Firfir",
+                    "description": "A savory Ethiopian and Eritrean breakfast dish made from shredded teff flatbread mixed with spiced clarified butter and often berbere spice.",
+                    "cuisine": "Ethiopia",
+                    "region": "East Africa",
+                    "originCity": "Addis Ababa",
+                    "category": "Breakfast, Savory Dish",
+                    "procurementDifficulty": "HARD",
+                    "executionDifficulty": "MEDIUM",
+                    "flagEmoji": "🇪🇹",
+                    "countryCode": "ET",
+                    "mainIngredients": [
+                        "Injera (fermented teff flatbread)",
+                        "Niter kibbeh (spiced clarified butter)",
+                        "Berbere spice blend",
+                        "Onions",
+                        "Garlic",
+                        "Tomato paste"
+                    ],
+                    "triviaClues": [
+                        "This dish ingeniously repurposes day-old teff flatbread, infusing it with rich, aromatic spices.",
+                        "The critical components are the sour, spongy flatbread and the deeply flavored clarified butter.",
+                        "It's a hearty and flavorful breakfast, often served with a side of yogurt or cottage cheese.",
+                        "There are both 'shiro firfir' (with chickpea stew) and 'tibs firfir' (with meat) variations.",
+                        "Play the daily challenge at DishGuise.com"
+                    ],
+                    "dishOptions": [
+                        {
+                            "id": "dish-0-cc2e4fb7-06ce-4061-930e-553892fb587f",
+                            "name": "Genfo",
+                            "isCorrect": false,
+                            "reason": "An Ethiopian barley or wheat porridge, a different breakfast item with a distinct texture."
+                        },
+                        {
+                            "id": "dish-1-9f0d2395-6dee-4142-ae6b-a1652e2daeaf",
+                            "name": "Firfir",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "dish-2-9c696dff-c030-468f-b090-486dfccbbf88",
+                            "name": "Kitfo",
+                            "isCorrect": false,
+                            "reason": "An Ethiopian dish of minced raw beef, highly seasoned, distinct from the shredded flatbread dish."
+                        },
+                        {
+                            "id": "dish-3-3127872c-b5b2-4e61-9875-ac42f682667a",
+                            "name": "Lahooh",
+                            "isCorrect": false,
+                            "reason": "A Somali flatbread, similar in form to injera but distinct in preparation and often served differently."
+                        },
+                        {
+                            "id": "dish-4-1c613833-9b21-40a6-84cb-911bd51b5542",
+                            "name": "Tibs",
+                            "isCorrect": false,
+                            "reason": "A sautéed meat dish, usually served for lunch or dinner, not typically a breakfast staple."
+                        },
+                        {
+                            "id": "dish-5-aeffca11-dec6-4a22-a3a2-627f861e73e2",
+                            "name": "Shahan Ful",
+                            "isCorrect": false,
+                            "reason": "A fava bean stew common for breakfast in the Horn of Africa, but distinct from the shredded bread dish."
+                        }
+                    ],
+                    "ingredientOptions": [
+                        {
+                            "id": "ing-0-b5de98cf-dcbd-41be-9654-d2ff2d78fe9e",
+                            "name": "Berbere spice blend",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-1-8aad576a-9b84-441e-aba9-e08682a31ea5",
+                            "name": "Onions",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-2-9f0f4cbb-7c51-4f24-91c7-0f6cfb516027",
+                            "name": "Injera (fermented teff flatbread)",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-3-ed5b5069-456c-425f-bb55-cdc416854efc",
+                            "name": "Bell peppers",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-4-403ac46f-28a0-4ac6-8ac8-47c27026237e",
+                            "name": "Niter kibbeh (spiced clarified butter)",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-5-bdbf1f4e-c4fe-4e57-b87d-5d24813ebd01",
+                            "name": "Garlic",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-6-77e1efe7-1c32-4519-954c-538875328bee",
+                            "name": "Rice",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-7-9494894a-60d9-492c-9b34-6552b2c644ee",
+                            "name": "Ginger powder",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-8-479b401e-4eb6-4b77-b1dc-afb9ab1d905b",
+                            "name": "Olive oil",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-9-5253bfa0-23ce-46d2-9b63-a27af001c697",
+                            "name": "Wheat flour",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-10-b401db7b-a7c7-44de-8474-ccf7292b0a9b",
+                            "name": "Turmeric",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-11-3f04f172-faa9-4343-be12-b88844c5f183",
+                            "name": "Corn meal",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-12-073fcce0-7db0-4b3d-bf3e-cacf181e142d",
+                            "name": "Lentils",
+                            "isCorrect": false
+                        }
+                    ],
+                    "difficulty": "Executive Chef"
+                }
+            ]
+        }
+    },
     "2025-12-19": {
         "date": "2025-12-19",
         "theme": "Celebratory Feast from Latin America",

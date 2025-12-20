@@ -172,9 +172,9 @@ export const IngredientsBoard: React.FC<IngredientsBoardProps> = ({
                 <div className="bg-[#2a2a2e] text-culinary-cream rounded-lg p-1 shadow-lg relative border border-white/10 flex flex-col h-full">
                     {/* Notebook Ring Visuals */}
                     {/* Notebook Ring Visuals (Distributed) */}
-                    <div className="absolute top-[20%] left-2 md:-left-3 w-4 h-4 bg-zinc-800 rounded-full z-20 border border-white/20 hidden md:block shadow-sm"></div>
-                    <div className="absolute top-[50%] left-2 md:-left-3 w-4 h-4 bg-zinc-800 rounded-full z-20 border border-white/20 hidden md:block shadow-sm -translate-y-1/2"></div>
-                    <div className="absolute bottom-[20%] left-2 md:-left-3 w-4 h-4 bg-zinc-800 rounded-full z-20 border border-white/20 hidden md:block shadow-sm"></div>
+                    <div className="absolute top-[20%] left-2 md:left-0 md:-translate-x-1/2 w-4 h-4 bg-zinc-800 rounded-full z-20 border border-white/20 hidden md:block shadow-sm"></div>
+                    <div className="absolute top-[50%] left-2 md:left-0 md:-translate-x-1/2 w-4 h-4 bg-zinc-800 rounded-full z-20 border border-white/20 hidden md:block shadow-sm -translate-y-1/2"></div>
+                    <div className="absolute bottom-[20%] left-2 md:left-0 md:-translate-x-1/2 w-4 h-4 bg-zinc-800 rounded-full z-20 border border-white/20 hidden md:block shadow-sm"></div>
 
                     <div className="p-4 bg-[url('https://www.transparenttextures.com/patterns/black-linen.png')] flex-grow flex flex-col rounded border border-white/5">
                         <div className="flex items-center justify-between mb-3 border-b border-white/10 pb-2">
