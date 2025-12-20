@@ -3,6 +3,9 @@
 
 body {
   background-color: #121212;
+  background-image: url('/textures/slate.png');
+  background-repeat: repeat;
+  background-size: 800px;
   color: #f4f4f0;
 }
 

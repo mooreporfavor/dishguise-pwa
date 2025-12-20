@@ -195,11 +195,11 @@ export const IngredientsBoard: React.FC<IngredientsBoardProps> = ({
                                 </li>
                             ))}
 
-                            {/* Hidden Hints */}
+                            {/* Hidden Hints (Redacted Visual) */}
                             {!isRoundOver && hiddenTriviaCount > 0 && Array.from({ length: hiddenTriviaCount }).map((_, idx) => (
-                                <li key={`hidden-triv-${idx}`} className="flex gap-3 opacity-30">
-                                    <div className="mt-1 w-4 h-4 rounded-full border border-white/20"></div>
-                                    <div className="h-4 bg-white/10 rounded w-3/4"></div>
+                                <li key={`hidden-triv-${idx}`} className="flex gap-3 opacity-20">
+                                    <div className="mt-1.5 w-3 h-1 bg-white/30 rounded-full"></div> {/* Dash bullet */}
+                                    <div className="h-4 bg-white/10 rounded w-3/4 animate-pulse"></div>
                                 </li>
                             ))}
                         </ul>

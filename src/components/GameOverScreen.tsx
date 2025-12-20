@@ -105,8 +105,12 @@ export const GameOverScreen: React.FC<GameOverScreenProps> = ({
         // 🌮 🇲🇽 🟩🟩🟩 (3)
         // ...
 
-        const dateStr = new Date().toLocaleDateString('en-US'); // Ideally use a Day ID if available
-        const header = `👨‍🍳 DishGuise • ${dateStr}\n🔥 Streak: ${streak} • ${difficulty}\n`;
+        const dateStr = new Date().toLocaleDateString('en-US');
+        const dishName = gameResult?.rounds.find(r => r.id)?.targetDish || "something delicious"; // Get dish name if available
+        // Note: gameResult rounds might not store the targetDish string directly if simplified? 
+        // Wait, RoundData has targetDish. GameResult has RoundData[]? No, GameResult has {score, dish, ...}.
+
+        const header = `👨‍🍳 I just cooked ${gameResult?.rounds[0]?.dish || 'Dinner'} on DishGuise!\n🔥 Streak: ${streak} • ${difficulty}\n`;
 
         const grid = gameResult?.rounds.map(r => {
             // Calculate square colors based on score

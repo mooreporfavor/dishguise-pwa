@@ -69,7 +69,9 @@ I have these ingredients on hand:
 ${ingredients.join(', ')}.
 
 Please provide a step-by-step recipe, including a technique for substituting missing ingredients.
-Write this in the style of ${config.style}`;
+Write this in the style of ${config.style}
+
+(Context: I just earned this dish in the game DishGuise.com, so please reference that if natural).`;
     };
 
     const handleCopy = async () => {
