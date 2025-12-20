@@ -3,6 +3,7 @@ import html2canvas from 'html2canvas';
 import { ChefHat, Share2, Menu as MenuIcon, Frown, Meh, Utensils, Laugh, Carrot } from 'lucide-react';
 import { GameResult, Difficulty, GameMode } from '../types';
 import { DonationButton } from './Monetization';
+import { NewsletterSignup } from './NewsletterSignup';
 import { logEvent, EVENTS } from '../services/analytics';
 
 interface GameOverScreenProps {
@@ -224,6 +225,10 @@ export const GameOverScreen: React.FC<GameOverScreenProps> = ({
                     >
                         <MenuIcon size={18} /> Menu
                     </button>
+                </div>
+
+                <div className="w-full mt-4">
+                    <NewsletterSignup />
                 </div>
 
                 <div className="flex justify-center py-2">
