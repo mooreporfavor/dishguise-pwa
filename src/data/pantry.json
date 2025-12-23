@@ -1,0 +1,1713 @@
+{
+    "2025-12-23": {
+        "date": "2025-12-23",
+        "theme": "Breakfast Staple from Eastern Europe",
+        "rounds": {
+            "EASY": [
+                {
+                    "id": "aee2669c-3115-4e51-b70d-83098a075ce6",
+                    "dayId": "2025-12-23-EASY",
+                    "targetDish": "Blini",
+                    "description": "Thin, small pancakes often served with sour cream, jam, or caviar. They are a beloved breakfast item, especially during Maslenitsa (Butter Week).",
+                    "cuisine": "Russian",
+                    "region": "Eastern Europe",
+                    "originCity": "Moscow",
+                    "category": "Pancake/Crepe",
+                    "procurementDifficulty": "EASY",
+                    "executionDifficulty": "EASY",
+                    "flagEmoji": "🇷🇺",
+                    "countryCode": "RU",
+                    "mainIngredients": [
+                        "Wheat flour",
+                        "Milk",
+                        "Eggs",
+                        "Yeast",
+                        "Sugar"
+                    ],
+                    "triviaClues": [
+                        "These are traditionally served during Maslenitsa, a Slavic religious and folk holiday.",
+                        "They can be served both savory with ingredients like smoked salmon or caviar, or sweet with jam and honey.",
+                        "The name is believed to come from an Old Slavic word meaning 'to mill' or 'to grind'.",
+                        "Play the daily challenge at DishGuise.com"
+                    ],
+                    "dishOptions": [
+                        {
+                            "id": "dish-0-7e559483-89b4-4ffd-9414-a3f9cef5f50c",
+                            "name": "American Pancakes",
+                            "isCorrect": false,
+                            "reason": "American pancakes are significantly thicker and fluffier, typically made with baking powder or soda, not yeast."
+                        },
+                        {
+                            "id": "dish-1-4fd980cf-c10e-4a5e-8b04-016fd4c857c7",
+                            "name": "French Crêpes",
+                            "isCorrect": false,
+                            "reason": "While similar in thinness, Blini often incorporate yeast for a slightly thicker, spongier texture and are traditionally smaller."
+                        },
+                        {
+                            "id": "dish-2-dcdb4ca9-528c-490a-aedd-85f399de3dbc",
+                            "name": "Dosa",
+                            "isCorrect": false,
+                            "reason": "Dosa is a South Indian fermented crepe made primarily from rice and lentils, with a distinct sour flavor."
+                        },
+                        {
+                            "id": "dish-3-57c49ec9-472e-4e8d-ad8e-00123c2b80d4",
+                            "name": "Blini",
+                            "isCorrect": true
+                        }
+                    ],
+                    "ingredientOptions": [
+                        {
+                            "id": "ing-0-138d20a5-bdf8-4e67-863a-3b5db9873cb5",
+                            "name": "Sugar",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-1-526800d3-a712-4334-8715-42d09c9fb87c",
+                            "name": "Wheat flour",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-2-93565a68-be76-485e-a2a9-eeb86d64e27a",
+                            "name": "Cornmeal",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-3-f1218267-802c-4ca9-90ce-77ed04720330",
+                            "name": "Eggs",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-4-5b5eca6d-48c9-4bb4-8e8a-38230fe94b57",
+                            "name": "Olive oil",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-5-1eb619be-5626-4db6-bccb-a13bf9b0d481",
+                            "name": "Rice flour",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-6-72fdfb54-d23d-4b1c-8e2d-e271e91c21f6",
+                            "name": "Baking powder",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-7-c51d8621-467e-4eee-acbc-076569df68d4",
+                            "name": "Yeast",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-8-b51a7929-2743-4c85-9164-b47d779d4343",
+                            "name": "Milk",
+                            "isCorrect": true
+                        }
+                    ],
+                    "difficulty": "Sous Chef"
+                },
+                {
+                    "id": "f9027a4d-113a-43e0-8ce4-c82823444b12",
+                    "dayId": "2025-12-23-EASY",
+                    "targetDish": "Syrniki",
+                    "description": "Small, pan-fried cheese pancakes made from tvorog (farmer's cheese), often served with sour cream, jam, or honey.",
+                    "cuisine": "Ukrainian",
+                    "region": "Eastern Europe",
+                    "originCity": "Kyiv",
+                    "category": "Pancake/Fritter",
+                    "procurementDifficulty": "EASY",
+                    "executionDifficulty": "EASY",
+                    "flagEmoji": "🇺🇦",
+                    "countryCode": "UA",
+                    "mainIngredients": [
+                        "Farmer's cheese",
+                        "Eggs",
+                        "Wheat flour",
+                        "Sugar",
+                        "Vanilla"
+                    ],
+                    "triviaClues": [
+                        "The primary ingredient is a type of fresh, unripened curd cheese, similar to cottage cheese but with a firmer texture.",
+                        "They are typically pan-fried until golden brown and are a popular breakfast or dessert item.",
+                        "The dish's name is derived from the Slavic word for cheese.",
+                        "Play the daily challenge at DishGuise.com"
+                    ],
+                    "dishOptions": [
+                        {
+                            "id": "dish-0-4852f74e-04e6-4975-bbe3-2d590db981f3",
+                            "name": "Syrniki",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "dish-1-713c5a21-e8d2-4293-ac3d-c1d8ab02a016",
+                            "name": "Ricotta Fritters",
+                            "isCorrect": false,
+                            "reason": "Ricotta fritters use a different type of soft Italian cheese and often have a lighter, airier texture."
+                        },
+                        {
+                            "id": "dish-2-ea2f4c2d-67f0-4033-bb20-a603f6126997",
+                            "name": "Cottage Cheese Pancakes",
+                            "isCorrect": false,
+                            "reason": "While similar, cottage cheese has a coarser, wetter texture compared to the drier, firmer tvorog, leading to a different pancake consistency."
+                        },
+                        {
+                            "id": "dish-3-60746be6-e06c-45ab-9390-d8ec922f08d1",
+                            "name": "Quarkkuchen",
+                            "isCorrect": false,
+                            "reason": "Quarkkuchen is a baked German cheesecake, not a pan-fried fritter, despite using a similar fresh cheese."
+                        }
+                    ],
+                    "ingredientOptions": [
+                        {
+                            "id": "ing-0-e8d06dc9-542a-441f-905b-72e7bf950da7",
+                            "name": "Ricotta cheese",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-1-6c91f0fd-c3f5-4f70-ba44-ff0a704367bc",
+                            "name": "Eggs",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-2-dfee7d28-e8e3-4528-8b0c-b1d36624455a",
+                            "name": "Baking soda",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-3-649a4b32-6702-4825-b69f-3c7133134f21",
+                            "name": "Sugar",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-4-4c8237aa-9cd8-4fc8-b5a7-cadcb957ac43",
+                            "name": "Farmer's cheese",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-5-865b941d-b298-42e6-b7b1-f827ac67c6c3",
+                            "name": "Wheat flour",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-6-f9f1797a-9581-4b9d-b4a0-c8b78ae3b238",
+                            "name": "Semolina",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-7-e0cec97e-3892-44d2-b3d9-ce9b4b485505",
+                            "name": "Heavy cream",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-8-59403732-7cf1-4780-ab27-3aa3c012c0b9",
+                            "name": "Vanilla",
+                            "isCorrect": true
+                        }
+                    ],
+                    "difficulty": "Sous Chef"
+                },
+                {
+                    "id": "18563679-82a4-4495-8008-745bcc5dcef2",
+                    "dayId": "2025-12-23-EASY",
+                    "targetDish": "Naleśniki",
+                    "description": "Thin, rolled pancakes or crepes, often filled with sweet or savory ingredients like sweet cheese, fruit jam, or mushrooms, and served for breakfast or dessert.",
+                    "cuisine": "Polish",
+                    "region": "Eastern Europe",
+                    "originCity": "Warsaw",
+                    "category": "Pancake/Crepe",
+                    "procurementDifficulty": "EASY",
+                    "executionDifficulty": "EASY",
+                    "flagEmoji": "🇵🇱",
+                    "countryCode": "PL",
+                    "mainIngredients": [
+                        "Wheat flour",
+                        "Eggs",
+                        "Milk",
+                        "Sugar",
+                        "Pinch of salt"
+                    ],
+                    "triviaClues": [
+                        "These are very similar to French crepes but are a staple across Central and Eastern Europe.",
+                        "They can be served both sweet (with quark cheese, fruit, or jam) and savory (with meat, mushrooms, or cabbage).",
+                        "The word for this dish is a diminutive of a Slavic word meaning 'pancake' or 'flat cake'.",
+                        "Play the daily challenge at DishGuise.com"
+                    ],
+                    "dishOptions": [
+                        {
+                            "id": "dish-0-0698a599-295c-415a-ac81-75f6ad1957af",
+                            "name": "French Crêpes",
+                            "isCorrect": false,
+                            "reason": "While visually similar, Naleśniki often have slightly thicker batter and are more commonly served rolled with substantial fillings."
+                        },
+                        {
+                            "id": "dish-1-7a85f4da-9ae2-4348-ad57-bcf3b2b87bca",
+                            "name": "Naleśniki",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "dish-2-3ad8ba7a-93ae-415b-bd22-5edf784ea3e3",
+                            "name": "Palatschinken",
+                            "isCorrect": false,
+                            "reason": "Palatschinken are essentially the same dish, but the name is used primarily in Austria and other Central European countries."
+                        },
+                        {
+                            "id": "dish-3-d955c8a6-739b-45e6-a024-07673a60c247",
+                            "name": "Roti Jala",
+                            "isCorrect": false,
+                            "reason": "Roti Jala is a Malaysian lace pancake with a distinct net-like appearance, made with a different technique and usually served with savory curries."
+                        }
+                    ],
+                    "ingredientOptions": [
+                        {
+                            "id": "ing-0-b0fd27ec-abb7-404c-9d54-1e34f0545f7f",
+                            "name": "Water (as primary liquid)",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-1-52488c63-d192-4e06-9627-1d75a2a7875a",
+                            "name": "Yeast",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-2-4b3ffbcc-1ca3-4365-b001-1d28269f8481",
+                            "name": "Eggs",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-3-95eb54d8-f853-41ec-855d-222e2c77ec7c",
+                            "name": "Sugar",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-4-4f5744be-4db7-43ca-a545-79eb1509a143",
+                            "name": "Almond flour",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-5-b72475ec-ae6d-471c-903b-37eb8f729b7f",
+                            "name": "Milk",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-6-c7b04071-a803-4673-b488-00ce6b4c433c",
+                            "name": "Cornstarch",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-7-23cb99a4-ab67-482a-86bd-6e2e83c26417",
+                            "name": "Wheat flour",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-8-88f2b7a2-050a-45ab-9449-5b4063a05137",
+                            "name": "Pinch of salt",
+                            "isCorrect": true
+                        }
+                    ],
+                    "difficulty": "Sous Chef"
+                },
+                {
+                    "id": "baa11641-27e5-40d4-8e32-9bcb08bda47f",
+                    "dayId": "2025-12-23-EASY",
+                    "targetDish": "Kifli",
+                    "description": "A crescent-shaped roll or pastry, typically light and fluffy, often enjoyed for breakfast with butter, jam, or cheese.",
+                    "cuisine": "Hungarian",
+                    "region": "Eastern Europe",
+                    "originCity": "Budapest",
+                    "category": "Bread/Pastry",
+                    "procurementDifficulty": "EASY",
+                    "executionDifficulty": "EASY",
+                    "flagEmoji": "🇭🇺",
+                    "countryCode": "HU",
+                    "mainIngredients": [
+                        "Wheat flour",
+                        "Milk",
+                        "Butter",
+                        "Yeast",
+                        "Sugar",
+                        "Egg"
+                    ],
+                    "triviaClues": [
+                        "This pastry's name translates to 'crescent' in Hungarian.",
+                        "It is a popular breakfast item throughout Hungary and other parts of Central and Eastern Europe.",
+                        "Though often savory, it can also be made sweet with a dusting of powdered sugar or various fillings.",
+                        "Play the daily challenge at DishGuise.com"
+                    ],
+                    "dishOptions": [
+                        {
+                            "id": "dish-0-e417bf84-c494-4373-abee-8daea1d1e2a6",
+                            "name": "Brioche",
+                            "isCorrect": false,
+                            "reason": "Brioche is a rich French bread with a high butter and egg content, typically baked as a loaf or bun, not usually in a crescent shape."
+                        },
+                        {
+                            "id": "dish-1-e2474860-143e-4b1c-ab39-9ea3b5db0a3e",
+                            "name": "Rogaliki",
+                            "isCorrect": false,
+                            "reason": "Rogaliki are a similar crescent-shaped pastry found in Poland and Russia, but often smaller and made with a slightly different dough, sometimes with sour cream."
+                        },
+                        {
+                            "id": "dish-2-a8e66e9a-0d93-40ea-9482-26947b9ff818",
+                            "name": "Croissant",
+                            "isCorrect": false,
+                            "reason": "Croissants are made with a laminated dough, resulting in many flaky layers, whereas this dish uses a softer, non-laminated yeast dough."
+                        },
+                        {
+                            "id": "dish-3-f826d340-2414-4757-b736-f0207006fca3",
+                            "name": "Kifli",
+                            "isCorrect": true
+                        }
+                    ],
+                    "ingredientOptions": [
+                        {
+                            "id": "ing-0-a394e894-4c05-42a5-8689-1db7b58d82bc",
+                            "name": "Olive oil",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-1-3c657eac-aff7-448e-a484-7293b04ca252",
+                            "name": "Yeast",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-2-9085de98-7a25-4820-b686-1b3e2b76c9de",
+                            "name": "Butter",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-3-7837bb58-aab0-4266-b16a-7956b0068406",
+                            "name": "Puff pastry",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-4-5d368798-6561-4da7-ac7d-2efa58666c33",
+                            "name": "Semolina",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-5-bb38a4e1-768c-4648-9ecc-1898f12e2634",
+                            "name": "Sugar",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-6-e7e75e11-c2be-48c7-bda5-7d850e2711de",
+                            "name": "Milk",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-7-1b895f8b-f700-4a71-8bfb-97136c8d21f1",
+                            "name": "Wheat flour",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-8-1c97d766-76f4-480f-b178-b08e28b87c47",
+                            "name": "Cream cheese",
+                            "isCorrect": false
+                        }
+                    ],
+                    "difficulty": "Sous Chef"
+                },
+                {
+                    "id": "161c2641-c8a7-42d4-b513-c0e2c6b99451",
+                    "dayId": "2025-12-23-EASY",
+                    "targetDish": "Kajmak",
+                    "description": "A creamy, dairy product similar to clotted cream, traditionally made by slowly simmering milk and skimming off the fatty foam, often served with bread for breakfast.",
+                    "cuisine": "Bosnian",
+                    "region": "Eastern Europe",
+                    "originCity": "Sarajevo",
+                    "category": "Dairy Spread",
+                    "procurementDifficulty": "EASY",
+                    "executionDifficulty": "EASY",
+                    "flagEmoji": "🇧🇦",
+                    "countryCode": "BA",
+                    "mainIngredients": [
+                        "Cow's milk",
+                        "Salt"
+                    ],
+                    "triviaClues": [
+                        "This dairy product is a staple in Balkan cuisine, often served with bread, especially for breakfast.",
+                        "It has a rich, slightly salty, and incredibly creamy texture, varying from fresh and soft to aged and firm.",
+                        "The traditional preparation involves simmering fresh milk for several hours and then skimming off the thickened fat layer.",
+                        "Play the daily challenge at DishGuise.com"
+                    ],
+                    "dishOptions": [
+                        {
+                            "id": "dish-0-4a68cca2-e77f-47b6-af9a-4eb7d7c53de5",
+                            "name": "Mascarpone",
+                            "isCorrect": false,
+                            "reason": "Mascarpone is an Italian cream cheese made by coagulating cream with acid, resulting in a much richer, smoother, and sweeter product."
+                        },
+                        {
+                            "id": "dish-1-6b11df18-11aa-477e-95bb-7d8d1159f8e4",
+                            "name": "Clotted Cream",
+                            "isCorrect": false,
+                            "reason": "While similar in texture, traditional British clotted cream is made by heating milk and then allowing it to cool and thicken, rather than a slow simmering and skimming process."
+                        },
+                        {
+                            "id": "dish-2-c30682d4-fa3b-421e-ae7f-7c4905b59866",
+                            "name": "Kajmak",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "dish-3-a4b4e3f0-a979-49a5-a7fe-e79a0acf8d38",
+                            "name": "Labneh",
+                            "isCorrect": false,
+                            "reason": "Labneh is a Middle Eastern strained yogurt, which has a tangier flavor and is made from fermented milk, unlike this fresh dairy product."
+                        }
+                    ],
+                    "ingredientOptions": [
+                        {
+                            "id": "ing-0-56936e6e-12e1-4440-88a4-7a1f5140def8",
+                            "name": "Sugar",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-1-55dc8121-15b2-4bcc-aad2-7ff163e0cd9e",
+                            "name": "Cow's milk",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-2-7020d9cc-5b30-4fe6-8e8e-c60d466bf0c7",
+                            "name": "Salt",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-3-164f31f0-d7d2-4d39-ae4f-96b4905f9a9b",
+                            "name": "Heavy cream",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-4-4c9341bb-6721-436d-a1d6-d70d6a402bd7",
+                            "name": "Goat's milk",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-5-14799535-1c95-4209-8039-7eb1f63711ea",
+                            "name": "Butter",
+                            "isCorrect": false
+                        }
+                    ],
+                    "difficulty": "Sous Chef"
+                }
+            ],
+            "MEDIUM": [
+                {
+                    "id": "770d297a-48f3-4f0a-acdf-b483d9c4baa7",
+                    "dayId": "2025-12-23-MEDIUM",
+                    "targetDish": "Mămăligă",
+                    "description": "A thick, savory porridge made from yellow cornmeal, often served as a staple side dish or a hearty breakfast, especially with cheese and sour cream.",
+                    "cuisine": "Romanian",
+                    "region": "Eastern Europe",
+                    "originCity": "Bucharest",
+                    "category": "Porridge",
+                    "procurementDifficulty": "EASY",
+                    "executionDifficulty": "MEDIUM",
+                    "flagEmoji": "🇷🇴",
+                    "countryCode": "RO",
+                    "mainIngredients": [
+                        "Cornmeal",
+                        "Water",
+                        "Salt",
+                        "Butter (optional)"
+                    ],
+                    "triviaClues": [
+                        "This dish is often considered the national dish of Romania and is a peasant food staple.",
+                        "It can be served soft as a porridge or sliced and fried after cooling.",
+                        "Traditionally, it was cooked in a cast-iron pot called a 'ceaun'.",
+                        "It is frequently paired with cheese, sour cream, or fried eggs for breakfast.",
+                        "Play the daily challenge at DishGuise.com"
+                    ],
+                    "dishOptions": [
+                        {
+                            "id": "dish-0-b3cbd27a-ab86-4b5b-a899-9989a8d8fa81",
+                            "name": "Grits",
+                            "isCorrect": false,
+                            "reason": "Grits are a porridge made from hominy (dried corn kernels treated with alkali), primarily found in the Southern United States, with a distinct texture and flavor."
+                        },
+                        {
+                            "id": "dish-1-fd89c814-7aba-436f-8f31-eddce76d13a9",
+                            "name": "Ugali",
+                            "isCorrect": false,
+                            "reason": "Ugali is a stiff cornmeal porridge from East Africa, typically made with a coarser grind of maize flour and usually served very firm."
+                        },
+                        {
+                            "id": "dish-2-d9b8bab9-4286-4c28-9818-8b946ad3c343",
+                            "name": "Polenta",
+                            "isCorrect": false,
+                            "reason": "While functionally similar, Polenta is the Italian term for cornmeal porridge and often refers to a creamier, finer-grained preparation."
+                        },
+                        {
+                            "id": "dish-3-f832b8fa-f9f6-49ac-976a-1930534d8d83",
+                            "name": "Mămăligă",
+                            "isCorrect": true
+                        }
+                    ],
+                    "ingredientOptions": [
+                        {
+                            "id": "ing-0-ae1ad7b8-4022-41f5-a84c-549b543fade4",
+                            "name": "Rice",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-1-b8941b8a-4f34-45d0-b088-5a6166f4e207",
+                            "name": "Water",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-2-98617c85-0a41-4b7a-bdf8-20df7de93fc9",
+                            "name": "Milk",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-3-a8504e54-a199-4bca-9e5f-ff1d2a9dd639",
+                            "name": "Potato starch",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-4-6f726dd4-1786-4c81-9eb4-2a2ddff342af",
+                            "name": "Semolina",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-5-207c8815-7928-44f4-b59d-e8de65406671",
+                            "name": "Butter (optional)",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-6-807cb702-6725-447d-bf87-4def771396da",
+                            "name": "Cornmeal",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-7-6e1f8ba0-5723-48c9-969a-e25812acd53c",
+                            "name": "Cream",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-8-2bc70da3-010b-4d31-ab98-7042d92f86b4",
+                            "name": "Wheat flour",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-9-455f8799-827c-4679-a9cc-299cd66d3020",
+                            "name": "Salt",
+                            "isCorrect": true
+                        }
+                    ],
+                    "difficulty": "Chef de Partie"
+                },
+                {
+                    "id": "c7e6ea0c-e7f0-4710-9c9f-a03e9a9b0ba6",
+                    "dayId": "2025-12-23-MEDIUM",
+                    "targetDish": "Langos",
+                    "description": "A deep-fried flatbread, crispy on the outside and soft on the inside, typically served with garlic oil, sour cream, and grated cheese, popular as a street food or breakfast.",
+                    "cuisine": "Hungarian",
+                    "region": "Eastern Europe",
+                    "originCity": "Budapest",
+                    "category": "Fried Bread",
+                    "procurementDifficulty": "EASY",
+                    "executionDifficulty": "MEDIUM",
+                    "flagEmoji": "🇭🇺",
+                    "countryCode": "HU",
+                    "mainIngredients": [
+                        "Wheat flour",
+                        "Yeast",
+                        "Milk",
+                        "Potatoes (optional)",
+                        "Salt"
+                    ],
+                    "triviaClues": [
+                        "The name of this dish comes from the Hungarian word 'láng', meaning flame, referring to its original baking method.",
+                        "It is a popular street food and festival dish, often eaten for a quick breakfast or snack.",
+                        "Common toppings include garlic water or oil, sour cream, and grated cheese.",
+                        "Some variations include mashed potatoes in the dough for a softer texture.",
+                        "Play the daily challenge at DishGuise.com"
+                    ],
+                    "dishOptions": [
+                        {
+                            "id": "dish-0-0e78def8-b8e4-4a61-8469-867b3cd88e01",
+                            "name": "Pizza Dough",
+                            "isCorrect": false,
+                            "reason": "Pizza dough is primarily baked, not deep-fried, and is traditionally topped with tomato sauce and cheese before baking."
+                        },
+                        {
+                            "id": "dish-1-e1ab3e64-4271-433f-b1ec-dbdbb2f7f31c",
+                            "name": "Fry Bread",
+                            "isCorrect": false,
+                            "reason": "Fry Bread is a similar deep-fried dough from Native American cuisine, but its cultural origin and specific dough composition differ."
+                        },
+                        {
+                            "id": "dish-2-d84558c7-8c35-4c56-83e2-b9aba3c33dd6",
+                            "name": "Donut",
+                            "isCorrect": false,
+                            "reason": "Donuts are typically sweeter, often ring-shaped or filled, and primarily considered a dessert or sweet snack rather than a savory flatbread."
+                        },
+                        {
+                            "id": "dish-3-a74a953c-c343-4af9-814d-36544d2d0f27",
+                            "name": "Langos",
+                            "isCorrect": true
+                        }
+                    ],
+                    "ingredientOptions": [
+                        {
+                            "id": "ing-0-7ce3fa71-e9fd-444a-a693-79146fbe0ae2",
+                            "name": "Olive oil (for dough)",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-1-c068d23b-c69c-4d42-8640-2a643b904d0d",
+                            "name": "Rye flour",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-2-4a895401-3d3e-4795-bbc4-d9daee68d81f",
+                            "name": "Wheat flour",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-3-a5be18e3-ca76-416f-aab5-e383c0407e62",
+                            "name": "Yeast",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-4-eecc9508-3d36-44cc-bd60-05856c323b71",
+                            "name": "Cheese curds",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-5-bb03e95e-4905-4f5a-9317-75608d5a9c84",
+                            "name": "Salt",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-6-02a75028-3601-44aa-8b12-af6c350af772",
+                            "name": "Potatoes (optional)",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-7-617c10ee-426f-4143-bb2f-b5ac554e686c",
+                            "name": "Corn flour",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-8-a9494199-6160-4611-ae79-e9f2bb3c7b8f",
+                            "name": "Eggs",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-9-c9a92cc4-b731-4b05-b341-811bb0e66ddd",
+                            "name": "Baking powder",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-10-2b1fc0ba-5f34-4669-9792-67b1666cbde8",
+                            "name": "Milk",
+                            "isCorrect": true
+                        }
+                    ],
+                    "difficulty": "Chef de Partie"
+                },
+                {
+                    "id": "a1ef0857-0bcf-4387-9476-0b9617f894c2",
+                    "dayId": "2025-12-23-MEDIUM",
+                    "targetDish": "Pogacha",
+                    "description": "A type of round, leavened bread, often with a decorative top, baked in various forms across the Balkans, commonly served with meals or for breakfast.",
+                    "cuisine": "Serbian",
+                    "region": "Eastern Europe",
+                    "originCity": "Belgrade",
+                    "category": "Bread",
+                    "procurementDifficulty": "EASY",
+                    "executionDifficulty": "MEDIUM",
+                    "flagEmoji": "🇷🇸",
+                    "countryCode": "RS",
+                    "mainIngredients": [
+                        "Wheat flour",
+                        "Yeast",
+                        "Water",
+                        "Salt",
+                        "Olive oil"
+                    ],
+                    "triviaClues": [
+                        "This bread is a staple throughout the Balkans, with many regional variations in shape and ingredients.",
+                        "It is often served at festive occasions and family gatherings.",
+                        "The name is derived from the Latin 'panis focacius', meaning 'bread baked on the hearth'.",
+                        "It can be plain or filled with cheese, meat, or vegetables.",
+                        "Play the daily challenge at DishGuise.com"
+                    ],
+                    "dishOptions": [
+                        {
+                            "id": "dish-0-e33cddfc-bf05-475c-93e6-1d28cc9fdc42",
+                            "name": "Naan",
+                            "isCorrect": false,
+                            "reason": "Naan is a leavened, oven-baked flatbread from South Asian cuisine, traditionally cooked in a tandoor oven, giving it a distinct char and texture."
+                        },
+                        {
+                            "id": "dish-1-f3e99e6a-3d03-4b1d-9c0d-a865ed0f5742",
+                            "name": "Focaccia",
+                            "isCorrect": false,
+                            "reason": "Focaccia is an Italian flatbread typically dimpled with fingers and generously topped with olive oil and herbs, differing in texture and preparation."
+                        },
+                        {
+                            "id": "dish-2-598c5ab4-b2b9-44ee-8a6d-01cf25e20805",
+                            "name": "Pita Bread",
+                            "isCorrect": false,
+                            "reason": "Pita bread is a Middle Eastern flatbread that puffs up to form a pocket when baked, which is not characteristic of this dish."
+                        },
+                        {
+                            "id": "dish-3-4f904f6a-8654-4902-b4e1-4fb440da3dec",
+                            "name": "Pogacha",
+                            "isCorrect": true
+                        }
+                    ],
+                    "ingredientOptions": [
+                        {
+                            "id": "ing-0-39623c6e-aec5-464a-b957-30ce0a94269f",
+                            "name": "Milk",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-1-f4766f0d-8506-4250-ba3b-18b0aced8339",
+                            "name": "Water",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-2-7cc9dea1-471f-4f71-9ee2-e2fee55809a3",
+                            "name": "Salt",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-3-8a53ab38-43fe-41d7-b365-c80537fdcd02",
+                            "name": "Yeast",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-4-f90b41c2-6919-4a44-9772-5c484b4e20b4",
+                            "name": "Eggs",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-5-8879c57f-6cde-431f-87c2-c6e65e848d7a",
+                            "name": "Baking soda",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-6-310da5a3-891b-41be-9a82-b4f6731ee594",
+                            "name": "Olive oil",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-7-d21ab08f-e3a8-43f3-b29f-574daf5a538c",
+                            "name": "Wheat flour",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-8-cf23887f-de12-4df0-ba00-8659e92c4c76",
+                            "name": "Cornmeal",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-9-d06110e4-8e1c-45b0-98e5-bbf706e34b6f",
+                            "name": "Rye flour",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-10-ec9528cd-0ec1-43f6-95ec-7e8169bcf314",
+                            "name": "Butter",
+                            "isCorrect": false
+                        }
+                    ],
+                    "difficulty": "Chef de Partie"
+                },
+                {
+                    "id": "09e04351-d872-464d-a96e-30c34b92d917",
+                    "dayId": "2025-12-23-MEDIUM",
+                    "targetDish": "Lecsó",
+                    "description": "A savory Hungarian vegetable ragout made primarily from yellow wax peppers, tomatoes, and onions, often enriched with paprika and sometimes served with eggs or sausage for breakfast or brunch.",
+                    "cuisine": "Hungarian",
+                    "region": "Eastern Europe",
+                    "originCity": "Szeged",
+                    "category": "Stew/Ragout",
+                    "procurementDifficulty": "EASY",
+                    "executionDifficulty": "MEDIUM",
+                    "flagEmoji": "🇭🇺",
+                    "countryCode": "HU",
+                    "mainIngredients": [
+                        "Bell peppers",
+                        "Tomatoes",
+                        "Onions",
+                        "Paprika",
+                        "Bacon (optional)"
+                    ],
+                    "triviaClues": [
+                        "This dish is a versatile staple in Hungarian cuisine, served as a side, main course, or even for breakfast.",
+                        "The quality of the paprika is crucial for its authentic flavor.",
+                        "When served for breakfast, it is often accompanied by fresh bread and sometimes fried eggs.",
+                        "It is particularly popular during late summer and early autumn when the main vegetables are in season.",
+                        "Play the daily challenge at DishGuise.com"
+                    ],
+                    "dishOptions": [
+                        {
+                            "id": "dish-0-9f1db27e-12af-4fa8-9a90-7d99e45a8c37",
+                            "name": "Pisto",
+                            "isCorrect": false,
+                            "reason": "Pisto is a Spanish vegetable stew similar to ratatouille, but typically features a more balanced mix of onions, tomatoes, peppers, zucchini, and eggplant."
+                        },
+                        {
+                            "id": "dish-1-243dba9d-5d23-4781-8a4d-edfd77048562",
+                            "name": "Shakshuka",
+                            "isCorrect": false,
+                            "reason": "Shakshuka is a Middle Eastern dish of eggs poached in a spicy tomato and pepper sauce, where the eggs are a central component cooked within the sauce."
+                        },
+                        {
+                            "id": "dish-2-72629967-230b-435f-98d7-86b8214a4963",
+                            "name": "Ratatouille",
+                            "isCorrect": false,
+                            "reason": "Ratatouille is a French vegetable stew that typically includes eggplant and zucchini, uses different herbs, and does not traditionally contain paprika or sausage."
+                        },
+                        {
+                            "id": "dish-3-615f8701-1040-40ef-8451-9671f38242e0",
+                            "name": "Lecsó",
+                            "isCorrect": true
+                        }
+                    ],
+                    "ingredientOptions": [
+                        {
+                            "id": "ing-0-ef246be7-8d4a-422b-8914-6fa4603883c0",
+                            "name": "Cumin",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-1-b00a0a45-f527-42f8-8247-799b812c24af",
+                            "name": "Potatoes",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-2-b21888fc-be6d-48a9-ae2d-d9e9c322b589",
+                            "name": "Onions",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-3-9ae9fe15-f67f-4b37-abbf-51419d8875d6",
+                            "name": "Zucchini",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-4-54ceca51-d439-425e-91e4-9d7071311c3f",
+                            "name": "Chili powder",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-5-77d1aeb7-a1c9-4130-92c8-0e882be53063",
+                            "name": "Bacon (optional)",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-6-ff37bf6e-a20c-4b60-8746-502ecd1cc10d",
+                            "name": "Tomatoes",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-7-ccc0d643-a546-4983-ba1c-e9cdc2d24109",
+                            "name": "Carrots",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-8-73f60225-154f-490f-b69a-49aa0f0af8bc",
+                            "name": "Eggplant",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-9-ca945295-0dd3-4add-aee7-85a48513a904",
+                            "name": "Bell peppers",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-10-e64a6c17-95ee-44bb-9ac3-33569145e0e8",
+                            "name": "Paprika",
+                            "isCorrect": true
+                        }
+                    ],
+                    "difficulty": "Chef de Partie"
+                },
+                {
+                    "id": "0ce98cc7-b8ad-4dc3-8141-a3478d149f10",
+                    "dayId": "2025-12-23-MEDIUM",
+                    "targetDish": "Gogosi",
+                    "description": "Light and fluffy Romanian doughnuts or fritters, typically flavored with lemon zest and often dusted with powdered sugar, enjoyed as a sweet breakfast or dessert.",
+                    "cuisine": "Romanian",
+                    "region": "Eastern Europe",
+                    "originCity": "Bucharest",
+                    "category": "Doughnut/Fritter",
+                    "procurementDifficulty": "EASY",
+                    "executionDifficulty": "MEDIUM",
+                    "flagEmoji": "🇷🇴",
+                    "countryCode": "RO",
+                    "mainIngredients": [
+                        "Wheat flour",
+                        "Eggs",
+                        "Sugar",
+                        "Milk",
+                        "Yeast",
+                        "Lemon zest"
+                    ],
+                    "triviaClues": [
+                        "These fried pastries are a popular treat across Romania, often enjoyed for breakfast or as a sweet snack.",
+                        "They are typically light, airy, and slightly chewy, with a hint of citrus from lemon zest.",
+                        "The dough is usually enriched with eggs and milk, giving them a soft crumb.",
+                        "They are traditionally dusted generously with powdered sugar before serving.",
+                        "Play the daily challenge at DishGuise.com"
+                    ],
+                    "dishOptions": [
+                        {
+                            "id": "dish-0-e735c172-842e-4a95-af53-595abcb6ab5c",
+                            "name": "Beignets",
+                            "isCorrect": false,
+                            "reason": "Beignets are French-style square doughnuts, often made without yeast, resulting in a slightly different texture and shape."
+                        },
+                        {
+                            "id": "dish-1-89ee93d3-2709-43f6-a842-172e32472eec",
+                            "name": "Krapfen",
+                            "isCorrect": false,
+                            "reason": "Krapfen are German/Austrian doughnuts, usually round and often filled with jam, differing in shape and common presentation."
+                        },
+                        {
+                            "id": "dish-2-50400057-ce61-4ab0-b70b-a5232819b2fc",
+                            "name": "American Doughnuts",
+                            "isCorrect": false,
+                            "reason": "American doughnuts are typically ring-shaped or filled, often with a denser texture, and use different leavening agents or dough compositions."
+                        },
+                        {
+                            "id": "dish-3-c50c5b0b-6dbb-4419-a9b4-95c0c9a74cc6",
+                            "name": "Gogosi",
+                            "isCorrect": true
+                        }
+                    ],
+                    "ingredientOptions": [
+                        {
+                            "id": "ing-0-a348267d-5bf5-4262-8a58-7c98fd5846e4",
+                            "name": "Cinnamon",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-1-a6c97c9e-5bc0-4ca9-a438-3fea850b6466",
+                            "name": "Potato starch",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-2-89473d39-e2d3-4cd0-891d-13537ede0060",
+                            "name": "Milk",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-3-68de5a95-415a-4eff-a712-6d643e305bd4",
+                            "name": "Buttermilk",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-4-c8391732-4373-43ec-b261-70e4b0474e4a",
+                            "name": "Sugar",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-5-c646bd27-3aa7-4f49-80ea-2a370acd1ae3",
+                            "name": "Baking soda",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-6-25e3faa7-65ef-4dc3-bfed-d584b6fc51b2",
+                            "name": "Semolina",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-7-e5cc4967-fd78-47aa-b89d-9d574c246656",
+                            "name": "Yeast",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-8-12a0a6d3-e6d9-4d1c-abdc-526f6a2cc5e8",
+                            "name": "Wheat flour",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-9-1f7293fc-18ca-48ed-9f3f-d89cd58c28ca",
+                            "name": "Eggs",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-10-5628b97d-ca35-4dd3-b301-abd586ba5999",
+                            "name": "Ricotta cheese",
+                            "isCorrect": false
+                        }
+                    ],
+                    "difficulty": "Chef de Partie"
+                }
+            ],
+            "HARD": [
+                {
+                    "id": "c07b45ea-305a-46b3-be5d-278fbbcb8a25",
+                    "dayId": "2025-12-23-HARD",
+                    "targetDish": "Kasha",
+                    "description": "A traditional Eastern European porridge made from roasted buckwheat groats, often served simply with butter or as a savory side dish, a common breakfast staple.",
+                    "cuisine": "Russian",
+                    "region": "Eastern Europe",
+                    "originCity": "Vladimir",
+                    "category": "Porridge",
+                    "procurementDifficulty": "EASY",
+                    "executionDifficulty": "HARD",
+                    "flagEmoji": "🇷🇺",
+                    "countryCode": "RU",
+                    "mainIngredients": [
+                        "Buckwheat groats",
+                        "Water",
+                        "Salt",
+                        "Butter"
+                    ],
+                    "triviaClues": [
+                        "This dish is a cornerstone of Slavic cuisine, considered a comfort food and a daily staple.",
+                        "The grain used is naturally gluten-free and known for its earthy, slightly nutty flavor.",
+                        "It is often cooked by toasting the groats first, then simmering them in water or broth.",
+                        "The proverb 'Shchi da kasha – pishcha nasha' (Cabbage soup and kasha are our food) highlights its importance.",
+                        "It can be served with mushrooms, onions, or simply a knob of butter.",
+                        "Play the daily challenge at DishGuise.com"
+                    ],
+                    "dishOptions": [
+                        {
+                            "id": "dish-0-1394a508-0058-4503-b338-2cba8b88e0dd",
+                            "name": "Grits",
+                            "isCorrect": false,
+                            "reason": "Grits are made from hominy (corn) and are a staple of Southern US cuisine, distinct from buckwheat in origin and preparation."
+                        },
+                        {
+                            "id": "dish-1-a1ca9621-15d9-471c-9b83-2f787b38ed50",
+                            "name": "Polenta",
+                            "isCorrect": false,
+                            "reason": "Polenta is a porridge made from cornmeal, a grain with a very different taste and texture profile than buckwheat."
+                        },
+                        {
+                            "id": "dish-2-bc691884-965c-41e6-b12d-d9cf4b519fac",
+                            "name": "Oatmeal",
+                            "isCorrect": false,
+                            "reason": "Oatmeal is made from oats, a different grain entirely, resulting in a distinct texture and flavor compared to roasted buckwheat."
+                        },
+                        {
+                            "id": "dish-3-971bdaf5-3791-41bf-8652-ef8506d778df",
+                            "name": "Congee",
+                            "isCorrect": false,
+                            "reason": "Congee is an Asian rice porridge, which uses rice as its base and is typically cooked to a much softer, almost liquid consistency."
+                        },
+                        {
+                            "id": "dish-4-b6e4c9cc-6995-42e9-bfbb-d42a0f6c344e",
+                            "name": "Kasha",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "dish-5-9294cb8d-ce72-434e-9cbb-7b7e786422a7",
+                            "name": "Millet Porridge",
+                            "isCorrect": false,
+                            "reason": "Millet porridge uses millet grains, which are smaller and have a different nutritional and flavor profile than buckwheat."
+                        }
+                    ],
+                    "ingredientOptions": [
+                        {
+                            "id": "ing-0-05913d6d-dc54-46ec-9c18-b090c5ef2180",
+                            "name": "Dried fruit",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-1-ca44369f-cc7f-4cf3-83a8-ca28a67e55b4",
+                            "name": "Butter",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-2-d82088e1-f97c-4387-b44b-4404e95350af",
+                            "name": "Cinnamon",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-3-94ea6ef5-c985-4a07-b06a-e49292800aae",
+                            "name": "Oats",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-4-d9bcc456-90bd-4289-aa24-b1d142f95e27",
+                            "name": "Milk",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-5-7e7c067b-cef7-4898-8df7-c5da8d0eb619",
+                            "name": "Semolina",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-6-536c007d-a408-4d2e-8a2f-58538c00442d",
+                            "name": "Sugar",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-7-9e0664a2-3c2d-4c5d-8ae7-c79b12b68369",
+                            "name": "Millet",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-8-c13a8386-5fd0-4bd4-9593-bcf328d423dc",
+                            "name": "Salt",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-9-eeeb587c-8f64-446d-82d3-2fe5e3e5134a",
+                            "name": "Water",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-10-a03a9854-22ed-4b1e-a9ea-a67142ed7de6",
+                            "name": "Buckwheat groats",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-11-68afba32-72c0-4e81-9e1c-09b51ca4db89",
+                            "name": "Rice",
+                            "isCorrect": false
+                        }
+                    ],
+                    "difficulty": "Executive Chef"
+                },
+                {
+                    "id": "5455596f-a205-4536-b84c-838f54eae15a",
+                    "dayId": "2025-12-23-HARD",
+                    "targetDish": "Obwarzanek Krakowski",
+                    "description": "A traditional braided ring-shaped bread, boiled and then baked, distinct from a bagel, typically topped with sesame seeds, poppy seeds, or salt, a protected regional specialty.",
+                    "cuisine": "Polish",
+                    "region": "Eastern Europe",
+                    "originCity": "Krakow",
+                    "category": "Bread",
+                    "procurementDifficulty": "EASY",
+                    "executionDifficulty": "HARD",
+                    "flagEmoji": "🇵🇱",
+                    "countryCode": "PL",
+                    "mainIngredients": [
+                        "Wheat flour",
+                        "Yeast",
+                        "Sugar",
+                        "Salt",
+                        "Water",
+                        "Sesame seeds"
+                    ],
+                    "triviaClues": [
+                        "This specific type of bread has a protected geographical indication within the EU, meaning it can only be produced in a designated area.",
+                        "It is traditionally sold from street carts in its city of origin.",
+                        "The dough is first boiled in hot water, giving it a characteristic texture and crust.",
+                        "Its name comes from the Polish word 'obwarzać', meaning 'to parboil'.",
+                        "It is often enjoyed as a simple breakfast or snack, sometimes with butter or cheese.",
+                        "Play the daily challenge at DishGuise.com"
+                    ],
+                    "dishOptions": [
+                        {
+                            "id": "dish-0-b971d8c0-ad72-42ac-9d1d-aef6aaaefc01",
+                            "name": "Taralli",
+                            "isCorrect": false,
+                            "reason": "Taralli are small, ring-shaped Italian crackers or breadsticks, often savory and much harder and crunchier, made with a different dough and process."
+                        },
+                        {
+                            "id": "dish-1-fe77c657-0141-4a32-95de-3886424c6f63",
+                            "name": "Bialy",
+                            "isCorrect": false,
+                            "reason": "A Bialy is a Polish-Jewish flat, round roll with a depressed center, typically filled with onions, and is baked without boiling."
+                        },
+                        {
+                            "id": "dish-2-1e562207-ffa0-45fd-b9c2-9f7c907b168f",
+                            "name": "Obwarzanek Krakowski",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "dish-3-898a3cff-2c0d-40d1-b27d-3e48fa5d338f",
+                            "name": "Pretzel",
+                            "isCorrect": false,
+                            "reason": "Pretzels are traditionally dipped in lye before baking, giving them a distinctive dark, shiny crust and a unique flavor profile, and they have a different shape."
+                        },
+                        {
+                            "id": "dish-4-cba9bdc3-7cee-4f33-8257-80d1520abfd8",
+                            "name": "Bagel",
+                            "isCorrect": false,
+                            "reason": "While both are boiled and baked, bagels typically have a denser, chewier texture and a different dough composition, often containing malt."
+                        },
+                        {
+                            "id": "dish-5-f96f9734-6d6f-447c-87a8-8088519c107a",
+                            "name": "Simit",
+                            "isCorrect": false,
+                            "reason": "Simit is a Turkish circular bread, often coated in molasses and sesame seeds, but it is not boiled and has a chewier, less airy texture."
+                        }
+                    ],
+                    "ingredientOptions": [
+                        {
+                            "id": "ing-0-68549a73-a148-46db-91d6-d472ea69fd5b",
+                            "name": "Yeast",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-1-dcd3c1bc-7ce2-4cd9-be1b-31c9b6874005",
+                            "name": "Olive oil",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-2-451e9eba-8755-4443-98a2-639e3276ec89",
+                            "name": "Milk",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-3-bb4d720a-f37e-450f-8fcd-14b8246349dc",
+                            "name": "Wheat flour",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-4-e8badbe2-720e-4935-9355-980fe639fab6",
+                            "name": "Egg wash",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-5-b0b6db7f-4683-4d3a-9b1b-b09b44ee95d9",
+                            "name": "Malt",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-6-b12efece-8141-4e10-a8c7-4d31fc70a75d",
+                            "name": "Water",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-7-98ba8e55-51d6-4d20-971b-fd2d918c74ab",
+                            "name": "Baking soda",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-8-f368565c-e78a-4470-aae2-664efa428454",
+                            "name": "Sugar",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-9-e47c4f33-5500-4331-aa33-f14e4ecfcbe9",
+                            "name": "Poppy seeds (distractor, as it's a topping, not core dough)",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-10-21d36226-022a-408d-8107-2aca4930ce95",
+                            "name": "Rye flour",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-11-b720d019-a84d-4c2f-b871-4772e73a252a",
+                            "name": "Salt",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-12-a9d18926-98e5-4751-a75e-8bf2172184b2",
+                            "name": "Caraway seeds",
+                            "isCorrect": false
+                        }
+                    ],
+                    "difficulty": "Executive Chef"
+                },
+                {
+                    "id": "ce88697f-6f97-4de3-95d0-a38f320b84bc",
+                    "dayId": "2025-12-23-HARD",
+                    "targetDish": "Plăcintă",
+                    "description": "A thin, savory or sweet pastry, often round or square, with various fillings like cheese, potatoes, cabbage, or fruit, popular for breakfast or as a snack.",
+                    "cuisine": "Moldovan",
+                    "region": "Eastern Europe",
+                    "originCity": "Chisinau",
+                    "category": "Pastry",
+                    "procurementDifficulty": "MEDIUM",
+                    "executionDifficulty": "HARD",
+                    "flagEmoji": "🇲🇩",
+                    "countryCode": "MD",
+                    "mainIngredients": [
+                        "Wheat flour",
+                        "Water",
+                        "Salt",
+                        "Vegetable oil",
+                        "Cheese (filling)"
+                    ],
+                    "triviaClues": [
+                        "This pastry is a culinary staple in Moldova and Romania, with countless regional variations.",
+                        "The dough is often stretched very thin by hand, almost like phyllo, before being filled and folded or rolled.",
+                        "Fillings can range from sweet (apples, cherries, pumpkin) to savory (brânză cheese, cabbage, potatoes, meat).",
+                        "It is typically baked until golden brown and flaky.",
+                        "The name is derived from the Latin word 'placenta', meaning flat cake.",
+                        "Play the daily challenge at DishGuise.com"
+                    ],
+                    "dishOptions": [
+                        {
+                            "id": "dish-0-ef292eb7-955b-4f15-9616-e149df785789",
+                            "name": "Samsa",
+                            "isCorrect": false,
+                            "reason": "Samsa is a Central Asian baked pastry, typically triangular and filled with spiced meat or pumpkin, often with a thicker, bread-like crust."
+                        },
+                        {
+                            "id": "dish-1-ab5ab1f8-2212-4e39-b78b-0582588c8d7e",
+                            "name": "Khachapuri",
+                            "isCorrect": false,
+                            "reason": "Khachapuri is a Georgian cheese bread, where the cheese is baked directly into or on top of the bread, often with an egg, rather than a thin pastry."
+                        },
+                        {
+                            "id": "dish-2-9237ec0e-50d1-4978-ae90-ec16c71e6145",
+                            "name": "Plăcintă",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "dish-3-076a3a27-d3b2-4f0e-a873-5b8d4bc730e7",
+                            "name": "Strudel",
+                            "isCorrect": false,
+                            "reason": "Strudel is an Austrian dessert made from a very thin, stretched dough, typically with a sweet fruit filling, and is usually rolled."
+                        },
+                        {
+                            "id": "dish-4-1ec968ad-5d6d-45cf-bdb7-7882b3ff590f",
+                            "name": "Börek",
+                            "isCorrect": false,
+                            "reason": "Börek is a Turkish pastry made from thin, flaky dough (yufka) with various fillings, often baked in large pans and then sliced."
+                        },
+                        {
+                            "id": "dish-5-2740b10c-2df5-4046-b193-cbb446240ddc",
+                            "name": "Burekas",
+                            "isCorrect": false,
+                            "reason": "Burekas are Sephardic Jewish pastries, often made with puff pastry or phyllo dough, and typically smaller and savory."
+                        }
+                    ],
+                    "ingredientOptions": [
+                        {
+                            "id": "ing-0-f7d250c1-a693-499a-bab5-c8a375064cc9",
+                            "name": "Cheese (filling)",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-1-796e4ab6-ec6b-4668-b667-398ab28f7979",
+                            "name": "Butter (for dough)",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-2-fc0251b8-3400-4df0-9221-90479eeec527",
+                            "name": "Meat (as main ingredient, not filling)",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-3-fd78e8b1-9634-4709-9272-5f326594b23c",
+                            "name": "Phyllo dough",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-4-efd8ea8a-2e0e-4723-a8e1-eab3e7c4fb18",
+                            "name": "Semolina",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-5-11c0f86e-6044-49f2-bcc7-30bd637d469a",
+                            "name": "Vegetable oil",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-6-eddb1c1d-e8e9-4c05-8760-ab8cf9a37e9f",
+                            "name": "Wheat flour",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-7-c76dc362-34f9-4f20-a7a5-44142489bbfc",
+                            "name": "Sugar (for dough)",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-8-e34c7305-dcf4-4f1e-8a83-6fb9688ae9e2",
+                            "name": "Eggs (for dough)",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-9-671a20e3-f79f-4329-bb69-c558c3a3948b",
+                            "name": "Salt",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-10-f3e814e4-440a-40d6-8e53-26973b2b8ff3",
+                            "name": "Potatoes (as main ingredient, not filling)",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-11-827f6a4d-f5bd-488e-81ce-d3e50bdedc19",
+                            "name": "Water",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-12-1e8b83a6-05e7-40ba-965c-6144cd773806",
+                            "name": "Puff pastry",
+                            "isCorrect": false
+                        }
+                    ],
+                    "difficulty": "Executive Chef"
+                },
+                {
+                    "id": "73d1d1c5-5a32-49b9-906a-4a38d84caf1d",
+                    "dayId": "2025-12-23-HARD",
+                    "targetDish": "Borodinsky Bread",
+                    "description": "A dark, dense sourdough rye bread with a distinct sweet and sour flavor, characterized by the use of rye malt and coriander, a staple for breakfast.",
+                    "cuisine": "Russian",
+                    "region": "Eastern Europe",
+                    "originCity": "Moscow",
+                    "category": "Bread",
+                    "procurementDifficulty": "MEDIUM",
+                    "executionDifficulty": "HARD",
+                    "flagEmoji": "🇷🇺",
+                    "countryCode": "RU",
+                    "mainIngredients": [
+                        "Rye flour",
+                        "Wheat flour",
+                        "Rye malt",
+                        "Molasses",
+                        "Coriander seeds",
+                        "Sourdough starter"
+                    ],
+                    "triviaClues": [
+                        "This bread is named after the Battle of Borodino, a significant event in Russian history.",
+                        "Its dark color and sweet-sour taste come from the rye flour, rye malt, and molasses.",
+                        "Coriander seeds are a signature spice, either whole or ground, often on the crust.",
+                        "It is traditionally made using a sourdough starter, contributing to its complex flavor.",
+                        "Often served thinly sliced with butter, cheese, or cured meats for breakfast.",
+                        "Play the daily challenge at DishGuise.com"
+                    ],
+                    "dishOptions": [
+                        {
+                            "id": "dish-0-77dfe83c-d1e0-4b49-b7b6-4ab794ec8ddf",
+                            "name": "Borodinsky Bread",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "dish-1-17bc74a0-e57a-401a-85a5-9cb890392628",
+                            "name": "Pumpernickel",
+                            "isCorrect": false,
+                            "reason": "Pumpernickel is a German rye bread that is typically coarser, baked for a much longer time at lower temperatures, and often lacks the prominent coriander flavor."
+                        },
+                        {
+                            "id": "dish-2-320268a8-4d08-4f31-883c-3f10905f0693",
+                            "name": "Volkornbrot",
+                            "isCorrect": false,
+                            "reason": "Vollkornbrot is German whole grain bread, which can be made with rye but doesn't necessarily have the specific malt and coriander profile."
+                        },
+                        {
+                            "id": "dish-3-7e0a5bf0-9a07-4eb8-86a2-167cbee95b8f",
+                            "name": "Kommissbrot",
+                            "isCorrect": false,
+                            "reason": "Kommissbrot is a German military rye bread, typically simpler and less flavored, designed for long shelf life and basic sustenance."
+                        },
+                        {
+                            "id": "dish-4-ba70b2de-d0ea-4111-bf66-dd1909e50315",
+                            "name": "Black Bread",
+                            "isCorrect": false,
+                            "reason": "Black bread is a generic term for dark rye breads and does not specify the unique combination of ingredients and flavor profile of this particular bread."
+                        },
+                        {
+                            "id": "dish-5-1ff3c4e8-9664-41b4-998a-5acc2ac59b35",
+                            "name": "Rugbrød",
+                            "isCorrect": false,
+                            "reason": "Rugbrød is a Danish rye bread that is often very dense, packed with seeds, and typically made with a different blend of flours and sourdough starter."
+                        }
+                    ],
+                    "ingredientOptions": [
+                        {
+                            "id": "ing-0-abc35566-029c-434c-9622-abc042395c2e",
+                            "name": "Sugar",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-1-638a22e8-2847-439c-ba15-1155a634c13d",
+                            "name": "Potato flour",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-2-f87594ab-5ad9-481d-bbe4-60a929501478",
+                            "name": "Fennel seeds",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-3-345e0161-0841-420e-b0da-3ffa47f55fce",
+                            "name": "Rye malt",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-4-ed23ab42-a845-4a3b-86cf-e10bf860cbdb",
+                            "name": "Whole wheat flour",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-5-efd1f66a-5e72-420b-8988-67051d7e0411",
+                            "name": "Coriander seeds",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-6-e2b1dfed-6f79-4bb4-b102-8a439591ce39",
+                            "name": "Rye flour",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-7-4fa0a608-22bc-4278-bc83-8c3a4b8757c1",
+                            "name": "Anise seeds",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-8-8a445cac-7323-4df1-b084-335a9c57ddae",
+                            "name": "Honey",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-9-f9c08103-a6ae-4f89-9263-109b8b6006c6",
+                            "name": "Barley flour",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-10-3cbf5c41-e3b4-41a2-9eea-60b004458fa6",
+                            "name": "Molasses",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-11-487ebf66-324d-4963-b14e-b534392c4a26",
+                            "name": "Wheat flour",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-12-20da152e-4f6a-41b6-904e-e9137ce9acc2",
+                            "name": "Baking powder",
+                            "isCorrect": false
+                        }
+                    ],
+                    "difficulty": "Executive Chef"
+                },
+                {
+                    "id": "5a2ae50c-795b-42b0-899e-8fdcb1588bfd",
+                    "dayId": "2025-12-23-HARD",
+                    "targetDish": "Kartoflyanyky",
+                    "description": "Savory Ukrainian potato pancakes or fritters, often made with grated or mashed potatoes, flour, and eggs, typically pan-fried and served with sour cream.",
+                    "cuisine": "Ukrainian",
+                    "region": "Eastern Europe",
+                    "originCity": "Lviv",
+                    "category": "Pancake/Fritter",
+                    "procurementDifficulty": "EASY",
+                    "executionDifficulty": "HARD",
+                    "flagEmoji": "🇺🇦",
+                    "countryCode": "UA",
+                    "mainIngredients": [
+                        "Potatoes",
+                        "Eggs",
+                        "Wheat flour",
+                        "Onion",
+                        "Garlic"
+                    ],
+                    "triviaClues": [
+                        "These savory fritters are a popular comfort food in Ukrainian cuisine.",
+                        "They can be made with either finely grated raw potatoes or mashed cooked potatoes.",
+                        "Often served for breakfast or as a side dish, typically accompanied by a dollop of sour cream.",
+                        "The addition of onion and garlic provides a robust savory flavor.",
+                        "The name is derived from the Ukrainian word for 'potato'.",
+                        "Play the daily challenge at DishGuise.com"
+                    ],
+                    "dishOptions": [
+                        {
+                            "id": "dish-0-e4fc29b1-aba3-40a5-ae6a-fd66319f36ff",
+                            "name": "Rösti",
+                            "isCorrect": false,
+                            "reason": "Rösti is a Swiss dish made from pan-fried grated or shredded potatoes, typically formed into a large, flat cake rather than individual fritters."
+                        },
+                        {
+                            "id": "dish-1-1dd9e87c-70ef-42d9-80ba-ac71e7105524",
+                            "name": "Boxty",
+                            "isCorrect": false,
+                            "reason": "Boxty is an Irish potato pancake that combines raw grated potato with mashed potato, flour, and buttermilk, giving it a unique texture."
+                        },
+                        {
+                            "id": "dish-2-044338a9-ecbb-4331-8623-052ef169242e",
+                            "name": "Hash Browns",
+                            "isCorrect": false,
+                            "reason": "Hash browns are an American breakfast dish of shredded or diced potatoes, often fried until crispy, but usually without flour or egg binding."
+                        },
+                        {
+                            "id": "dish-3-9e090305-5fec-4b7e-862d-1e3906b9e07e",
+                            "name": "Draniki",
+                            "isCorrect": false,
+                            "reason": "Draniki are Belarusian potato pancakes, very similar in concept but often made with a specific regional preparation or ingredient ratio."
+                        },
+                        {
+                            "id": "dish-4-27947e46-5389-477f-a110-b4f4caa10443",
+                            "name": "Kartoflyanyky",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "dish-5-a79b60aa-0f06-45b8-94ed-d9e33b2fc24f",
+                            "name": "Latkes",
+                            "isCorrect": false,
+                            "reason": "Latkes are Jewish potato pancakes, traditionally associated with Hanukkah, and often made with finely grated potatoes and fried in oil."
+                        }
+                    ],
+                    "ingredientOptions": [
+                        {
+                            "id": "ing-0-7a8d7f3b-e64c-4bd3-8d17-b9d58c0101dc",
+                            "name": "Potatoes",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-1-530e4b26-8aef-40bd-af75-50db6fbae16a",
+                            "name": "Onion",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-2-f05e57a7-5ce1-47a0-9699-474bed2a29a5",
+                            "name": "Cheese",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-3-152f3db2-659c-47c5-afbb-6eba4cc54cf6",
+                            "name": "Garlic",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-4-81ab649b-96de-4050-8310-1e0e6e1c3ed1",
+                            "name": "Baking powder",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-5-1153fe09-0d46-405b-a7e5-ab4d750120fe",
+                            "name": "Sweet potatoes",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-6-d10d29a2-1dab-408b-be9d-8b1bf7c9c063",
+                            "name": "Breadcrumbs",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-7-95b06f25-e664-464f-9f67-43f2fdbf4167",
+                            "name": "Paprika",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-8-a28045a7-0bab-477c-919e-3f6c07b9bf50",
+                            "name": "Eggs",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-9-c7b54b0e-c18e-4b9c-86cc-2a39bcd52ee6",
+                            "name": "Bell peppers",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-10-029247d3-284a-4ee6-ac4c-c5a5f32395b5",
+                            "name": "Wheat flour",
+                            "isCorrect": true
+                        },
+                        {
+                            "id": "ing-11-c7e01521-5256-4b90-b0cd-192d4c1e7a68",
+                            "name": "Carrots",
+                            "isCorrect": false
+                        },
+                        {
+                            "id": "ing-12-2de8dc20-8dd0-4e71-b2e9-f178c17a8560",
+                            "name": "Zucchini",
+                            "isCorrect": false
+                        }
+                    ],
+                    "difficulty": "Executive Chef"
+                }
+            ]
+        }
+    }
+}

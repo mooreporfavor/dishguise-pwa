@@ -26,8 +26,7 @@ export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
         setStatus('loading');
 
         try {
-            const API_KEY = 'kit_fa95cb01e17882af41902718d296bde7';
-            const URL = `https://api.convertkit.com/v3/forms/${formId}/subscribe`;
+            const URL = '/api/subscribe';
 
             const response = await fetch(URL, {
                 method: 'POST',
@@ -35,7 +34,6 @@ export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    api_key: API_KEY,
                     email: email
                 }),
             });
@@ -51,7 +49,7 @@ export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
         } catch (error) {
             console.error('Newsletter Error:', error);
             setStatus('error');
-            setErrorMessage('Check your internet connection');
+            setErrorMessage(error instanceof Error ? error.message : 'Something went wrong');
         }
     };
 
@@ -80,8 +78,8 @@ export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
                         <Mail size={18} className="text-culinary-gold" />
                     </div>
                     <div>
-                        <h3 className="font-bold text-white text-sm uppercase tracking-wide">Join the Kitchen</h3>
-                        <p className="text-zinc-400 text-xs">Get new mystery dishes daily.</p>
+                        <h3 className="font-bold text-white text-sm uppercase tracking-wide">Don't Lose Your Streak 🔥</h3>
+                        <p className="text-zinc-400 text-xs">Get a daily reminder and a free hint for tomorrow's menu.</p>
                     </div>
                 </div>
 

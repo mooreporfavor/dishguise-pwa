@@ -4,7 +4,9 @@ import { ChefHat, Share2, Menu as MenuIcon, Frown, Meh, Utensils, Laugh, Carrot 
 import { GameResult, Difficulty, GameMode } from '../types';
 import { DonationButton } from './Monetization';
 import { NewsletterSignup } from './NewsletterSignup';
+import { NextMenuTimer } from './NextMenuTimer'; // NEW
 import { logEvent, EVENTS } from '../services/analytics';
+import { getTomorrowTeaser } from '../services/gameService'; // NEW
 
 interface GameOverScreenProps {
     totalScore: number;
@@ -227,7 +229,23 @@ export const GameOverScreen: React.FC<GameOverScreenProps> = ({
                     </button>
                 </div>
 
-                <div className="w-full mt-4">
+                <div className="w-full mt-4 space-y-4">
+                    {/* 5. Next Menu & Teaser */}
+                    <div className="space-y-2">
+                        <NextMenuTimer />
+                        {(() => {
+                            const teaser = getTomorrowTeaser();
+                            if (teaser) {
+                                return (
+                                    <div className="text-center font-mono text-[10px] text-zinc-500 uppercase tracking-widest">
+                                        Tomorrow's {teaser.label}: <span className="text-zinc-300 font-bold">{teaser.value}</span>
+                                    </div>
+                                );
+                            }
+                            return null;
+                        })()}
+                    </div>
+
                     <NewsletterSignup />
                 </div>
 

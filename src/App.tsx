@@ -81,7 +81,7 @@ interface Penalty {
     y: string;
 }
 
-import { PassportScreen } from './components/PassportScreen';
+
 
 const App: React.FC = () => {
     const [showIntro, setShowIntro] = useState(true);
@@ -857,14 +857,7 @@ const App: React.FC = () => {
     }
 
     // --- PROFILE / PASSPORT SCREEN ---
-    if (appState === AppState.PROFILE) {
-        return (
-            <PassportScreen
-                userProfile={userProfile}
-                onBack={() => setAppState(AppState.MENU)}
-            />
-        );
-    }
+
 
     // --- GAME OVER SCREEN (Refactored) ---
     if (appState === AppState.GAME_OVER) {

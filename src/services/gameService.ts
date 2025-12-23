@@ -1,6 +1,6 @@
 import { Difficulty, GameMode, RoundData } from '../types';
 import { THE_PANTRY } from '../data/ThePantry';
-import { generateDailyRound } from './geminiService';
+
 import { KIDS_MENU } from '../data/KidsMenu';
 
 // Simple UUID generator
@@ -40,7 +40,18 @@ export const getGameRound = async (
     // ... (Rest of existing logic)
 
     // 1. Check The Pantry
-    const dailyMenu = THE_PANTRY[today];
+    // 1. Check The Pantry
+    let dailyMenu = THE_PANTRY[today];
+
+    // 1.5 Smart Fallback: If today is missing, check tomorrow (or any future date)
+    if (!dailyMenu) {
+        // Find the next available date in the pantry
+        const futureDate = Object.keys(THE_PANTRY).sort().find(d => d > today);
+        if (futureDate) {
+            console.warn(`[GameService] ⚠️ Pantry missing for ${today}. Time Traveling to ${futureDate}...`);
+            dailyMenu = THE_PANTRY[futureDate];
+        }
+    }
 
     if (dailyMenu) {
         const rounds = dailyMenu.rounds[diffKey];
@@ -55,7 +66,62 @@ export const getGameRound = async (
         }
     }
 
-    // 2. Fallback to Live AI
-    console.warn(`[GameService] 🤖 Pantry empty for ${today}. Cooking live with generic AI...`);
-    return await generateDailyRound(difficulty, roundIndex, mode, excludeList);
+    // 2. Kitchen Closed Fallback
+    console.warn(`[GameService] 🤖 Pantry empty for ${today}. Kitchen Closed.`);
+    return {
+        id: `closed-${Date.now()}`,
+        dayId: `closed-${Date.now()}`,
+        targetDish: "Kitchen Closed",
+        description: "The AI Chef is offline. Please generate a new batch menu to continue playing.",
+        cuisine: "System",
+        region: "Offline",
+        originCity: "404 City",
+        category: "Maintenance",
+        procurementDifficulty: "HARD",
+        executionDifficulty: "HARD",
+        flagEmoji: "🚫",
+        countryCode: "UN",
+        mainIngredients: ["Void", "Null", "Empty Pantry"],
+        triviaClues: ["I am not a real dish.", "Generate more rounds.", "Check pantry.json"],
+        dishOptions: [],
+        ingredientOptions: [],
+        difficulty
+    } as any;
+};
+
+export const getTomorrowTeaser = (): { label: string, value: string } | null => {
+    try {
+        const today = new Date();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        const tomorrowStr = tomorrow.toISOString().split('T')[0];
+
+        const dayData = THE_PANTRY[tomorrowStr];
+
+        if (!dayData) return null;
+
+        // Extract a teaser from the Easy mode data (usually representative)
+        const round = dayData.rounds.EASY[0];
+
+        if (!round) return null;
+
+        // Prioritize interesting fields
+        if (round.region && round.region !== "International") {
+            return { label: "Region", value: round.region };
+        }
+
+        if (round.cuisine) {
+            return { label: "Cuisine", value: round.cuisine };
+        }
+
+        if (round.category) {
+            return { label: "Category", value: round.category };
+        }
+
+        return { label: "Mystery", value: "Something Delicious" };
+
+    } catch (e) {
+        console.error("Failed to get teaser", e);
+        return null;
+    }
 };

@@ -2,48 +2,48 @@ import { RoundData, Difficulty } from "../types";
 
 const KIDS_DISHES = [
     {
-        name: "Pizza",
-        desc: "A round dough topped with red sauce and melted cheese.",
-        origin: "Italy",
-        clues: ["Shape: Circle", "Color: Red & Yellow", "Taste: Cheesy and Salty"],
-        ingredients: ["Dough", "Tomato Sauce", "Cheese", "Pepperoni"],
-        icon: "🍕",
-        cc: "IT"
-    },
-    {
-        name: "Hamburger",
-        desc: "A grilled meat patty served in a bun with toppings.",
-        origin: "USA",
-        clues: ["Shape: Round Bun", "Color: Brown & Green", "Type: Sandwich"],
-        ingredients: ["Bun", "Beef Patty", "Lettuce", "Ketchup"],
-        icon: "🍔",
-        cc: "US"
-    },
-    {
-        name: "Taco",
-        desc: "A folded tortilla filled with meat and cheese.",
-        origin: "Mexico",
-        clues: ["Shape: Half Moon", "Color: Yellow & Brown", "Texture: Crunchy or Soft"],
-        ingredients: ["Tortilla", "Meat", "Cheese", "Salsa"],
-        icon: "🌮",
-        cc: "MX"
-    },
-    {
-        name: "Sushi",
-        desc: "Rice rolled up with fish on the inside.",
+        name: "Sushi Roll",
+        desc: "Rice rolled in seaweed with fish or veggies inside.",
         origin: "Japan",
-        clues: ["Shape: Small Cylinder", "Color: Black & White", "Ingredient: Rice"],
-        ingredients: ["Rice", "Seaweed", "Fish", "Soy Sauce"],
+        clues: ["Rolled up tight", "Uses sticky rice", "Wrapped in green seaweed"],
+        ingredients: ["Rice", "Nori (Seaweed)", "Cucumber", "Salmon"],
         icon: "🍣",
         cc: "JP"
     },
     {
-        name: "Donut",
-        desc: "Fried dough with a hole in the middle and frosting.",
-        origin: "Global",
-        clues: ["Shape: Circle with Hole", "Color: Pink / Brown", "Taste: Sweet"],
-        ingredients: ["Dough", "Sugar", "Glaze", "Sprinkles"],
-        icon: "🍩",
+        name: "Tacos",
+        desc: "A folded tortilla filled with tasty meat and cheese.",
+        origin: "Mexico",
+        clues: ["Crunchy or soft shell", "Held in your hand", "Great on Tuesdays"],
+        ingredients: ["Tortilla", "Ground Beef", "Cheese", "Salsa"],
+        icon: "🌮",
+        cc: "MX"
+    },
+    {
+        name: "Croissant",
+        desc: "A flaky, buttery pastry shaped like a crescent moon.",
+        origin: "France",
+        clues: ["Buttery and flaky", "Moon shaped", "Crunchy outside, soft inside"],
+        ingredients: ["Flour", "Butter", "Yeast", "Milk"],
+        icon: "🥐",
+        cc: "FR"
+    },
+    {
+        name: "Dumplings",
+        desc: "Dough pockets filled with meat or veggies, then steamed or fried.",
+        origin: "China",
+        clues: ["Small dough pockets", "Steamed or fried", "Good with soy sauce"],
+        ingredients: ["Dough Wrapper", "Pork", "Cabbage", "Ginger"],
+        icon: "🥟",
+        cc: "CN"
+    },
+    {
+        name: "Brioche Burger",
+        desc: "A juicy burger served on a sweet, fluffy French bun.",
+        origin: "USA / France",
+        clues: ["Fancy fluffy bun", "Juicy meat patty", "Sweet bread"],
+        ingredients: ["Brioche Bun", "Beef Patty", "Lettuce", "Tomato"],
+        icon: "🍔",
         cc: "US"
     }
 ];
@@ -55,26 +55,26 @@ export const KIDS_MENU: RoundData[] = KIDS_DISHES.map((d, i) => ({
     description: d.desc,
     cuisine: d.origin,
     region: "Kids World",
-    originCity: "Fun Town",
-    category: "Yummy",
+    originCity: "Yum City",
+    category: "Curious Cuisine",
     flagEmoji: d.icon,
-    countryCode: d.cc, // Correct Country Code
+    countryCode: d.cc,
     procurementDifficulty: "EASY",
     executionDifficulty: "EASY",
     mainIngredients: d.ingredients,
-    triviaClues: d.clues,
+    triviaClues: [...d.clues, "Play the daily challenge at DishGuise.com"],
     dishOptions: [
         { id: `opt-${i}-1`, name: d.name, isCorrect: true },
-        { id: `opt-${i}-2`, name: "Salad", isCorrect: false },
+        { id: `opt-${i}-2`, name: "Sandwich", isCorrect: false },
         { id: `opt-${i}-3`, name: "Soup", isCorrect: false },
-        { id: `opt-${i}-4`, name: "Broccoli", isCorrect: false }
+        { id: `opt-${i}-4`, name: "Salad", isCorrect: false }
     ],
     ingredientOptions: [
         ...d.ingredients.map((ing, idx) => ({ id: `ing-${i}-${idx}`, name: ing, isCorrect: true })),
-        { id: `ing-${i}-wrong-1`, name: "Rocks", isCorrect: false },
-        { id: `ing-${i}-wrong-2`, name: "Sand", isCorrect: false },
-        { id: `ing-${i}-wrong-3`, name: "Paper", isCorrect: false },
-        { id: `ing-${i}-wrong-4`, name: "Glue", isCorrect: false }
+        { id: `ing-${i}-wrong-1`, name: "Spoon", isCorrect: false },
+        { id: `ing-${i}-wrong-2`, name: "Napkin", isCorrect: false },
+        { id: `ing-${i}-wrong-3`, name: "Chocolate Sauce", isCorrect: false },
+        { id: `ing-${i}-wrong-4`, name: "Spaghetti", isCorrect: false }
     ].sort(() => Math.random() - 0.5),
     difficulty: Difficulty.EASY,
     isMakeable: true
