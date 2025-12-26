@@ -31,7 +31,7 @@ export default async function handler(
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    api_secret: API_SECRET,
+                    api_key: API_SECRET,
                     email: email,
                 }),
             }
