@@ -34,14 +34,14 @@ export const AffiliateButton: React.FC<AffiliateButtonProps> = ({ type, term, co
 
     switch (type) {
         case 'AMAZON':
-            const amzQuery = encodeURIComponent(`${term} ingredients and cookbook`);
+            const amzQuery = encodeURIComponent(`${term} ingredients grocery`);
             url = `https://www.amazon.com/s?k=${amzQuery}${CONFIG.AMAZON_TAG ? `&tag=${CONFIG.AMAZON_TAG}` : ''}`;
             icon = <ShoppingBag size={14} />;
             label = "Shop Ingredients";
             break;
         case 'DELIVERY':
             // Generic search on Instacart or DoorDash
-            url = `${CONFIG.INSTACART_LINK}`;
+            url = term ? `https://www.instacart.com/store/s?k=${encodeURIComponent(term)}` : `${CONFIG.INSTACART_LINK}`;
             icon = <Utensils size={14} />;
             label = "Get Groceries";
             break;

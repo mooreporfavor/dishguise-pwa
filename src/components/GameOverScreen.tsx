@@ -253,7 +253,7 @@ export const GameOverScreen: React.FC<GameOverScreenProps> = ({
                         const makeableDish = gameResult?.rounds.find(r => r.isMakeable)?.dish || gameResult?.rounds[gameResult.rounds.length - 1].dish;
                         return (
                             <a
-                                href={`https://www.instacart.com/store/search?s=${encodeURIComponent(makeableDish + " ingredients")}`}
+                                href={`https://www.instacart.com/store/s?k=${encodeURIComponent(makeableDish + " ingredients")}`}
                                 target="_blank"
                                 rel="noreferrer"
                                 className="w-full bg-[#E04F26] text-white font-bold py-3 rounded-xl shadow-lg hover:bg-[#c9421d] transition-all flex items-center justify-center gap-2 uppercase tracking-widest text-sm"
