@@ -3,9 +3,9 @@
 
 body {
   background-color: #121212;
-  background-image: url('/textures/slate.png');
+  background-image: url('/textures/slate_background.webp');
   background-repeat: repeat;
-  background-size: 800px;
+  background-size: cover; /* Changed from fixed 800px to cover to mimic full background */
   color: #f4f4f0;
 }
 
