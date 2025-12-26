@@ -37,17 +37,33 @@ export default async function handler(
             }
         );
 
-        const data = await kitResponse.json();
+        const responseText = await kitResponse.text();
+        console.log('Kit.com Status:', kitResponse.status);
+        console.log('Kit.com Response:', responseText);
+
+        let data;
+        try {
+            data = JSON.parse(responseText);
+        } catch (e) {
+            console.error('Failed to parse Kit response:', responseText);
+            return response.status(502).json({
+                message: `Received invalid response from ConvertKit: ${kitResponse.status} - ${responseText.slice(0, 100)}`
+            });
+        }
 
         if (!kitResponse.ok) {
-            throw new Error(data.message || 'Failed to subscribe');
+            throw new Error(data.message || `Kit API Error: ${kitResponse.status}`);
         }
 
         return response.status(200).json(data);
     } catch (error: any) {
-        console.error('Kit.com API Error:', error);
+        console.error('Server/Kit Error:', error);
         return response.status(500).json({
             message: error.message || 'Failed to process subscription'
         });
     }
+    return response.status(500).json({
+        message: error.message || 'Failed to process subscription'
+    });
+}
 }
