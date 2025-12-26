@@ -50,6 +50,10 @@ const calculatePercentile = (score: number, difficulty: Difficulty) => {
 
     // Adjust curve based on difficulty expectation
     switch (difficulty) {
+        case Difficulty.KIDS:
+            mean = 25000; // Very easy to score high
+            stdDev = 2000;
+            break;
         case Difficulty.EASY:
             mean = 20000; // Easier to get high scores
             stdDev = 2500;
@@ -88,48 +92,50 @@ export const GameOverScreen: React.FC<GameOverScreenProps> = ({
     const [emailSubmitted, setEmailSubmitted] = useState(false);
 
     const verdict = getChefVerdict(totalScore);
-    const percentile = calculatePercentile(totalScore, difficulty);
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setReceiptReady(true);
-        }, 1500);
-        return () => clearTimeout(timer);
-    }, []);
+    // Calculate Rank based on "Clues Used" (approx 500pts per clue)
+    // Max Score = 25,000
+    const maxScore = 25000;
+    const lostPoints = maxScore - totalScore;
+    const cluesUsed = Math.max(0, lostPoints / 500);
+
+    let rankTitle = "Commis Chef";
+    let percentile = 80;
+    let rankColor = "text-zinc-500";
+
+    if (cluesUsed <= 1) {
+        rankTitle = "Executive Chef";
+        percentile = 1;
+        rankColor = "text-culinary-gold";
+    } else if (cluesUsed <= 2) {
+        rankTitle = "Head Chef";
+        percentile = 10;
+        rankColor = "text-orange-400";
+    } else if (cluesUsed <= 3.5) {
+        rankTitle = "Line Cook";
+        percentile = 40;
+        rankColor = "text-yellow-600";
+    } else {
+        rankTitle = "Commis Chef";
+        percentile = 80; // Top 80% means you are in the bottom 20%? Or means you are better than 20%?
+        // Usually "Top 1%" is best. "Top 80%" is bad.
+        rankColor = "text-zinc-400";
+    }
+
+    const GlobalAverageScore = 22000; // notionally around 6 clues
 
     const handleShare = async () => {
         logEvent(EVENTS.SHARE, { score: totalScore, difficulty });
 
-        // 1. Build the Viral Grid String
-        // Format:
-        // 👨‍🍳 DishGuise Daily #42
-        // ⭐️ Expert Chef
-        //
-        // 🌮 🇲🇽 🟩🟩🟩 (3)
-        // ...
-
-        const dateStr = new Date().toLocaleDateString('en-US');
-        const dishName = gameResult?.rounds.find(r => r.id)?.targetDish || "something delicious"; // Get dish name if available
-        // Note: gameResult rounds might not store the targetDish string directly if simplified? 
-        // Wait, RoundData has targetDish. GameResult has RoundData[]? No, GameResult has {score, dish, ...}.
-
-        const header = `👨‍🍳 I just cooked ${gameResult?.rounds[0]?.dish || 'Dinner'} on DishGuise!\n🔥 Streak: ${streak} • ${difficulty}\n`;
+        const header = `👨‍🍳 I just cooked ${gameResult?.rounds[0]?.dish || 'Dinner'} on DishGuise!\n🔥 Streak: ${streak} • ${rankTitle}\n`;
 
         const grid = gameResult?.rounds.map(r => {
-            // Calculate square colors based on score
-            // 5000 = 🟩, 0 = 🟥? Or maybe based on guesses?
-            // "guesses" isn't strictly tracked in GameResult rounds, only score.
-            // Let's approximate: >4000 = 🟩 (1-2 clues), >2000 = 🟨 (3-4 clues), <2000 = 🟥 (5 clues)
-            // Wait, we don't have exact guesses count here easily. 
-            // Actually, let's just use Score to visualize "Performance".
-
             let cubes = "";
             if (r.score >= 4000) cubes = "🟩🟩🟩";
             else if (r.score >= 2000) cubes = "🟨🟨";
             else cubes = "🟥";
 
-            // Emoji Fallback
-            const dishIcon = r.emoji || "🍲"; // Use specific emoji if available, else generic pot
+            const dishIcon = r.emoji || "🍲";
             const flag = r.countryCode
                 ? String.fromCodePoint(...r.countryCode.toUpperCase().split('').map(c => 127397 + c.charCodeAt(0)))
                 : r.flagEmoji;
@@ -137,7 +143,7 @@ export const GameOverScreen: React.FC<GameOverScreenProps> = ({
             return `${dishIcon} ${flag} ${cubes} (${r.score})`;
         }).join('\n');
 
-        const footer = `\nScore: ${totalScore.toLocaleString()} | Top ${100 - percentile}%\n${APP_URL}`;
+        const footer = `\nScore: ${totalScore.toLocaleString()} | Top ${percentile}%\n${APP_URL}`;
 
         const shareText = `${header}\n${grid}\n${footer}`;
 
@@ -181,19 +187,63 @@ export const GameOverScreen: React.FC<GameOverScreenProps> = ({
                 )}
 
                 {/* 2. Visible Viral Grid (Wordle Style) */}
-                <div className="bg-zinc-900/80 p-4 rounded-xl text-center space-y-2 backdrop-blur-sm border border-zinc-800">
-                    <div className="text-zinc-400 text-[10px] uppercase tracking-widest mb-1">Performance</div>
-                    <div className="font-mono text-xl tracking-widest leading-none">
-                        {gameResult?.rounds.map((r, i) => {
-                            let cubes = "🟥";
-                            if (r.score >= 4000) cubes = "🟩";
-                            else if (r.score >= 2000) cubes = "🟨";
-                            return <span key={i} className="mx-0.5">{cubes}</span>;
-                        })}
+                {/* 2. Rank & Progress */}
+                <div className="bg-zinc-900/90 p-6 rounded-xl text-center space-y-4 backdrop-blur-sm border border-zinc-800 shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
+
+                    <div className="space-y-1">
+                        <div className="text-zinc-500 text-[10px] uppercase tracking-[0.2em]">Rank Achieved</div>
+                        <h2 className={`font-serif text-3xl font-bold ${rankColor} drop-shadow-sm`}>
+                            {rankTitle}
+                        </h2>
+                        <div className="text-zinc-400 text-xs font-mono">
+                            Top <span className="text-white font-bold">{percentile}%</span> of players
+                        </div>
                     </div>
-                    <div className="text-2xl font-black text-white">
-                        {totalScore.toLocaleString()} pts
+
+                    {/* Progress Bar */}
+                    <div className="relative pt-6 pb-2 px-2">
+                        {/* Track */}
+                        <div className="h-2 w-full bg-zinc-800 rounded-full overflow-hidden">
+                            <div
+                                className="h-full bg-gradient-to-r from-teal-800 to-teal-500"
+                                style={{ width: `${Math.min(100, (totalScore / 25000) * 100)}%` }}
+                            />
+                        </div>
+
+                        {/* Ticks for Context (Notional) */}
+                        <div className="absolute top-2 w-full h-full pointer-events-none">
+                            {/* Global Avg Marker */}
+                            <div
+                                className="absolute top-[-1.5rem] flex flex-col items-center transform -translate-x-1/2"
+                                style={{ left: `${(GlobalAverageScore / 25000) * 100}%` }}
+                            >
+                                <span className="text-[9px] uppercase tracking-wider text-zinc-500 bg-zinc-900/80 px-1 rounded">Avg</span>
+                                <div className="w-0.5 h-8 bg-zinc-600/50 dashed-line"></div>
+                            </div>
+
+                            {/* Player Marker */}
+                            <div
+                                className="absolute top-[-4px] flex flex-col items-center transform -translate-x-1/2 z-10 transition-all duration-1000 ease-out"
+                                style={{ left: `${(totalScore / 25000) * 100}%` }}
+                            >
+                                <div className="w-3 h-3 bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,0.8)] border-2 border-zinc-900"></div>
+                            </div>
+                        </div>
                     </div>
+
+                    <div className="flex justify-between items-end border-t border-white/5 pt-3 mt-2">
+                        <div className="text-left">
+                            <div className="text-[9px] text-zinc-600 uppercase tracking-widest">Score</div>
+                            <div className="font-mono text-xl text-white leading-none">{totalScore.toLocaleString()}</div>
+                        </div>
+                        <div className="text-right">
+                            <div className="text-[9px] text-zinc-600 uppercase tracking-widest">Clues Used</div>
+                            <div className="font-mono text-xl text-white leading-none">
+                                {Number(cluesUsed).toFixed(1)} <span className="text-zinc-600 text-xs">/ {((25000 - totalScore) > 0 ? "~" : "")}</span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
                 {/* 3. Actions */}

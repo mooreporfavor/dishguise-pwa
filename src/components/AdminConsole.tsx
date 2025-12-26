@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { generateBatchMenu } from '../services/geminiService';
-import { DailyMenu } from '../data/ThePantry';
+import { DailyMenu, THE_PANTRY } from '../data/ThePantry';
 import { Copy, Loader2, X, Terminal, Calendar, Layers } from 'lucide-react';
 
 interface AdminConsoleProps {
@@ -14,7 +14,20 @@ export const AdminConsole: React.FC<AdminConsoleProps> = ({ onClose }) => {
     const [generatedJson, setGeneratedJson] = useState("");
 
     // Config
-    const [startDate, setStartDate] = useState(new Date().toISOString().split('T')[0]);
+    // Smart Start: Find the last date in pantry and start the day after
+    const getLastPantryDate = () => {
+        const dates = Object.keys(THE_PANTRY).sort();
+        if (dates.length === 0) return new Date().toISOString().split('T')[0];
+        // Create date object from the last key string 'YYYY-MM-DD'
+        // forcing it to be treated as local date component to avoid timezone shifts
+        // actually simplest is just:
+        const lastDateStr = dates[dates.length - 1]; // "2025-12-26"
+        const d = new Date(lastDateStr);
+        d.setUTCDate(d.getUTCDate() + 1);
+        return d.toISOString().split('T')[0];
+    };
+
+    const [startDate, setStartDate] = useState(getLastPantryDate());
     const [batchDays, setBatchDays] = useState(7);
 
     const addLog = (msg: string) => setLogs(prev => [...prev, msg].slice(-20));
@@ -92,9 +105,41 @@ export const AdminConsole: React.FC<AdminConsoleProps> = ({ onClose }) => {
         }
     };
 
-    const copyToClipboard = () => {
-        navigator.clipboard.writeText(generatedJson);
-        alert("JSON copied! Paste this into src/data/ThePantry.ts inside the THE_PANTRY object.");
+    const copyToClipboard = async () => {
+        try {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                await navigator.clipboard.writeText(generatedJson);
+                alert("JSON copied! Paste this into src/data/pantry.json inside the main object.");
+            } else {
+                throw new Error("Clipboard API unavailable");
+            }
+        } catch (err) {
+            // Fallback for insecure contexts (e.g. http://192.168.x.x)
+            const textArea = document.createElement("textarea");
+            textArea.value = generatedJson;
+
+            // Ensure it's not visible but part of the DOM
+            textArea.style.position = "fixed";
+            textArea.style.left = "-9999px";
+            textArea.style.top = "0";
+            document.body.appendChild(textArea);
+
+            textArea.focus();
+            textArea.select();
+
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    alert("JSON copied! Paste this into src/data/pantry.json inside the main object.");
+                } else {
+                    alert("Could not auto-copy. Please manually select and copy the text below.");
+                }
+            } catch (err) {
+                alert("Could not auto-copy. Please manually select and copy the text below.");
+            }
+
+            document.body.removeChild(textArea);
+        }
     };
 
     return (

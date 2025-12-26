@@ -78,7 +78,7 @@ export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
                         <Mail size={18} className="text-culinary-gold" />
                     </div>
                     <div>
-                        <h3 className="font-bold text-white text-sm uppercase tracking-wide">Don't Lose Your Streak 🔥 (v2.0)</h3>
+                        <h3 className="font-bold text-white text-sm uppercase tracking-wide">Don't Lose Your Streak 🔥</h3>
                         <p className="text-zinc-400 text-xs">Get a daily reminder and a free hint for tomorrow's menu.</p>
                     </div>
                 </div>

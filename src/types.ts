@@ -1,5 +1,6 @@
 
 export enum Difficulty {
+    KIDS = 'Little Chef',
     EASY = 'Sous Chef',
     MEDIUM = 'Chef de Partie',
     HARD = 'Executive Chef'

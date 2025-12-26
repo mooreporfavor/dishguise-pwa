@@ -13,6 +13,7 @@ const generateSafeId = () => {
 
 const getDifficultyKey = (d: Difficulty): 'EASY' | 'MEDIUM' | 'HARD' => {
     switch (d) {
+        case Difficulty.KIDS: return 'EASY'; // Fallback to EASY text if needed, though Kids Mode has custom logic
         case Difficulty.EASY: return 'EASY';
         case Difficulty.MEDIUM: return 'MEDIUM';
         default: return 'HARD';
@@ -26,8 +27,8 @@ export const getGameRound = async (
     excludeList: string[] = []
 ): Promise<RoundData> => {
 
-    // 0. KIDS MODE (EASY)
-    if (difficulty === Difficulty.EASY) {
+    // 0. KIDS MODE (LITTLE CHEF)
+    if (difficulty === Difficulty.KIDS) {
         const kidRound = KIDS_MENU[roundIndex % KIDS_MENU.length];
         console.log(`[GameService] 👶 Kids Mode Active: Serving ${kidRound.targetDish}`);
         // Return mostly static, but generate unique ID just in case

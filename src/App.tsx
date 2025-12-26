@@ -602,6 +602,8 @@ const App: React.FC = () => {
         }
     };
 
+
+
     const handleFinishIntermission = () => {
         proceedToNextRound();
     };
@@ -636,7 +638,7 @@ const App: React.FC = () => {
     // Fix: Use local date to avoid Timezone issues (ISO is UTC)
     // 'en-CA' outputs YYYY-MM-DD
     const todayISO = new Date().toLocaleDateString('en-CA');
-    const heroImageUrl = `/daily_images/${todayISO}.jpg`; // Expects user to populate this folder
+    const heroImageUrl = `/hero-images/${todayISO}.png`; // Matches script output
 
     if (showIntro) return <LogoIntro onComplete={() => setShowIntro(false)} heroImageUrl={heroImageUrl} />;
 
@@ -708,8 +710,9 @@ const App: React.FC = () => {
     if (appState === AppState.MENU) {
         const today = new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
         return (
-            <div className="min-h-screen bg-culinary-dark flex flex-col items-center p-6 overflow-hidden">
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-800/30 via-culinary-dark to-black pointer-events-none"></div>
+            <div className="min-h-screen bg-culinary-dark flex flex-col items-center p-6 overflow-hidden relative">
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-800/30 via-culinary-dark to-black pointer-events-none z-0"></div>
+
                 <div className="z-10 w-full max-w-md py-8 flex flex-col h-full relative">
                     <button
                         onClick={handleProfileClick}
@@ -763,13 +766,14 @@ const App: React.FC = () => {
                             let subLabel = "";
                             let desc = "";
                             let recommended = false;
+
                             if (diff === Difficulty.EASY) {
                                 subLabel = "(Easy)";
-                                desc = "Kids Mode / Beginner.";
+                                desc = "Sous Chef. Casual Dining.";
+                                recommended = true;
                             } else if (diff === Difficulty.MEDIUM) {
                                 subLabel = "(Medium)";
                                 desc = "The Standard. Casual Foodie.";
-                                recommended = true;
                             } else {
                                 subLabel = "(Hard)";
                                 desc = "Expert Mode. Deep Cuts.";
@@ -826,6 +830,38 @@ const App: React.FC = () => {
                                 </button>
                             );
                         })}
+
+                        {/* KIDS MODE - SEPARATE & CUTESY */}
+                        {(() => {
+                            const diff = Difficulty.KIDS;
+                            const completedCount = getCompletedCount(diff, gameMode);
+                            const isComplete = completedCount >= ROUNDS_PER_DAY;
+
+                            return (
+                                <button
+                                    key={diff}
+                                    disabled={isComplete}
+                                    onClick={() => startGame(diff)}
+                                    className={`w-full mt-6 group relative p-3 rounded-xl border border-dashed border-zinc-700 hover:border-pink-300/50 bg-zinc-900/30 transition-all duration-300 text-left overflow-hidden flex items-center gap-4
+                                    ${isComplete ? 'opacity-50 grayscale' : 'hover:bg-zinc-800/50'}
+                                    `}
+                                >
+                                    <div className="bg-pink-500/10 text-pink-300 p-2 rounded-full group-hover:scale-110 transition-transform">
+                                        <Sparkles size={18} />
+                                    </div>
+                                    <div className="flex-1">
+                                        <h4 className="font-serif text-sm text-pink-200 group-hover:text-pink-100 flex items-center gap-2">
+                                            Little Chef
+                                            {isComplete && <span className="text-zinc-500 text-[10px] uppercase decoration-auto">(Done)</span>}
+                                        </h4>
+                                        <p className="text-[10px] text-zinc-500 uppercase tracking-wider">For Kids • Simple Dishes</p>
+                                    </div>
+                                    <div className="text-zinc-600 font-mono text-xs group-hover:text-pink-200/50">
+                                        {completedCount}/{ROUNDS_PER_DAY}
+                                    </div>
+                                </button>
+                            )
+                        })()}
                     </div>
 
                     <div className="mt-6 space-y-3">
