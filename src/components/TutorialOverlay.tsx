@@ -16,14 +16,14 @@ export const TutorialOverlay: React.FC<TutorialOverlayProps> = ({ mode, onComple
     // Define steps based on mode
     const steps = mode === 'DETECTIVE' ? [
         {
-            title: "Welcome, Critic",
-            desc: "Your reputation is on the line. Can you identify the dish just by analyzing this Prep List?",
+            title: "Mise-en-place Protocol",
+            desc: "Welcome, Chef. The dish is hidden, but the ingredients tell a story. We reveal them in a strict order: Texture → Aromatics → The Star.",
             targetId: 'ingredients-board',
             position: 'bottom'
         },
         {
-            title: "Analyze & Reveal",
-            desc: "Some ingredients are hidden. You can reveal them for a clearer picture, but it costs points from your Ticket Value.",
+            title: "Build the Flavor",
+            desc: "The first clues set the stage. As you reveal more, you'll uncover the 'Body' and 'Signature' ingredients. Use your palate to deduce the dish before the final reveal.",
             targetId: 'ingredients-board',
             position: 'bottom'
         },

@@ -8,7 +8,7 @@ import { RoundData, Difficulty, GameMode } from '../types';
 
 export const STATIC_MENU: Record<string, RoundData> = {
   // --- SAMPLE ROUND (You will paste more below this) ---
-  "Chef de Partie-1-DETECTIVE": {
+  "Head Chef-1-DETECTIVE": {
     "id": "static-sample-1",
     "dayId": "sample",
     "targetDish": "Pad Thai",
@@ -50,6 +50,6 @@ export const STATIC_MENU: Record<string, RoundData> = {
       { "id": "ing-10", "name": "Galangal", "isCorrect": false },
       { "id": "ing-11", "name": "Lemongrass", "isCorrect": false }
     ],
-    "difficulty": "Chef de Partie" as Difficulty
+    "difficulty": "Head Chef" as Difficulty
   }
 };

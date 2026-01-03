@@ -38,26 +38,31 @@ const getDaySeed = (str: string) => {
     };
 };
 
-const REGIONS = [
-    "Southeast Asia", "Mediterranean", "Latin America", "Eastern Europe",
-    "Middle East", "Nordic", "Sub-Saharan Africa", "Indian Subcontinent",
-    "East Asia", "American South", "Caribbean", "Polynesia", "French Provinces", "Italian Regions"
-];
-
-const CATEGORIES = [
-    "Street Food", "Celebratory Feast", "Comfort Stew", "Fermented Dish",
-    "Breakfast Staple", "Dessert", "Seafood Delicacy", "Noodle Dish", "Rice Dish", "Sandwich"
+const CURATED_THEMES = [
+    "Global Dumplings",
+    "Street Food Icons",
+    "Grandma's Comfort Food",
+    "Spicy Legends",
+    "Breakfast of Champions",
+    "Holiday Feasts",
+    "Seaside Eats",
+    "Midnight Snacks",
+    "Royal Banquets",
+    "Fermented Funk",
+    "Sandwiches of the World",
+    "Noodle Nirvana",
+    "Rice Bowls",
+    "Vegan Virtuosos",
+    "Carnivore's Carnival"
 ];
 
 const getDailyTopic = (difficulty: Difficulty, roundIndex: number) => {
     const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
     const seedKey = `${today}-${difficulty}-${roundIndex}`;
-    const rng = getDaySeed(seedKey); // Use this if you want deterministic daily randomness
     // Ideally for batch generation we just pick random ones
-    const region = REGIONS[Math.floor(Math.random() * REGIONS.length)];
-    const category = CATEGORIES[Math.floor(Math.random() * CATEGORIES.length)];
+    const theme = CURATED_THEMES[Math.floor(Math.random() * CURATED_THEMES.length)];
 
-    return { region, category, seedKey };
+    return { theme, seedKey };
 };
 
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
@@ -207,33 +212,46 @@ const ROUND_GENERATION_SCHEMA = {
 export const generateBatchMenu = async (date: string): Promise<DailyMenu> => {
     const model = "gemini-2.5-flash"; // User specified format
 
-    // Pick a random daily theme
-    const region = REGIONS[Math.floor(Math.random() * REGIONS.length)];
-    const category = CATEGORIES[Math.floor(Math.random() * CATEGORIES.length)];
+    // Pick a random daily theme from Curated List
+    const theme = CURATED_THEMES[Math.floor(Math.random() * CURATED_THEMES.length)];
 
     const prompt = `
     Generate a full Daily Menu for DishGuise.
     Date: ${date}
-    Theme: ${category} from ${region}
+    Theme: ${theme}
     
     I need exactly 15 rounds of content:
     - 5 EASY rounds
     - 5 MEDIUM rounds
     - 5 HARD rounds
 
-    1. TARGET DISH: Must fit the theme '${category}' and region '${region}'.
-       *EXCEPTION FOR EASY ROUNDS*: If the regional theme is obscure or lacks globally famous dishes, you MUST pivot to broadly famous "Continental Classics" or "International Comfort Food" to ensure playability. Easy rounds must never be obscure.
-    2. UNIQUE: No duplicate dishes across the 15 rounds.
-    3. DISTRACTORS: Must be plausible but incorrect.
+    1. GLOBAL DIVERSITY: The rounds MUST feature dishes from DIFFERENT globally diverse regions (e.g. Asia, Europe, Americas, Africa). Do NOT stick to just one region for the whole theme.
+       Example: If theme is "Dumplings", include Ravioli (Italy), Gyoza (Japan), Pierogi (Poland), Empanadas (Argentina), Modak (India).
+
+    2. TARGET DISH: Must fit the theme '${theme}'.
+       *EXCEPTION FOR EASY ROUNDS*: Must be "Global Superstars" / Ubiquitous dishes.
+       *HARD ROUNDS*: Can be "Local Secrets" or regional specialties.
+    3. UNIQUE: No duplicate dishes across the 15 rounds.
+    4. DISTRACTORS: Must be plausible but incorrect.
        - Distractor Dishes: Provide a specific reason why this similar dish is NOT the target (e.g., "Uses rice flour instead of wheat").
-    4. NO SPOILERS: Ingredients MUST NOT share the name of the dish.
-       - BAD: Dish="Apple Pie", Ingredient="Apple". (Too obvious).
+    5. INGREDIENT HIERARCHY ("Mise-en-place" Protocol):
+       You must provide exactly 5 'mainIngredients' sorted in this specific order of revelation:
+       [0] Texture/Base: (e.g., "Broth", "Puff Pastry", "Rice Noodles"). Sets the stage.
+       [1] Primary Aromatic: (e.g., "Garlic", "Lemongrass", "Mirepoix"). Hints at the region.
+       [2] Supporting Component: (e.g., "Spinach", "Tofu", "Red Bean"). Adds body.
+       [3] The Star: (e.g., "Prawns", "Beef Short Rib"). The core protein or veg.
+       [4] The Signature: (e.g., "Tamarind", "Saffron", "Truffle Oil"). The defining flavor.
+    
+    6. BANNED INGREDIENTS: NEVER include generic items that give no info.
+       - BANNED: "Water", "Salt", "Oil", "Vegetable Oil", "Sugar", "Pepper", "Flour" (unless specific like 'Chickpea Flour').
+    
+    7. NO SPOILERS: Ingredients MUST NOT share the name of the dish.
+       - BAD: Dish="Apple Pie", Ingredient="Apple".
        - GOOD: Dish="Apple Pie", Ingredient="Granny Smith Fruit".
-    5. SEO: The final item in 'triviaClues' for every round MUST be exactly: "Play the daily challenge at DishGuise.com".
+    8. SEO: The final item in 'triviaClues' for every round MUST be exactly: "Play the daily challenge at DishGuise.com".
     
     DIFFICULTY DEFINITIONS:
     - EASY: Global Superstar / Ubiquitous Dishes. (3 distractors, 4 wrong ingredients).
-      Example: If theme is "Ethiopian", Easy might be "Roast Chicken" if "Doro Wat" is deemed too hard.
     - MEDIUM: National Standard dishes. (3 distractors, 6 wrong ingredients)
     - HARD: Regional Specialty / Chef's Secret. (5 distractors, 8 wrong ingredients)
 
@@ -257,7 +275,7 @@ export const generateBatchMenu = async (date: string): Promise<DailyMenu> => {
             },
             temperature: 0.7,
             topP: 0.95,
-            systemInstruction: 'You are the DishGuise Head Chef. You generate balanced, culturally accurate daily game menus. You never repeat a dish from the provided history.'
+            systemInstruction: 'You are the DishGuise Head Chef. You generate balanced, culturally accurate daily game menus. You strictly follow the Mise-en-place ingredient ordering protocol.'
         }
     });
 
@@ -313,7 +331,7 @@ export const generateDailyRound = async (
         } as any;
     }
 
-    const { region, category, seedKey } = getDailyTopic(difficulty, roundIndex);
+    const { theme, seedKey } = getDailyTopic(difficulty, roundIndex);
     const MAX_RETRIES = 2;
 
     // ... (Keep existing difficulty prompt logic if needed, or simplify)
@@ -340,20 +358,31 @@ export const generateDailyRound = async (
 
             const prompt = `
                 Create a single 'DishGuise' game round.
-                Region: ${region}
-                Category: ${category}
+                Theme: ${theme}
                 Difficulty: ${difficulty} (${difficultyDesc})
                 
                 Avoid: ${exclusionString}
 
                 Requirements:
-                - Target Dish Name
+                - Target Dish Name: Must fit the theme '${theme}'.
                 - 101 Clues
                 - ${numDistractorDishes} Distractor Dishes (with reasons based on ingredients)
                 - ${numDistractorIngredients} Distractor Ingredients
-                - CRITICAL: NO SPOILERS. Ingredients MUST NOT contain the dish name.
-                  (e.g. If dish is "Matoke", do not list "Matoke Bananas" as ingredient. Use "Green Cooking Bananas" instead).
-                - SEO: The final item in 'triviaClues' MUST be exactly: "Play the daily challenge at DishGuise.com".
+                
+                INGREDIENT HIERARCHY ("Mise-en-place" Protocol):
+                You must provide exactly 5 'mainIngredients' sorted in this specific order of revelation:
+                [0] Texture/Base: (e.g., "Broth", "Puff Pastry", "Rice Noodles"). Sets the stage.
+                [1] Primary Aromatic: (e.g., "Garlic", "Lemongrass", "Mirepoix"). Hints at the region.
+                [2] Supporting Component: (e.g., "Spinach", "Tofu", "Red Bean"). Adds body.
+                [3] The Star: (e.g., "Prawns", "Beef Short Rib"). The core.
+                [4] The Signature: (e.g., "Tamarind", "Saffron", "Truffle Oil"). The defining flavor.
+                
+                BANNED: "Water", "Salt", "Oil", "Vegetable Oil", "Sugar", "Pepper", "Flour".
+                
+                CRITICAL NO SPOILERS: Ingredients MUST NOT contain the dish name.
+                (e.g. If dish is "Matoke", do not list "Matoke Bananas" as ingredient. Use "Green Cooking Bananas" instead).
+                
+                SEO: The final item in 'triviaClues' MUST be exactly: "Play the daily challenge at DishGuise.com".
             `;
 
             // NOTE: Using 'any' cast here because we haven't refactored generateDailyRound to use the new exact schema yet

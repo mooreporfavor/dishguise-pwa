@@ -2,7 +2,7 @@
 export enum Difficulty {
     KIDS = 'Little Chef',
     EASY = 'Sous Chef',
-    MEDIUM = 'Chef de Partie',
+    MEDIUM = 'Head Chef',
     HARD = 'Executive Chef'
 }
 
@@ -13,7 +13,8 @@ export enum AppState {
     ROUND_OVER = 'ROUND_OVER',
     GAME_OVER = 'GAME_OVER',
     INTERMISSION = 'INTERMISSION',
-    PROFILE = 'PROFILE'
+    PROFILE = 'PROFILE',
+    PRIVACY = 'PRIVACY'
 }
 
 export enum GamePhase {

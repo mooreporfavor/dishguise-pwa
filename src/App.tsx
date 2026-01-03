@@ -15,6 +15,8 @@ import { GameOverScreen } from './components/GameOverScreen';
 import { logEvent, EVENTS } from './services/analytics';
 import { SFX } from './services/soundService';
 import { CheckCircle2, Play, Utensils, ChefHat, Menu as MenuIcon, Timer, Cigarette, Sparkles, LogOut, User, AlertTriangle, ArrowDown, ArrowRight, Award } from 'lucide-react';
+import CookieConsent from "react-cookie-consent";
+import { Privacy } from './components/Privacy';
 
 const ROUNDS_PER_DAY = 5;
 const MAX_ROUND_SCORE = 5000;
@@ -41,7 +43,7 @@ const LOADING_MSGS = [
 const getTitle = (level: number) => {
     if (level < 5) return "Dishwasher"; // Day 1-2
     if (level < 15) return "Commis Chef"; // Week 1
-    if (level < 30) return "Chef de Partie"; // Month 1
+    if (level < 30) return "Line Cook"; // Month 1
     if (level < 50) return "Sous Chef"; // Month 2
     if (level < 75) return "Chef de Cuisine"; // Month 4
     return "Executive Chef"; // Lvl 75+ (Requires significant play)
@@ -83,7 +85,7 @@ interface Penalty {
 
 
 
-const App: React.FC = () => {
+const DishGuiseGame: React.FC = () => {
     const [showIntro, setShowIntro] = useState(true);
     const [appState, setAppState] = useState<AppState>(AppState.MENU);
     const [difficulty, setDifficulty] = useState<Difficulty>(Difficulty.MEDIUM);
@@ -597,11 +599,9 @@ const App: React.FC = () => {
                     }
                 };
             });
-
             setAppState(AppState.GAME_OVER);
         }
     };
-
 
 
     const handleFinishIntermission = () => {
@@ -650,10 +650,14 @@ const App: React.FC = () => {
         return <CulinaryPassport profile={userProfile} onClose={() => setAppState(AppState.MENU)} />;
     }
 
+    if (appState === AppState.PRIVACY) {
+        return <Privacy onBack={() => setAppState(AppState.MENU)} />;
+    }
+
     if (appState === AppState.LOADING) {
         return (
-            <div className="h-screen w-screen bg-culinary-dark flex flex-col items-center justify-center p-4 relative overflow-hidden">
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-800/30 via-culinary-dark to-black pointer-events-none"></div>
+            <div className="h-screen w-screen bg-black/80 flex flex-col items-center justify-center p-4 relative overflow-hidden backdrop-blur-sm">
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-800/20 via-black/50 to-black/80 pointer-events-none"></div>
                 <div className="relative mb-6">
                     <ChefHat size={64} className="text-zinc-600 animate-pulse" />
                     <Sparkles size={32} className="text-culinary-gold absolute -top-2 -right-2 animate-bounce" />
@@ -674,7 +678,7 @@ const App: React.FC = () => {
 
     if (appState === AppState.INTERMISSION) {
         return (
-            <div className="h-screen w-screen bg-culinary-dark flex flex-col items-center justify-center p-6">
+            <div className="h-screen w-screen bg-black/80 flex flex-col items-center justify-center p-6 backdrop-blur-sm">
                 <div className="max-w-md w-full space-y-8 text-center">
                     <div className="relative">
                         <div className="absolute -top-10 left-1/2 -translate-x-1/2 text-zinc-800 opacity-20">
@@ -710,8 +714,8 @@ const App: React.FC = () => {
     if (appState === AppState.MENU) {
         const today = new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
         return (
-            <div className="min-h-screen bg-culinary-dark flex flex-col items-center p-6 overflow-hidden relative">
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-800/30 via-culinary-dark to-black pointer-events-none z-0"></div>
+            <div className="min-h-screen bg-transparent flex flex-col items-center p-6 overflow-hidden relative">
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-800/20 via-black/40 to-black/80 pointer-events-none z-0"></div>
 
                 <div className="z-10 w-full max-w-md py-8 flex flex-col h-full relative">
                     <button
@@ -884,8 +888,9 @@ const App: React.FC = () => {
                         )}
                     </div>
 
-                    <div className="mt-8 text-center text-zinc-600 text-[10px] font-mono">
-                        DISHGUISE v2.5 • AI POWERED • CULINARY DEDUCTION
+                    <div className="mt-8 text-center text-zinc-600 text-[10px] font-mono flex flex-col gap-2">
+                        <span>DISHGUISE v2.5 • AI POWERED • CULINARY DEDUCTION</span>
+                        <button onClick={() => setAppState(AppState.PRIVACY)} className="underline hover:text-zinc-500">Privacy Policy</button>
                     </div>
                 </div>
             </div>
@@ -918,7 +923,7 @@ const App: React.FC = () => {
     const blurAmount = phase === GamePhase.REVEAL ? 0 : Math.max(0, 30 * (1 - revealProgress));
 
     return (
-        <div className="h-screen bg-[#121212] flex flex-col overflow-hidden relative">
+        <div className="h-screen bg-transparent flex flex-col overflow-hidden relative">
             {/* Dynamic Hero Background */}
             <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
                 <div
@@ -1004,7 +1009,7 @@ const App: React.FC = () => {
                             {gameMode === 'DETECTIVE' ? (
                                 <IngredientsBoard
                                     mainIngredients={currentRoundData?.mainIngredients || []}
-                                    triviaClues={currentRoundData?.triviaClues || []}
+                                    triviaClues={(currentRoundData?.triviaClues || []).filter(c => !c.toLowerCase().includes('dishguise.com'))}
                                     revealedCount={revealedIngredientsCount}
                                     revealedTriviaCount={revealedTriviaCount}
                                     phase={phase}
@@ -1073,9 +1078,9 @@ const App: React.FC = () => {
 
                                             if (isCorrect) {
                                                 return (
-                                                    <div key={option.id} className="p-4 bg-green-900/20 border border-green-500/50 rounded flex items-center justify-between shadow-[0_0_15px_rgba(74,222,128,0.1)]">
-                                                        <span className="font-serif text-green-400 font-bold text-lg">{option.name}</span>
-                                                        <CheckCircle2 size={20} className="text-green-400" />
+                                                    <div key={option.id} className="p-4 bg-culinary-gold border border-yellow-500 rounded flex items-center justify-between shadow-xl scale-[1.02] transform transition-all duration-500 z-10 relative">
+                                                        <span className="font-serif text-black font-extrabold text-lg">{option.name}</span>
+                                                        <CheckCircle2 size={24} className="text-black" strokeWidth={3} />
                                                     </div>
                                                 );
                                             }
@@ -1121,11 +1126,14 @@ const App: React.FC = () => {
 
                     {phase === GamePhase.REVEAL && (
                         <div ref={resultsRef} className="pb-8 space-y-6 scroll-mt-24">
-                            <div className="bg-gradient-to-br from-culinary-gold to-yellow-600 text-black p-6 rounded-lg shadow-2xl relative overflow-hidden animate-slide-up">
+                            <div className="bg-gradient-to-br from-culinary-gold to-yellow-600 text-black p-6 rounded-lg shadow-2xl relative overflow-hidden animate-print-receipt origin-top">
                                 <div className="absolute top-0 right-0 p-4 opacity-20">
                                     <ChefHat size={64} />
                                 </div>
-                                <h3 className="font-black font-serif text-2xl mb-2 uppercase tracking-tight">Dish Notes</h3>
+                                <div className="flex flex-col gap-1 mb-4 border-b border-black/10 pb-4">
+                                    <span className="text-[10px] font-mono uppercase tracking-widest opacity-60">Dish Notes</span>
+                                    <h3 className="font-black font-serif text-3xl uppercase tracking-tight leading-none">{currentRoundData?.targetDish}</h3>
+                                </div>
                                 <p className="font-serif text-lg leading-relaxed max-w-2xl border-l-4 border-black/20 pl-4 mb-4">
                                     {currentRoundData?.description}
                                 </p>
@@ -1134,7 +1142,15 @@ const App: React.FC = () => {
                                         <AffiliateButton
                                             type="TRAVEL"
                                             term={currentRoundData.originCity}
-                                            country={currentRoundData.cuisine} // Use country noun
+                                            country={(() => {
+                                                try {
+                                                    return currentRoundData.countryCode
+                                                        ? new Intl.DisplayNames(['en'], { type: 'region' }).of(currentRoundData.countryCode)
+                                                        : currentRoundData.cuisine;
+                                                } catch (e) {
+                                                    return currentRoundData.cuisine;
+                                                }
+                                            })()}
                                             flag={currentRoundData.flagEmoji}
                                             countryCode={currentRoundData.countryCode} // PASSED
                                             className="bg-black/10 hover:bg-black/20 text-black border border-black/10"
@@ -1163,6 +1179,24 @@ const App: React.FC = () => {
                 </div>
             </main>
         </div>
+    );
+};
+
+const App: React.FC = () => {
+    return (
+        <>
+            <DishGuiseGame />
+            <CookieConsent
+                location="bottom"
+                buttonText="Got it"
+                cookieName="dishguise_cookie_consent"
+                style={{ background: "#0f172a", fontSize: "12px", alignItems: "center" }}
+                buttonStyle={{ color: "#000000", background: "#eebb4d", fontSize: "12px", borderRadius: "4px", fontWeight: "bold", padding: "8px 16px" }}
+                expires={150}
+            >
+                DishGuise uses cookies to ensure you get the best experience and to support the chef via affiliate links.
+            </CookieConsent>
+        </>
     );
 };
 

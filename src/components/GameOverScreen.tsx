@@ -93,36 +93,34 @@ export const GameOverScreen: React.FC<GameOverScreenProps> = ({
 
     const verdict = getChefVerdict(totalScore);
 
-    // Calculate Rank based on "Clues Used" (approx 500pts per clue)
+    // Calculate Rank based on "Points Lost" (Accuracy)
     // Max Score = 25,000
     const maxScore = 25000;
     const lostPoints = maxScore - totalScore;
-    const cluesUsed = Math.max(0, lostPoints / 500);
 
     let rankTitle = "Commis Chef";
     let percentile = 80;
     let rankColor = "text-zinc-500";
 
-    if (cluesUsed <= 1) {
+    if (lostPoints === 0) {
         rankTitle = "Executive Chef";
         percentile = 1;
         rankColor = "text-culinary-gold";
-    } else if (cluesUsed <= 2) {
+    } else if (lostPoints <= 1000) {
         rankTitle = "Head Chef";
         percentile = 10;
         rankColor = "text-orange-400";
-    } else if (cluesUsed <= 3.5) {
+    } else if (lostPoints <= 3500) {
         rankTitle = "Line Cook";
         percentile = 40;
         rankColor = "text-yellow-600";
     } else {
         rankTitle = "Commis Chef";
-        percentile = 80; // Top 80% means you are in the bottom 20%? Or means you are better than 20%?
-        // Usually "Top 1%" is best. "Top 80%" is bad.
+        percentile = 80;
         rankColor = "text-zinc-400";
     }
 
-    const GlobalAverageScore = 22000; // notionally around 6 clues
+    const GlobalAverageScore = 22000;
 
     const handleShare = async () => {
         logEvent(EVENTS.SHARE, { score: totalScore, difficulty });
@@ -158,8 +156,6 @@ export const GameOverScreen: React.FC<GameOverScreenProps> = ({
             } catch (e) { }
         }
 
-        // Fallback or Image Share (keep existing image logic as secondary option?)
-        // Actually, user specifically asked for the Grid to be copied to clipboard.
         try {
             await navigator.clipboard.writeText(shareText);
             alert("Results copied to clipboard! Share them with your friends.");
@@ -186,7 +182,6 @@ export const GameOverScreen: React.FC<GameOverScreenProps> = ({
                     </div>
                 )}
 
-                {/* 2. Visible Viral Grid (Wordle Style) */}
                 {/* 2. Rank & Progress */}
                 <div className="bg-zinc-900/90 p-6 rounded-xl text-center space-y-4 backdrop-blur-sm border border-zinc-800 shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
 
@@ -196,50 +191,71 @@ export const GameOverScreen: React.FC<GameOverScreenProps> = ({
                             {rankTitle}
                         </h2>
                         <div className="text-zinc-400 text-xs font-mono">
-                            Top <span className="text-white font-bold">{percentile}%</span> of players
+                            {percentile <= 60 ? (
+                                <>Top <span className="text-white font-bold">{percentile}%</span> of players</>
+                            ) : (
+                                <span className="text-zinc-500">Kitchen Porter in Training</span>
+                            )}
                         </div>
                     </div>
 
-                    {/* Progress Bar */}
-                    <div className="relative pt-6 pb-2 px-2">
-                        {/* Track */}
-                        <div className="h-2 w-full bg-zinc-800 rounded-full overflow-hidden">
+                    {/* Progress Bar (Gradient Reveal) */}
+                    <div className="relative pt-8 pb-2 px-2">
+                        {/* Track Container */}
+                        <div className="h-3 w-full bg-zinc-800 rounded-full overflow-hidden relative border border-zinc-700/50">
+                            {/* Full Gradient Background (Fixed) */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-red-500 via-yellow-500 to-emerald-500 opacity-90" />
+
+                            {/* Reveal Mask (Covers the 'unearned' part) */}
                             <div
-                                className="h-full bg-gradient-to-r from-teal-800 to-teal-500"
-                                style={{ width: `${Math.min(100, (totalScore / 25000) * 100)}%` }}
+                                className="absolute right-0 top-0 h-full bg-zinc-800 transition-all duration-1000 ease-out"
+                                style={{ width: `${100 - Math.min(100, (totalScore / 25000) * 100)}%` }}
                             />
+
+                            {/* Inner Shadow/Gloss */}
+                            <div className="absolute inset-0 shadow-[inset_0_1px_2px_rgba(0,0,0,0.3)] pointer-events-none" />
                         </div>
 
-                        {/* Ticks for Context (Notional) */}
-                        <div className="absolute top-2 w-full h-full pointer-events-none">
+                        {/* Ticks/Markers Overlay */}
+                        <div className="absolute top-2 w-full h-full pointer-events-none px-2 left-0">
                             {/* Global Avg Marker */}
                             <div
-                                className="absolute top-[-1.5rem] flex flex-col items-center transform -translate-x-1/2"
+                                className="absolute top-[-2rem] flex flex-col items-center transform -translate-x-1/2"
                                 style={{ left: `${(GlobalAverageScore / 25000) * 100}%` }}
                             >
-                                <span className="text-[9px] uppercase tracking-wider text-zinc-500 bg-zinc-900/80 px-1 rounded">Avg</span>
-                                <div className="w-0.5 h-8 bg-zinc-600/50 dashed-line"></div>
+                                <span className="text-[9px] uppercase tracking-wider text-zinc-500 bg-zinc-900/90 px-1 rounded border border-zinc-800">Avg</span>
+                                <div className="w-0.5 h-10 bg-zinc-600/50 dashed-line"></div>
                             </div>
 
                             {/* Player Marker */}
                             <div
-                                className="absolute top-[-4px] flex flex-col items-center transform -translate-x-1/2 z-10 transition-all duration-1000 ease-out"
+                                className="absolute top-[-0.9rem] flex flex-col items-center transform -translate-x-1/2 z-10 transition-all duration-1000 ease-out"
                                 style={{ left: `${(totalScore / 25000) * 100}%` }}
                             >
-                                <div className="w-3 h-3 bg-white rounded-full shadow-[0_0_10px_rgba(255,255,255,0.8)] border-2 border-zinc-900"></div>
+                                <div className={`relative p-1.5 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.5)] border-2 border-zinc-900 ${totalScore > 15000 ? 'bg-emerald-500 text-white' :
+                                        totalScore > 5000 ? 'bg-yellow-500 text-black' :
+                                            'bg-red-500 text-white'
+                                    }`}>
+                                    <ChefHat size={14} strokeWidth={2.5} />
+                                    {/* Little arrow/pointer triangle at bottom */}
+                                    <div className={`absolute bottom-[-4px] left-1/2 transform -translate-x-1/2 border-l-[4px] border-r-[4px] border-t-[4px] border-l-transparent border-r-transparent ${totalScore > 15000 ? 'border-t-emerald-500' :
+                                            totalScore > 5000 ? 'border-t-yellow-500' :
+                                                'border-t-red-500'
+                                        }`}></div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div className="flex justify-between items-end border-t border-white/5 pt-3 mt-2">
+                    <div className="flex justify-between items-end border-t border-white/5 pt-3 mt-4">
                         <div className="text-left">
                             <div className="text-[9px] text-zinc-600 uppercase tracking-widest">Score</div>
                             <div className="font-mono text-xl text-white leading-none">{totalScore.toLocaleString()}</div>
                         </div>
                         <div className="text-right">
-                            <div className="text-[9px] text-zinc-600 uppercase tracking-widest">Clues Used</div>
+                            <div className="text-[9px] text-zinc-600 uppercase tracking-widest">Points Deducted</div>
                             <div className="font-mono text-xl text-white leading-none">
-                                {Number(cluesUsed).toFixed(1)} <span className="text-zinc-600 text-xs">/ {((25000 - totalScore) > 0 ? "~" : "")}</span>
+                                -{lostPoints.toLocaleString()} <span className="text-zinc-600 text-xs text-[10px] align-top"> ({((totalScore / 25000) * 100).toFixed(0)}%)</span>
                             </div>
                         </div>
                     </div>
