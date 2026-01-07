@@ -361,39 +361,9 @@ const DishGuiseGame: React.FC = () => {
             return;
         }
 
-        // Check localStorage cache
-        const stored = localStorage.getItem(`dishguise_cache_${cacheKey}`);
-        if (stored) {
-            const data = JSON.parse(stored);
-            setRoundCache(prev => ({ ...prev, [cacheKey]: data }));
-            setCurrentRoundData(data);
-            resetRoundState();
-            setAppState(AppState.PLAYING);
-            return;
-        }
-
-        // Load from Service (Static or AI)
+        // Load from Service
         setAppState(AppState.LOADING);
         await loadRound(selectedDiff, completed + 1, gameMode);
-    };
-
-    const prefetchRound = async (diff: Difficulty, nextRoundIdx: number, mode: GameMode) => {
-        if (nextRoundIdx > ROUNDS_PER_DAY) return;
-        const cacheKey = `${diff}-${nextRoundIdx}-${mode}`;
-        if (roundCache[cacheKey]) return; // Already cached
-
-        try {
-            await new Promise(r => setTimeout(r, 2000)); // Gentle delay
-            const stored = localStorage.getItem(`dishguise_cache_${cacheKey}`);
-            if (stored) {
-                setRoundCache(prev => ({ ...prev, [cacheKey]: JSON.parse(stored) }));
-                return;
-            }
-            // Fetch from service (silently)
-            const data = await getGameRound(diff, nextRoundIdx, mode, userProfile.dishHistory);
-            setRoundCache(prev => ({ ...prev, [cacheKey]: data }));
-            localStorage.setItem(`dishguise_cache_${cacheKey}`, JSON.stringify(data));
-        } catch (e) { console.warn("Prefetch failed", e); }
     };
 
     const loadRound = async (diff: Difficulty, roundIdx: number, mode: GameMode) => {
@@ -406,12 +376,9 @@ const DishGuiseGame: React.FC = () => {
 
             setCurrentRoundData(data);
             setRoundCache(prev => ({ ...prev, [cacheKey]: data }));
-            localStorage.setItem(`dishguise_cache_${cacheKey}`, JSON.stringify(data));
             resetRoundState();
             setAppState(AppState.PLAYING);
 
-            // Trigger prefetch for NEXT round
-            prefetchRound(diff, roundIdx + 1, mode);
         } catch (e) {
             console.error(e);
             setAppState(AppState.MENU);
