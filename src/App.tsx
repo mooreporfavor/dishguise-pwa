@@ -50,8 +50,10 @@ const getTitle = (level: number) => {
 };
 
 // Logarithmic/Square Root curve: Harder to level up as you go.
-// 20k XP = Lvl 6. 100k XP = Lvl 15. 1M XP = Lvl 45.
-const calculateLevel = (xp: number) => Math.floor(Math.sqrt(xp / 500)) + 1;
+// 25k XP (1 Perfect Day) = Lvl 6. 
+// 175k XP (1 Week) = Lvl 14. 
+// 10M XP (~1 Year) = Lvl 100.
+const calculateLevel = (xp: number) => Math.floor(Math.sqrt(xp / 1000)) + 1;
 
 const getRandomLoadingMsg = () => LOADING_MSGS[Math.floor(Math.random() * LOADING_MSGS.length)];
 
@@ -281,10 +283,7 @@ const DishGuiseGame: React.FC = () => {
     const awardXP = (amount: number) => {
         setUserProfile(prev => {
             const newXp = prev.xp + amount;
-            let newLevel = prev.level;
-            while (newXp >= (newLevel + 1) * 2000) {
-                newLevel++;
-            }
+            const newLevel = calculateLevel(newXp);
             return {
                 ...prev,
                 xp: newXp,

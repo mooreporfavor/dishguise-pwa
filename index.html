@@ -1,40 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    
-    <!-- SEO & Branding -->
-    <title>DishGuise | The Culinary Deduction Game</title>
-    <meta name="description" content="Test your culinary knowledge. Guess the dish from its ingredients, unlock clues, and challenge your friends in this AI-powered food game." />
-    <meta name="theme-color" content="#121212" />
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23121212' rx='20'/%3E%3Ctext x='50' y='65' font-family='serif' font-weight='bold' font-size='50' fill='%23eebb4d' text-anchor='middle'%3EDG%3C/text%3E%3C/svg%3E">
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <script>
-      window.onerror = function(msg, url, line, col, error) {
-        var e = document.createElement('div');
-        e.style.position = 'fixed';
-        e.style.top = '0';
-        e.style.left = '0';
-        e.style.width = '100%';
-        e.style.background = 'red';
-        e.style.color = 'white';
-        e.style.zIndex = '9999';
-        e.style.padding = '20px';
-        e.style.fontFamily = 'monospace';
-        e.style.whiteSpace = 'pre-wrap';
-        e.innerText = 'RUNTIME ERROR:\n' + msg + '\n' + (error ? error.stack : '');
-        document.body.appendChild(e);
-      };
-    </script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-  </body>
+  <!-- SEO & Branding -->
+  <title>DishGuise | The Culinary Deduction Game</title>
+  <meta name="description"
+    content="Test your culinary knowledge. Guess the dish from its ingredients, unlock clues, and challenge your friends in this AI-powered food game." />
+  <meta name="theme-color" content="#121212" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/DishGuise_Logo.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="DishGuise" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+  <script>
+    window.onerror = function (msg, url, line, col, error) {
+      var e = document.createElement('div');
+      e.style.position = 'fixed';
+      e.style.top = '0';
+      e.style.left = '0';
+      e.style.width = '100%';
+      e.style.background = 'red';
+      e.style.color = 'white';
+      e.style.zIndex = '9999';
+      e.style.padding = '20px';
+      e.style.fontFamily = 'monospace';
+      e.style.whiteSpace = 'pre-wrap';
+      e.innerText = 'RUNTIME ERROR:\n' + msg + '\n' + (error ? error.stack : '');
+      document.body.appendChild(e);
+    };
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+
+</body>
+
 </html>

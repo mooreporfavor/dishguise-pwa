@@ -5,6 +5,7 @@ import { GameResult, Difficulty, GameMode } from '../types';
 import { DonationButton } from './Monetization';
 import { NewsletterSignup } from './NewsletterSignup';
 import { NextMenuTimer } from './NextMenuTimer'; // NEW
+import { AffiliateRow } from './AffiliateRow';
 import { logEvent, EVENTS } from '../services/analytics';
 import { getTomorrowTeaser } from '../services/gameService'; // NEW
 
@@ -233,14 +234,14 @@ export const GameOverScreen: React.FC<GameOverScreenProps> = ({
                                 style={{ left: `${(totalScore / 25000) * 100}%` }}
                             >
                                 <div className={`relative p-1.5 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.5)] border-2 border-zinc-900 ${totalScore > 15000 ? 'bg-emerald-500 text-white' :
-                                        totalScore > 5000 ? 'bg-yellow-500 text-black' :
-                                            'bg-red-500 text-white'
+                                    totalScore > 5000 ? 'bg-yellow-500 text-black' :
+                                        'bg-red-500 text-white'
                                     }`}>
                                     <ChefHat size={14} strokeWidth={2.5} />
                                     {/* Little arrow/pointer triangle at bottom */}
                                     <div className={`absolute bottom-[-4px] left-1/2 transform -translate-x-1/2 border-l-[4px] border-r-[4px] border-t-[4px] border-l-transparent border-r-transparent ${totalScore > 15000 ? 'border-t-emerald-500' :
-                                            totalScore > 5000 ? 'border-t-yellow-500' :
-                                                'border-t-red-500'
+                                        totalScore > 5000 ? 'border-t-yellow-500' :
+                                            'border-t-red-500'
                                         }`}></div>
                                 </div>
                             </div>
@@ -265,18 +266,18 @@ export const GameOverScreen: React.FC<GameOverScreenProps> = ({
                 {/* 3. Actions */}
                 <div className="grid grid-cols-1 gap-2">
                     {/* Dynamic Shop Button */}
+                    {/* Dynamic Shop Button */}
                     {(() => {
-                        const makeableDish = gameResult?.rounds.find(r => r.isMakeable)?.dish || gameResult?.rounds[gameResult.rounds.length - 1].dish;
+                        const targetRound = gameResult?.rounds.find(r => r.isMakeable) || gameResult?.rounds[gameResult.rounds.length - 1];
+                        if (!targetRound) return null;
+
                         return (
-                            <a
-                                href={`https://www.instacart.com/store/s?k=${encodeURIComponent(makeableDish + " ingredients")}`}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="w-full bg-[#E04F26] text-white font-bold py-3 rounded-xl shadow-lg hover:bg-[#c9421d] transition-all flex items-center justify-center gap-2 uppercase tracking-widest text-sm"
-                            >
-                                <Carrot size={20} fill="currentColor" />
-                                Cook {makeableDish}
-                            </a>
+                            <AffiliateRow
+                                dishName={targetRound.dish}
+                                origin={targetRound.region || "World"}
+                                countryCode={targetRound.countryCode}
+                                className="mb-2"
+                            />
                         );
                     })()}
 
@@ -312,7 +313,7 @@ export const GameOverScreen: React.FC<GameOverScreenProps> = ({
                         })()}
                     </div>
 
-                    <NewsletterSignup />
+                    <NewsletterSignup variant={totalScore > 15000 ? 'win' : 'loss'} />
                 </div>
 
                 <div className="flex justify-center py-2">

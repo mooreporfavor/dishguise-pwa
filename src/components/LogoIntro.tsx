@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { ChefHat } from 'lucide-react';
 
 interface LogoIntroProps {
     onComplete: () => void;
@@ -32,9 +31,10 @@ export const LogoIntro: React.FC<LogoIntroProps> = ({ onComplete, heroImageUrl }
             <div className="relative z-10 flex flex-col items-center">
                 {/* Icon Reveal */}
                 <div className="flex items-end gap-1 mb-4 overflow-hidden p-1">
-                    <ChefHat
-                        className={`text-culinary-gold w-14 h-14 transition-all duration-[600ms] cubic-bezier(0.22, 1, 0.36, 1) ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
-                        strokeWidth={1.5}
+                    <img
+                        src="/DishGuise_Logo.svg"
+                        alt="DishGuise Logo"
+                        className={`w-14 h-14 transition-all duration-[600ms] cubic-bezier(0.22, 1, 0.36, 1) ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
                     />
                 </div>
 

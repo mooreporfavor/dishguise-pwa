@@ -2,17 +2,33 @@ import React, { useState } from 'react';
 import { Mail, Check, Loader2, AlertCircle, ArrowRight } from 'lucide-react';
 
 interface NewsletterSignupProps {
-    formId?: string;
-    className?: string;
+    variant?: 'win' | 'loss' | 'default';
 }
 
 export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
     formId = "c3dee61335",
-    className
+    className,
+    variant = 'default'
 }) => {
     const [email, setEmail] = useState('');
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState('');
+
+    const copy = {
+        win: {
+            title: "You're on fire! 🔥",
+            subtitle: "Don't break your streak. Get a notification when the kitchen opens tomorrow."
+        },
+        loss: {
+            title: "Redemption awaits. 👨‍🍳",
+            subtitle: "Get a free 'Chef's Hint' delivered to your inbox every morning."
+        },
+        default: {
+            title: "Don't Lose Your Streak 🔥",
+            subtitle: "Get a daily reminder and a free hint for tomorrow's menu."
+        }
+    }[variant];
+
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -78,8 +94,8 @@ export const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
                         <Mail size={18} className="text-culinary-gold" />
                     </div>
                     <div>
-                        <h3 className="font-bold text-white text-sm uppercase tracking-wide">Don't Lose Your Streak 🔥</h3>
-                        <p className="text-zinc-400 text-xs">Get a daily reminder and a free hint for tomorrow's menu.</p>
+                        <h3 className="font-bold text-white text-sm uppercase tracking-wide">{copy.title}</h3>
+                        <p className="text-zinc-400 text-xs">{copy.subtitle}</p>
                     </div>
                 </div>
 
